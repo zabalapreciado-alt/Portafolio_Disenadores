@@ -51,7 +51,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(57, 195);
+            this.btnLogin.Location = new System.Drawing.Point(49, 81);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(130, 23);
             this.btnLogin.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(37, 340);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(29, 428);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(150, 23);
             this.btnCerrarSesion.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // btnGaleria
             // 
-            this.btnGaleria.Location = new System.Drawing.Point(218, 340);
+            this.btnGaleria.Location = new System.Drawing.Point(57, 159);
             this.btnGaleria.Name = "btnGaleria";
             this.btnGaleria.Size = new System.Drawing.Size(75, 23);
             this.btnGaleria.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // btnEstadisticas
             // 
-            this.btnEstadisticas.Location = new System.Drawing.Point(316, 340);
+            this.btnEstadisticas.Location = new System.Drawing.Point(749, 37);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Size = new System.Drawing.Size(106, 23);
             this.btnEstadisticas.TabIndex = 4;
@@ -93,7 +93,7 @@
             // 
             // btnAdminProyectos
             // 
-            this.btnAdminProyectos.Location = new System.Drawing.Point(400, 301);
+            this.btnAdminProyectos.Location = new System.Drawing.Point(734, 97);
             this.btnAdminProyectos.Name = "btnAdminProyectos";
             this.btnAdminProyectos.Size = new System.Drawing.Size(148, 23);
             this.btnAdminProyectos.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             // btnOfertas
             // 
-            this.btnOfertas.Location = new System.Drawing.Point(460, 428);
+            this.btnOfertas.Location = new System.Drawing.Point(734, 212);
             this.btnOfertas.Name = "btnOfertas";
             this.btnOfertas.Size = new System.Drawing.Size(118, 23);
             this.btnOfertas.TabIndex = 6;
@@ -115,7 +115,7 @@
             // 
             // btnNuevaOferta
             // 
-            this.btnNuevaOferta.Location = new System.Drawing.Point(518, 359);
+            this.btnNuevaOferta.Location = new System.Drawing.Point(734, 159);
             this.btnNuevaOferta.Name = "btnNuevaOferta";
             this.btnNuevaOferta.Size = new System.Drawing.Size(123, 23);
             this.btnNuevaOferta.TabIndex = 7;
@@ -126,7 +126,7 @@
             // 
             // btnAcercaDe
             // 
-            this.btnAcercaDe.Location = new System.Drawing.Point(653, 275);
+            this.btnAcercaDe.Location = new System.Drawing.Point(57, 224);
             this.btnAcercaDe.Name = "btnAcercaDe";
             this.btnAcercaDe.Size = new System.Drawing.Size(116, 23);
             this.btnAcercaDe.TabIndex = 8;
@@ -136,7 +136,7 @@
             // 
             // btnContacto
             // 
-            this.btnContacto.Location = new System.Drawing.Point(760, 340);
+            this.btnContacto.Location = new System.Drawing.Point(57, 282);
             this.btnContacto.Name = "btnContacto";
             this.btnContacto.Size = new System.Drawing.Size(95, 23);
             this.btnContacto.TabIndex = 9;
