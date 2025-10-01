@@ -43,17 +43,19 @@
             // lblBienvenida
             // 
             this.lblBienvenida.AutoSize = true;
-            this.lblBienvenida.Location = new System.Drawing.Point(54, 37);
+            this.lblBienvenida.Location = new System.Drawing.Point(40, 30);
+            this.lblBienvenida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(125, 16);
+            this.lblBienvenida.Size = new System.Drawing.Size(100, 13);
             this.lblBienvenida.TabIndex = 0;
             this.lblBienvenida.Text = "Bienvenido invitado";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(49, 81);
+            this.btnLogin.Location = new System.Drawing.Point(37, 66);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(130, 23);
+            this.btnLogin.Size = new System.Drawing.Size(98, 19);
             this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Iniciar Sesión";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -61,9 +63,10 @@
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(29, 428);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(22, 348);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(150, 23);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(112, 19);
             this.btnCerrarSesion.TabIndex = 2;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -72,9 +75,10 @@
             // 
             // btnGaleria
             // 
-            this.btnGaleria.Location = new System.Drawing.Point(57, 159);
+            this.btnGaleria.Location = new System.Drawing.Point(43, 129);
+            this.btnGaleria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGaleria.Name = "btnGaleria";
-            this.btnGaleria.Size = new System.Drawing.Size(75, 23);
+            this.btnGaleria.Size = new System.Drawing.Size(56, 19);
             this.btnGaleria.TabIndex = 3;
             this.btnGaleria.Text = "Galería";
             this.btnGaleria.UseVisualStyleBackColor = true;
@@ -82,9 +86,10 @@
             // 
             // btnEstadisticas
             // 
-            this.btnEstadisticas.Location = new System.Drawing.Point(749, 37);
+            this.btnEstadisticas.Location = new System.Drawing.Point(562, 30);
+            this.btnEstadisticas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(106, 23);
+            this.btnEstadisticas.Size = new System.Drawing.Size(80, 19);
             this.btnEstadisticas.TabIndex = 4;
             this.btnEstadisticas.Text = "Estadísticas";
             this.btnEstadisticas.UseVisualStyleBackColor = true;
@@ -93,9 +98,10 @@
             // 
             // btnAdminProyectos
             // 
-            this.btnAdminProyectos.Location = new System.Drawing.Point(734, 97);
+            this.btnAdminProyectos.Location = new System.Drawing.Point(550, 79);
+            this.btnAdminProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdminProyectos.Name = "btnAdminProyectos";
-            this.btnAdminProyectos.Size = new System.Drawing.Size(148, 23);
+            this.btnAdminProyectos.Size = new System.Drawing.Size(111, 19);
             this.btnAdminProyectos.TabIndex = 5;
             this.btnAdminProyectos.Text = "Gestionar Proyectos";
             this.btnAdminProyectos.UseVisualStyleBackColor = true;
@@ -104,9 +110,10 @@
             // 
             // btnOfertas
             // 
-            this.btnOfertas.Location = new System.Drawing.Point(734, 212);
+            this.btnOfertas.Location = new System.Drawing.Point(550, 172);
+            this.btnOfertas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOfertas.Name = "btnOfertas";
-            this.btnOfertas.Size = new System.Drawing.Size(118, 23);
+            this.btnOfertas.Size = new System.Drawing.Size(88, 19);
             this.btnOfertas.TabIndex = 6;
             this.btnOfertas.Text = "Ver Ofertas";
             this.btnOfertas.UseVisualStyleBackColor = true;
@@ -115,9 +122,10 @@
             // 
             // btnNuevaOferta
             // 
-            this.btnNuevaOferta.Location = new System.Drawing.Point(734, 159);
+            this.btnNuevaOferta.Location = new System.Drawing.Point(550, 129);
+            this.btnNuevaOferta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevaOferta.Name = "btnNuevaOferta";
-            this.btnNuevaOferta.Size = new System.Drawing.Size(123, 23);
+            this.btnNuevaOferta.Size = new System.Drawing.Size(92, 19);
             this.btnNuevaOferta.TabIndex = 7;
             this.btnNuevaOferta.Text = "Enviar Oferta";
             this.btnNuevaOferta.UseVisualStyleBackColor = true;
@@ -126,9 +134,10 @@
             // 
             // btnAcercaDe
             // 
-            this.btnAcercaDe.Location = new System.Drawing.Point(57, 224);
+            this.btnAcercaDe.Location = new System.Drawing.Point(43, 182);
+            this.btnAcercaDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAcercaDe.Name = "btnAcercaDe";
-            this.btnAcercaDe.Size = new System.Drawing.Size(116, 23);
+            this.btnAcercaDe.Size = new System.Drawing.Size(87, 19);
             this.btnAcercaDe.TabIndex = 8;
             this.btnAcercaDe.Text = "Acerca de Mí";
             this.btnAcercaDe.UseVisualStyleBackColor = true;
@@ -136,9 +145,10 @@
             // 
             // btnContacto
             // 
-            this.btnContacto.Location = new System.Drawing.Point(57, 282);
+            this.btnContacto.Location = new System.Drawing.Point(43, 229);
+            this.btnContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnContacto.Name = "btnContacto";
-            this.btnContacto.Size = new System.Drawing.Size(95, 23);
+            this.btnContacto.Size = new System.Drawing.Size(71, 19);
             this.btnContacto.TabIndex = 9;
             this.btnContacto.Text = "Contacto";
             this.btnContacto.UseVisualStyleBackColor = true;
@@ -146,9 +156,11 @@
             // 
             // FrmHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 505);
+            this.BackgroundImage = global::PortafolioDiseñadores.Properties.Resources.ChatGPT_Image_1_oct_2025__02_08_34_p_m_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(682, 410);
             this.Controls.Add(this.btnContacto);
             this.Controls.Add(this.btnAcercaDe);
             this.Controls.Add(this.btnNuevaOferta);
@@ -159,6 +171,7 @@
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblBienvenida);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmHome";
             this.Text = "FrmHome";
             this.ResumeLayout(false);

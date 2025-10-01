@@ -39,8 +39,10 @@ namespace PortafolioDiseñadores
         {
             using (SqlConnection con = new Conexion().Abrir())
             {
-                string sql = "INSERT INTO Proyectos (Titulo, Descripcion, Categoria, RutaImagen) VALUES (@t, @d, @c, @r)";
+                string sql = "INSERT INTO Proyectos (DiseñadorId, Titulo, Descripcion, Categoria, RutaImagen) VALUES (@i, @t, @d, @c, @r)";
                 SqlCommand cmd = new SqlCommand(sql, con);
+                int diseñadorid = 1;
+                cmd.Parameters.AddWithValue("@i", diseñadorid);
                 cmd.Parameters.AddWithValue("@t", txtTitulo.Text);
                 cmd.Parameters.AddWithValue("@d", txtDescripcion.Text);
                 cmd.Parameters.AddWithValue("@c", txtCategoria.Text);
