@@ -37,16 +37,21 @@
             // dgvOfertas
             // 
             this.dgvOfertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOfertas.Location = new System.Drawing.Point(227, 70);
+            this.dgvOfertas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvOfertas.Location = new System.Drawing.Point(0, 0);
+            this.dgvOfertas.MultiSelect = false;
             this.dgvOfertas.Name = "dgvOfertas";
+            this.dgvOfertas.ReadOnly = true;
             this.dgvOfertas.RowHeadersWidth = 51;
             this.dgvOfertas.RowTemplate.Height = 24;
-            this.dgvOfertas.Size = new System.Drawing.Size(240, 150);
+            this.dgvOfertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOfertas.Size = new System.Drawing.Size(800, 320);
             this.dgvOfertas.TabIndex = 0;
+            this.dgvOfertas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOfertas_CellFormatting);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(217, 284);
+            this.btnAceptar.Location = new System.Drawing.Point(275, 371);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 1;
@@ -56,7 +61,7 @@
             // 
             // btnRechazar
             // 
-            this.btnRechazar.Location = new System.Drawing.Point(392, 284);
+            this.btnRechazar.Location = new System.Drawing.Point(450, 371);
             this.btnRechazar.Name = "btnRechazar";
             this.btnRechazar.Size = new System.Drawing.Size(75, 23);
             this.btnRechazar.TabIndex = 2;
@@ -74,6 +79,7 @@
             this.Controls.Add(this.dgvOfertas);
             this.Name = "FrmOfertasTrabajo";
             this.Text = "FrmOfertasTrabajo";
+            this.Load += new System.EventHandler(this.FrmOfertasTrabajo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOfertas)).EndInit();
             this.ResumeLayout(false);
 

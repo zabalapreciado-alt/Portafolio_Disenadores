@@ -39,9 +39,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(234, 106);
+            this.pictureBox1.Location = new System.Drawing.Point(192, 45);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 132);
+            this.pictureBox1.Size = new System.Drawing.Size(303, 199);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -57,7 +57,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(60, 154);
+            this.lblDescripcion.Location = new System.Drawing.Point(57, 154);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(44, 16);
             this.lblDescripcion.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(177, 293);
+            this.btnAnterior.Location = new System.Drawing.Point(229, 296);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(75, 23);
             this.btnAnterior.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(336, 292);
+            this.btnSiguiente.Location = new System.Drawing.Point(388, 295);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 4;
