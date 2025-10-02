@@ -35,22 +35,22 @@
             // dgvEstadisticas
             // 
             this.dgvEstadisticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstadisticas.Location = new System.Drawing.Point(21, 11);
-            this.dgvEstadisticas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvEstadisticas.Location = new System.Drawing.Point(28, 14);
+            this.dgvEstadisticas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvEstadisticas.Name = "dgvEstadisticas";
             this.dgvEstadisticas.RowHeadersWidth = 51;
             this.dgvEstadisticas.RowTemplate.Height = 24;
-            this.dgvEstadisticas.Size = new System.Drawing.Size(559, 327);
+            this.dgvEstadisticas.Size = new System.Drawing.Size(745, 402);
             this.dgvEstadisticas.TabIndex = 0;
             // 
             // FrmEstadisticas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(90)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(29)))), ((int)(((byte)(201)))));
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvEstadisticas);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmEstadisticas";
             this.Text = "FrmEstadisticas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadisticas)).EndInit();

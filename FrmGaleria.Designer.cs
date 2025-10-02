@@ -39,37 +39,39 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(144, 37);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(192, 46);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(227, 162);
+            this.pictureBox1.Size = new System.Drawing.Size(303, 199);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(74, 86);
+            this.lblTitulo.Location = new System.Drawing.Point(99, 106);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(35, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(44, 16);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "label1";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(74, 134);
+            this.lblDescripcion.Location = new System.Drawing.Point(99, 165);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(35, 13);
+            this.lblDescripcion.Size = new System.Drawing.Size(44, 16);
             this.lblDescripcion.TabIndex = 2;
             this.lblDescripcion.Text = "label2";
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(172, 240);
-            this.btnAnterior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnterior.Location = new System.Drawing.Point(229, 295);
+            this.btnAnterior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(56, 19);
+            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
             this.btnAnterior.TabIndex = 3;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
@@ -77,10 +79,10 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(291, 240);
-            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSiguiente.Location = new System.Drawing.Point(388, 295);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(56, 19);
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 4;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
@@ -88,9 +90,10 @@
             // 
             // btnDetalles
             // 
-            this.btnDetalles.Location = new System.Drawing.Point(640, 66);
+            this.btnDetalles.Location = new System.Drawing.Point(853, 81);
+            this.btnDetalles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDetalles.Name = "btnDetalles";
-            this.btnDetalles.Size = new System.Drawing.Size(56, 19);
+            this.btnDetalles.Size = new System.Drawing.Size(75, 23);
             this.btnDetalles.TabIndex = 5;
             this.btnDetalles.Text = "Detalles";
             this.btnDetalles.UseVisualStyleBackColor = true;
@@ -98,17 +101,17 @@
             // 
             // FrmGaleria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(90)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(29)))), ((int)(((byte)(201)))));
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnDetalles);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmGaleria";
             this.Text = "FrmGaleria";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
