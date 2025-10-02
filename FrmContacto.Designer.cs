@@ -34,18 +34,21 @@
             // lblContacto
             // 
             this.lblContacto.AutoSize = true;
-            this.lblContacto.Location = new System.Drawing.Point(106, 77);
+            this.lblContacto.Location = new System.Drawing.Point(80, 63);
+            this.lblContacto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContacto.Name = "lblContacto";
-            this.lblContacto.Size = new System.Drawing.Size(44, 16);
+            this.lblContacto.Size = new System.Drawing.Size(35, 13);
             this.lblContacto.TabIndex = 0;
             this.lblContacto.Text = "label1";
             // 
             // FrmContacto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(90)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.lblContacto);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmContacto";
             this.Text = "FrmContacto";
             this.ResumeLayout(false);

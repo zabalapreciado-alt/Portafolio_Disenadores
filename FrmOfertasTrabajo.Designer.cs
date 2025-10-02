@@ -39,21 +39,23 @@
             this.dgvOfertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOfertas.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvOfertas.Location = new System.Drawing.Point(0, 0);
+            this.dgvOfertas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvOfertas.MultiSelect = false;
             this.dgvOfertas.Name = "dgvOfertas";
             this.dgvOfertas.ReadOnly = true;
             this.dgvOfertas.RowHeadersWidth = 51;
             this.dgvOfertas.RowTemplate.Height = 24;
             this.dgvOfertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOfertas.Size = new System.Drawing.Size(800, 320);
+            this.dgvOfertas.Size = new System.Drawing.Size(600, 260);
             this.dgvOfertas.TabIndex = 0;
             this.dgvOfertas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOfertas_CellFormatting);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(275, 371);
+            this.btnAceptar.Location = new System.Drawing.Point(206, 301);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(56, 19);
             this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -61,9 +63,10 @@
             // 
             // btnRechazar
             // 
-            this.btnRechazar.Location = new System.Drawing.Point(450, 371);
+            this.btnRechazar.Location = new System.Drawing.Point(338, 301);
+            this.btnRechazar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRechazar.Name = "btnRechazar";
-            this.btnRechazar.Size = new System.Drawing.Size(75, 23);
+            this.btnRechazar.Size = new System.Drawing.Size(56, 19);
             this.btnRechazar.TabIndex = 2;
             this.btnRechazar.Text = "Rechazar";
             this.btnRechazar.UseVisualStyleBackColor = true;
@@ -71,12 +74,14 @@
             // 
             // FrmOfertasTrabajo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(90)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnRechazar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgvOfertas);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmOfertasTrabajo";
             this.Text = "FrmOfertasTrabajo";
             this.Load += new System.EventHandler(this.FrmOfertasTrabajo_Load);
