@@ -39,26 +39,29 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(83, 61);
+            this.lblTitulo.Location = new System.Drawing.Point(62, 50);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(44, 16);
+            this.lblTitulo.Size = new System.Drawing.Size(35, 13);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "label1";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(86, 133);
+            this.lblDescripcion.Location = new System.Drawing.Point(64, 108);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(44, 16);
+            this.lblDescripcion.Size = new System.Drawing.Size(35, 13);
             this.lblDescripcion.TabIndex = 1;
             this.lblDescripcion.Text = "label2";
             // 
             // btnLike
             // 
-            this.btnLike.Location = new System.Drawing.Point(86, 260);
+            this.btnLike.Location = new System.Drawing.Point(64, 211);
+            this.btnLike.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLike.Name = "btnLike";
-            this.btnLike.Size = new System.Drawing.Size(75, 23);
+            this.btnLike.Size = new System.Drawing.Size(56, 19);
             this.btnLike.TabIndex = 2;
             this.btnLike.Text = "Me gusta";
             this.btnLike.UseVisualStyleBackColor = true;
@@ -66,17 +69,19 @@
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(197, 260);
+            this.txtComentario.Location = new System.Drawing.Point(148, 211);
+            this.txtComentario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(100, 29);
+            this.txtComentario.Size = new System.Drawing.Size(76, 24);
             this.txtComentario.TabIndex = 3;
             // 
             // btnComentar
             // 
-            this.btnComentar.Location = new System.Drawing.Point(359, 260);
+            this.btnComentar.Location = new System.Drawing.Point(269, 211);
+            this.btnComentar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnComentar.Name = "btnComentar";
-            this.btnComentar.Size = new System.Drawing.Size(114, 23);
+            this.btnComentar.Size = new System.Drawing.Size(86, 19);
             this.btnComentar.TabIndex = 4;
             this.btnComentar.Text = "Comentar";
             this.btnComentar.UseVisualStyleBackColor = true;
@@ -85,23 +90,25 @@
             // lstComentarios
             // 
             this.lstComentarios.FormattingEnabled = true;
-            this.lstComentarios.ItemHeight = 16;
-            this.lstComentarios.Location = new System.Drawing.Point(570, 232);
+            this.lstComentarios.Location = new System.Drawing.Point(428, 188);
+            this.lstComentarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstComentarios.Name = "lstComentarios";
-            this.lstComentarios.Size = new System.Drawing.Size(120, 84);
+            this.lstComentarios.Size = new System.Drawing.Size(91, 69);
             this.lstComentarios.TabIndex = 5;
             // 
             // FrmDetalles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(90)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.lstComentarios);
             this.Controls.Add(this.btnComentar);
             this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.btnLike);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblTitulo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmDetalles";
             this.Text = "FrmDetalles";
             this.ResumeLayout(false);

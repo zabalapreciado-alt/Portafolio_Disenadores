@@ -34,18 +34,21 @@
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(93, 53);
+            this.lblInfo.Location = new System.Drawing.Point(70, 43);
+            this.lblInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(44, 16);
+            this.lblInfo.Size = new System.Drawing.Size(35, 13);
             this.lblInfo.TabIndex = 0;
             this.lblInfo.Text = "label1";
             // 
             // FrmAcercaDe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(90)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.lblInfo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmAcercaDe";
             this.Text = "FrmAcercaDe";
             this.ResumeLayout(false);
