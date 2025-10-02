@@ -52,7 +52,7 @@
             this.lblBienvenida.ForeColor = System.Drawing.Color.White;
             this.lblBienvenida.Location = new System.Drawing.Point(51, 33);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(345, 42);
+            this.lblBienvenida.Size = new System.Drawing.Size(347, 41);
             this.lblBienvenida.TabIndex = 0;
             this.lblBienvenida.Text = "Bienvenido invitado";
             // 
@@ -181,7 +181,7 @@
             this.panel1.Controls.Add(this.btnGaleria);
             this.panel1.Controls.Add(this.btnContacto);
             this.panel1.ForeColor = System.Drawing.Color.RosyBrown;
-            this.panel1.Location = new System.Drawing.Point(188, 201);
+            this.panel1.Location = new System.Drawing.Point(188, 218);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(620, 83);
             this.panel1.TabIndex = 10;
