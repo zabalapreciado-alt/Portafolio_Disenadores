@@ -45,15 +45,15 @@
             this.dgvOfertas.RowHeadersWidth = 51;
             this.dgvOfertas.RowTemplate.Height = 24;
             this.dgvOfertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOfertas.Size = new System.Drawing.Size(800, 320);
+            this.dgvOfertas.Size = new System.Drawing.Size(996, 418);
             this.dgvOfertas.TabIndex = 0;
             this.dgvOfertas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOfertas_CellFormatting);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(275, 371);
+            this.btnAceptar.Location = new System.Drawing.Point(305, 452);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(80, 37);
             this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -61,9 +61,9 @@
             // 
             // btnRechazar
             // 
-            this.btnRechazar.Location = new System.Drawing.Point(450, 371);
+            this.btnRechazar.Location = new System.Drawing.Point(594, 452);
             this.btnRechazar.Name = "btnRechazar";
-            this.btnRechazar.Size = new System.Drawing.Size(75, 23);
+            this.btnRechazar.Size = new System.Drawing.Size(80, 37);
             this.btnRechazar.TabIndex = 2;
             this.btnRechazar.Text = "Rechazar";
             this.btnRechazar.UseVisualStyleBackColor = true;
@@ -73,7 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(996, 527);
             this.Controls.Add(this.btnRechazar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgvOfertas);

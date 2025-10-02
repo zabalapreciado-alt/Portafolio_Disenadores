@@ -48,7 +48,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(57, 106);
+            this.lblTitulo.Location = new System.Drawing.Point(74, 86);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(44, 16);
             this.lblTitulo.TabIndex = 1;
@@ -57,7 +57,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(57, 154);
+            this.lblDescripcion.Location = new System.Drawing.Point(74, 134);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(44, 16);
             this.lblDescripcion.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             // btnDetalles
             // 
-            this.btnDetalles.Location = new System.Drawing.Point(541, 154);
+            this.btnDetalles.Location = new System.Drawing.Point(640, 66);
             this.btnDetalles.Name = "btnDetalles";
             this.btnDetalles.Size = new System.Drawing.Size(75, 23);
             this.btnDetalles.TabIndex = 5;

@@ -38,35 +38,44 @@
             this.btnNuevaOferta = new System.Windows.Forms.Button();
             this.btnAcercaDe = new System.Windows.Forms.Button();
             this.btnContacto = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBienvenida
             // 
             this.lblBienvenida.AutoSize = true;
-            this.lblBienvenida.Location = new System.Drawing.Point(40, 30);
-            this.lblBienvenida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBienvenida.BackColor = System.Drawing.Color.Transparent;
+            this.lblBienvenida.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenida.ForeColor = System.Drawing.Color.White;
+            this.lblBienvenida.Location = new System.Drawing.Point(51, 33);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(100, 13);
+            this.lblBienvenida.Size = new System.Drawing.Size(345, 42);
             this.lblBienvenida.TabIndex = 0;
             this.lblBienvenida.Text = "Bienvenido invitado";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(37, 66);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(58, 95);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(98, 19);
+            this.btnLogin.Size = new System.Drawing.Size(194, 35);
             this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Iniciar Sesión";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(22, 348);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Location = new System.Drawing.Point(834, 490);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(112, 19);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(152, 30);
             this.btnCerrarSesion.TabIndex = 2;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -75,10 +84,12 @@
             // 
             // btnGaleria
             // 
-            this.btnGaleria.Location = new System.Drawing.Point(43, 129);
-            this.btnGaleria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGaleria.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGaleria.ForeColor = System.Drawing.Color.Black;
+            this.btnGaleria.Location = new System.Drawing.Point(219, 22);
+            this.btnGaleria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGaleria.Name = "btnGaleria";
-            this.btnGaleria.Size = new System.Drawing.Size(56, 19);
+            this.btnGaleria.Size = new System.Drawing.Size(172, 34);
             this.btnGaleria.TabIndex = 3;
             this.btnGaleria.Text = "Galería";
             this.btnGaleria.UseVisualStyleBackColor = true;
@@ -86,10 +97,11 @@
             // 
             // btnEstadisticas
             // 
-            this.btnEstadisticas.Location = new System.Drawing.Point(562, 30);
-            this.btnEstadisticas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEstadisticas.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.Location = new System.Drawing.Point(12, 490);
+            this.btnEstadisticas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(80, 19);
+            this.btnEstadisticas.Size = new System.Drawing.Size(115, 30);
             this.btnEstadisticas.TabIndex = 4;
             this.btnEstadisticas.Text = "Estadísticas";
             this.btnEstadisticas.UseVisualStyleBackColor = true;
@@ -98,10 +110,11 @@
             // 
             // btnAdminProyectos
             // 
-            this.btnAdminProyectos.Location = new System.Drawing.Point(550, 79);
-            this.btnAdminProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdminProyectos.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminProyectos.Location = new System.Drawing.Point(147, 490);
+            this.btnAdminProyectos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminProyectos.Name = "btnAdminProyectos";
-            this.btnAdminProyectos.Size = new System.Drawing.Size(111, 19);
+            this.btnAdminProyectos.Size = new System.Drawing.Size(209, 30);
             this.btnAdminProyectos.TabIndex = 5;
             this.btnAdminProyectos.Text = "Gestionar Proyectos";
             this.btnAdminProyectos.UseVisualStyleBackColor = true;
@@ -110,10 +123,11 @@
             // 
             // btnOfertas
             // 
-            this.btnOfertas.Location = new System.Drawing.Point(550, 172);
-            this.btnOfertas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOfertas.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOfertas.Location = new System.Drawing.Point(376, 490);
+            this.btnOfertas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOfertas.Name = "btnOfertas";
-            this.btnOfertas.Size = new System.Drawing.Size(88, 19);
+            this.btnOfertas.Size = new System.Drawing.Size(128, 30);
             this.btnOfertas.TabIndex = 6;
             this.btnOfertas.Text = "Ver Ofertas";
             this.btnOfertas.UseVisualStyleBackColor = true;
@@ -122,10 +136,12 @@
             // 
             // btnNuevaOferta
             // 
-            this.btnNuevaOferta.Location = new System.Drawing.Point(550, 129);
-            this.btnNuevaOferta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevaOferta.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaOferta.ForeColor = System.Drawing.Color.Black;
+            this.btnNuevaOferta.Location = new System.Drawing.Point(15, 11);
+            this.btnNuevaOferta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevaOferta.Name = "btnNuevaOferta";
-            this.btnNuevaOferta.Size = new System.Drawing.Size(92, 19);
+            this.btnNuevaOferta.Size = new System.Drawing.Size(172, 34);
             this.btnNuevaOferta.TabIndex = 7;
             this.btnNuevaOferta.Text = "Enviar Oferta";
             this.btnNuevaOferta.UseVisualStyleBackColor = true;
@@ -134,10 +150,12 @@
             // 
             // btnAcercaDe
             // 
-            this.btnAcercaDe.Location = new System.Drawing.Point(43, 182);
-            this.btnAcercaDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAcercaDe.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcercaDe.ForeColor = System.Drawing.Color.Black;
+            this.btnAcercaDe.Location = new System.Drawing.Point(26, 22);
+            this.btnAcercaDe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAcercaDe.Name = "btnAcercaDe";
-            this.btnAcercaDe.Size = new System.Drawing.Size(87, 19);
+            this.btnAcercaDe.Size = new System.Drawing.Size(172, 34);
             this.btnAcercaDe.TabIndex = 8;
             this.btnAcercaDe.Text = "Acerca de Mí";
             this.btnAcercaDe.UseVisualStyleBackColor = true;
@@ -145,35 +163,58 @@
             // 
             // btnContacto
             // 
-            this.btnContacto.Location = new System.Drawing.Point(43, 229);
-            this.btnContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnContacto.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContacto.ForeColor = System.Drawing.Color.Black;
+            this.btnContacto.Location = new System.Drawing.Point(421, 22);
+            this.btnContacto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnContacto.Name = "btnContacto";
-            this.btnContacto.Size = new System.Drawing.Size(71, 19);
+            this.btnContacto.Size = new System.Drawing.Size(172, 34);
             this.btnContacto.TabIndex = 9;
             this.btnContacto.Text = "Contacto";
             this.btnContacto.UseVisualStyleBackColor = true;
             this.btnContacto.Click += new System.EventHandler(this.btnContacto_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Indigo;
+            this.panel1.Controls.Add(this.btnAcercaDe);
+            this.panel1.Controls.Add(this.btnGaleria);
+            this.panel1.Controls.Add(this.btnContacto);
+            this.panel1.ForeColor = System.Drawing.Color.RosyBrown;
+            this.panel1.Location = new System.Drawing.Point(188, 201);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(620, 83);
+            this.panel1.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Indigo;
+            this.panel2.Controls.Add(this.btnNuevaOferta);
+            this.panel2.Location = new System.Drawing.Point(392, 307);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(204, 56);
+            this.panel2.TabIndex = 11;
+            // 
             // FrmHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PortafolioDiseñadores.Properties.Resources.ChatGPT_Image_1_oct_2025__02_08_34_p_m_;
+            this.BackgroundImage = global::PortafolioDiseñadores.Properties.Resources.istockphoto_1387666645_612x612;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(682, 410);
-            this.Controls.Add(this.btnContacto);
-            this.Controls.Add(this.btnAcercaDe);
-            this.Controls.Add(this.btnNuevaOferta);
+            this.ClientSize = new System.Drawing.Size(998, 531);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOfertas);
             this.Controls.Add(this.btnAdminProyectos);
             this.Controls.Add(this.btnEstadisticas);
-            this.Controls.Add(this.btnGaleria);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblBienvenida);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmHome";
             this.Text = "FrmHome";
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +232,8 @@
         private System.Windows.Forms.Button btnNuevaOferta;
         private System.Windows.Forms.Button btnAcercaDe;
         private System.Windows.Forms.Button btnContacto;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
