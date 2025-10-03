@@ -30,8 +30,9 @@ namespace PortafolioDiseñadores
 
             btnLogin.Visible = (UsuarioId == 0);
             btnCerrarSesion.Visible = (UsuarioId > 0);
+            
 
-            btnEstadisticas.Visible = (Rol == "admin" || Rol == "diseñador");
+            btnEstadisticas.Visible = (Rol == "admin" || Rol == "diseñador" || Rol == "reclutador");
             btnAdminProyectos.Visible = (Rol == "admin" || Rol == "diseñador");
             btnOfertas.Visible = (Rol == "admin" || Rol == "diseñador");
             btnNuevaOferta.Visible = (Rol == "reclutador");

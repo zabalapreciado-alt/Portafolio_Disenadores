@@ -169,5 +169,20 @@
   <ItemGroup>
     <None Include="Resources\istockphoto-1387666645-612x612.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logotipo-instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whatsapp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-whatsapp-computer-icons-whatsapp-text-whatsapp-icon-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram-black-logo-on-transparent-background-free-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\732026.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

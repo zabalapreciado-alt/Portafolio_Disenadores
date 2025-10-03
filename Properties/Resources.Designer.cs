@@ -63,6 +63,16 @@ namespace PortafolioDiseñadores.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _732026 {
+            get {
+                object obj = ResourceManager.GetObject("732026", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ChatGPT_Image_1_oct_2025__02_08_34_p_m_ {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT Image 1 oct 2025, 02_08_34 p.m.", resourceCulture);
@@ -73,9 +83,49 @@ namespace PortafolioDiseñadores.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap instagram_black_logo_on_transparent_background_free_vector {
+            get {
+                object obj = ResourceManager.GetObject("instagram-black-logo-on-transparent-background-free-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap istockphoto_1387666645_612x612 {
             get {
                 object obj = ResourceManager.GetObject("istockphoto-1387666645-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logotipo_instagram {
+            get {
+                object obj = ResourceManager.GetObject("logotipo-instagram", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_clipart_whatsapp_computer_icons_whatsapp_text_whatsapp_icon_thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("png-clipart-whatsapp-computer-icons-whatsapp-text-whatsapp-icon-thumbnail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whatsapp {
+            get {
+                object obj = ResourceManager.GetObject("whatsapp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -16,9 +16,11 @@ namespace PortafolioDiseñadores
         {
             InitializeComponent();
         }
-        private void FrmAcercaDe_Load(object sender, EventArgs e)
-        {
-            lblInfo.Text = "Soy María Clara, diseñadora gráfica con experiencia en branding, ilustración y UI/UX.";
-        }
+
+        
+        //private void FrmAcercaDe_Load(object sender, EventArgs e)
+        //{
+        //lblInfo.Text = "Soy María Clara, diseñadora gráfica con experiencia en branding, ilustración y UI/UX.";
+        //}
     }
 }

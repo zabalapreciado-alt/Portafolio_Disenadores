@@ -41,18 +41,62 @@ namespace PortafolioDiseñadores
             }
         }
 
-        private void CargarProyectos()
+        //private void CargarProyectos()
+        //{
+        //    try
+        //    {
+        //        using (SqlConnection con = new Conexion().Abrir())
+        //        {
+        //            string sql = @"
+        //                SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
+        //                       d.Nombre AS Diseñador
+        //                FROM Proyectos p
+        //                LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
+        //                ORDER BY p.Id DESC";
+        //            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+        //            proyectos.Clear();
+        //            da.Fill(proyectos);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error cargando proyectos: " + ex.Message);
+        //    }
+        //}
+        private void CargarProyectos(bool ordenarPorLikes = false)
         {
             try
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    string sql = @"
-                        SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
-                               d.Nombre AS Diseñador
-                        FROM Proyectos p
-                        LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
-                        ORDER BY p.Id DESC";
+                    string sql;
+
+                    if (ordenarPorLikes)
+                    {
+                        sql = @"
+                    SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
+                           d.Nombre AS Diseñador,
+                           ISNULL(l.TotalLikes, 0) AS LikesTotales
+                    FROM Proyectos p
+                    LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
+                    LEFT JOIN (
+                        SELECT ProyectoId, COUNT(*) AS TotalLikes
+                        FROM Likes
+                        GROUP BY ProyectoId
+                    ) l ON p.Id = l.ProyectoId
+                    ORDER BY LikesTotales DESC, p.Id DESC";
+                    }
+                    else
+                    {
+                        // Orden normal (por fecha/ID descendente)
+                        sql = @"
+                    SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
+                           d.Nombre AS Diseñador
+                    FROM Proyectos p
+                    LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
+                    ORDER BY p.Id DESC";
+                    }
+
                     SqlDataAdapter da = new SqlDataAdapter(sql, con);
                     proyectos.Clear();
                     da.Fill(proyectos);
@@ -63,6 +107,7 @@ namespace PortafolioDiseñadores
                 MessageBox.Show("Error cargando proyectos: " + ex.Message);
             }
         }
+
 
         private string ObtenerRutaCompletaImagen(string nombreArchivo)
         {
@@ -227,6 +272,25 @@ namespace PortafolioDiseñadores
 
             txtComentario.Clear();
             CargarComentarios();
+        }
+
+        private void btnFiltrarLikes_Click(object sender, EventArgs e)
+        {
+            CargarProyectos(true); // true para ordenar por likes
+            if (proyectos.Rows.Count > 0)
+            {
+                index = 0;
+                MostrarProyecto(index);
+            }
+            else
+            {
+                lblTitulo.Text = "No hay proyectos disponibles";
+                lblDescripcion.Text = "";
+                lblLikes.Text = "Likes: 0";
+                lstComentarios.DataSource = null;
+                if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
+                pictureBox1.Image = null;
+            }
         }
     }
 }
