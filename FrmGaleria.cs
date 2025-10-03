@@ -24,8 +24,8 @@ namespace PortafolioDiseñadores
         }
         private void FrmGaleria_Load(object sender, EventArgs e)
         {
+            // Cargamos y mostramos sólo si hay resultados
             CargarProyectos();
-
             if (proyectos.Rows.Count > 0)
             {
                 index = 0;
@@ -33,10 +33,10 @@ namespace PortafolioDiseñadores
             }
             else
             {
-                lblTitulo.Text = "";
+                // Muestra un mensaje claro y limpia UI
+                lblTitulo.Text = "No hay proyectos disponibles";
                 lblDescripcion.Text = "";
-                pictureBox1.Image = null;
-                MessageBox.Show("No hay proyectos en la galería.");
+                if (pictureBox1.Image != null) { pictureBox1.Image.Dispose(); pictureBox1.Image = null; }
             }
         }
 
@@ -46,7 +46,13 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    string sql = "SELECT Id, Titulo, Descripcion, RutaImagen FROM Proyectos ORDER BY Id";
+                    // Usamos LEFT JOIN para incluir proyectos aunque falte ficha de diseñador
+                    string sql = @"
+                        SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
+                               d.Nombre AS Diseñador
+                        FROM Proyectos p
+                        LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
+                        ORDER BY p.Id DESC"; // o por FechaCreacion si la tienes
                     SqlDataAdapter da = new SqlDataAdapter(sql, con);
                     proyectos.Clear();
                     da.Fill(proyectos);
@@ -67,61 +73,84 @@ namespace PortafolioDiseñadores
 
         private void MostrarProyecto(int i)
         {
-            if (proyectos.Rows.Count == 0) return;
+            if (proyectos == null || proyectos.Rows.Count == 0) return;
+            if (i < 0) i = 0;
+            if (i > proyectos.Rows.Count - 1) i = proyectos.Rows.Count - 1;
+            index = i;
 
-            lblTitulo.Text = proyectos.Rows[i]["Titulo"].ToString();
-            lblDescripcion.Text = proyectos.Rows[i]["Descripcion"].ToString();
+            DataRow row = proyectos.Rows[index];
+            lblTitulo.Text = row["Titulo"]?.ToString() ?? "";
+            string desc = row["Descripcion"]?.ToString() ?? "";
+            string diseñador = row["Diseñador"] == DBNull.Value ? "Desconocido" : row["Diseñador"].ToString();
+            lblDescripcion.Text = desc + Environment.NewLine + "Diseñador: " + diseñador;
 
-            string nombreImg = proyectos.Rows[i]["RutaImagen"].ToString();
+            string nombreImg = row["RutaImagen"]?.ToString();
             string fullPath = ObtenerRutaCompletaImagen(nombreImg);
 
-            if (!string.IsNullOrEmpty(fullPath) && File.Exists(fullPath))
+            // Manejo seguro de imágenes (liberar antes)
+            try
             {
-                try
+                if (pictureBox1.Image != null)
+                {
+                    pictureBox1.Image.Dispose();
+                    pictureBox1.Image = null;
+                }
+
+                if (!string.IsNullOrEmpty(fullPath) && File.Exists(fullPath))
                 {
                     pictureBox1.Image = Image.FromFile(fullPath);
                     pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
-                catch
+                else
                 {
-                    pictureBox1.Image = null;
+                    pictureBox1.Image = null; // imagen por defecto si quieres
                 }
             }
-            else
+            catch (Exception ex)
             {
-                pictureBox1.Image = null; // o asigna una imagen por defecto
+                // No detener la app por error de imagen
+                pictureBox1.Image = null;
+                Console.WriteLine("Error mostrando imagen: " + ex.Message);
             }
         }
 
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (proyectos.Rows.Count == 0) return;
+            if (proyectos == null || proyectos.Rows.Count == 0) return;
             if (index < proyectos.Rows.Count - 1)
             {
                 index++;
                 MostrarProyecto(index);
             }
-            else MessageBox.Show("Último proyecto.");
+            else
+            {
+                MessageBox.Show("Último proyecto.");
+            }
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            if (proyectos.Rows.Count == 0) return;
+            if (proyectos == null || proyectos.Rows.Count == 0) return;
             if (index > 0)
             {
                 index--;
                 MostrarProyecto(index);
             }
-            else MessageBox.Show("Primer proyecto.");
+            else
+            {
+                MessageBox.Show("Primer proyecto.");
+            }
         }
 
         private void btnDetalles_Click(object sender, EventArgs e)
         {
-            if (proyectos.Rows.Count == 0) return;
+            if (proyectos == null || proyectos.Rows.Count == 0) return;
             int proyectoId = Convert.ToInt32(proyectos.Rows[index]["Id"]);
             FrmDetalles f = new FrmDetalles(proyectoId);
-            f.ShowDialog(); 
+            f.ShowDialog();
+            // después de cerrar detalles podrías recargar si quieres:
+            // CargarProyectos(); MostrarProyecto(index);
         }
     }
 }

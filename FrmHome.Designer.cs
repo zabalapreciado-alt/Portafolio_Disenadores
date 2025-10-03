@@ -39,9 +39,7 @@
             this.btnAcercaDe = new System.Windows.Forms.Button();
             this.btnContacto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBienvenida
@@ -72,7 +70,7 @@
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(834, 490);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(895, 525);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(152, 30);
@@ -98,7 +96,7 @@
             // btnEstadisticas
             // 
             this.btnEstadisticas.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(12, 490);
+            this.btnEstadisticas.Location = new System.Drawing.Point(12, 520);
             this.btnEstadisticas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Size = new System.Drawing.Size(115, 30);
@@ -111,7 +109,7 @@
             // btnAdminProyectos
             // 
             this.btnAdminProyectos.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminProyectos.Location = new System.Drawing.Point(147, 490);
+            this.btnAdminProyectos.Location = new System.Drawing.Point(147, 520);
             this.btnAdminProyectos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminProyectos.Name = "btnAdminProyectos";
             this.btnAdminProyectos.Size = new System.Drawing.Size(209, 30);
@@ -124,7 +122,7 @@
             // btnOfertas
             // 
             this.btnOfertas.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOfertas.Location = new System.Drawing.Point(376, 490);
+            this.btnOfertas.Location = new System.Drawing.Point(376, 520);
             this.btnOfertas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOfertas.Name = "btnOfertas";
             this.btnOfertas.Size = new System.Drawing.Size(128, 30);
@@ -138,7 +136,7 @@
             // 
             this.btnNuevaOferta.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaOferta.ForeColor = System.Drawing.Color.Black;
-            this.btnNuevaOferta.Location = new System.Drawing.Point(15, 11);
+            this.btnNuevaOferta.Location = new System.Drawing.Point(407, 316);
             this.btnNuevaOferta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevaOferta.Name = "btnNuevaOferta";
             this.btnNuevaOferta.Size = new System.Drawing.Size(172, 34);
@@ -186,23 +184,13 @@
             this.panel1.Size = new System.Drawing.Size(620, 83);
             this.panel1.TabIndex = 10;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Indigo;
-            this.panel2.Controls.Add(this.btnNuevaOferta);
-            this.panel2.Location = new System.Drawing.Point(392, 307);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(204, 56);
-            this.panel2.TabIndex = 11;
-            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PortafolioDiseñadores.Properties.Resources.istockphoto_1387666645_612x612;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(998, 531);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1055, 561);
+            this.Controls.Add(this.btnNuevaOferta);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOfertas);
             this.Controls.Add(this.btnAdminProyectos);
@@ -214,7 +202,6 @@
             this.Name = "FrmHome";
             this.Text = "FrmHome";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +220,6 @@
         private System.Windows.Forms.Button btnAcercaDe;
         private System.Windows.Forms.Button btnContacto;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
     }
 }
 

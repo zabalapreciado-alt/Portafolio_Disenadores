@@ -39,7 +39,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(192, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(228, 55);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(303, 199);
@@ -49,7 +49,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(99, 106);
+            this.lblTitulo.Location = new System.Drawing.Point(42, 70);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(44, 16);
@@ -59,7 +59,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(99, 165);
+            this.lblDescripcion.Location = new System.Drawing.Point(42, 113);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(44, 16);
@@ -68,10 +68,10 @@
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(229, 295);
+            this.btnAnterior.Location = new System.Drawing.Point(287, 324);
             this.btnAnterior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
+            this.btnAnterior.Size = new System.Drawing.Size(87, 31);
             this.btnAnterior.TabIndex = 3;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
@@ -79,10 +79,10 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(388, 295);
+            this.btnSiguiente.Location = new System.Drawing.Point(431, 324);
             this.btnSiguiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.Size = new System.Drawing.Size(87, 31);
             this.btnSiguiente.TabIndex = 4;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
@@ -90,8 +90,8 @@
             // 
             // btnDetalles
             // 
-            this.btnDetalles.Location = new System.Drawing.Point(853, 81);
-            this.btnDetalles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDetalles.Location = new System.Drawing.Point(628, 91);
+            this.btnDetalles.Margin = new System.Windows.Forms.Padding(4);
             this.btnDetalles.Name = "btnDetalles";
             this.btnDetalles.Size = new System.Drawing.Size(75, 23);
             this.btnDetalles.TabIndex = 5;
@@ -114,6 +114,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmGaleria";
             this.Text = "FrmGaleria";
+            this.Load += new System.EventHandler(this.FrmGaleria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

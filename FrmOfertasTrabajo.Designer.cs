@@ -46,14 +46,14 @@
             this.dgvOfertas.RowHeadersWidth = 51;
             this.dgvOfertas.RowTemplate.Height = 24;
             this.dgvOfertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOfertas.Size = new System.Drawing.Size(1328, 514);
+            this.dgvOfertas.Size = new System.Drawing.Size(1172, 514);
             this.dgvOfertas.TabIndex = 0;
             this.dgvOfertas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOfertas_CellFormatting);
             // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(407, 556);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(107, 46);
             this.btnAceptar.TabIndex = 1;
@@ -64,7 +64,7 @@
             // btnRechazar
             // 
             this.btnRechazar.Location = new System.Drawing.Point(792, 556);
-            this.btnRechazar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRechazar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRechazar.Name = "btnRechazar";
             this.btnRechazar.Size = new System.Drawing.Size(107, 46);
             this.btnRechazar.TabIndex = 2;
@@ -77,7 +77,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(29)))), ((int)(((byte)(201)))));
-            this.ClientSize = new System.Drawing.Size(1328, 649);
+            this.ClientSize = new System.Drawing.Size(1172, 639);
             this.Controls.Add(this.btnRechazar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgvOfertas);

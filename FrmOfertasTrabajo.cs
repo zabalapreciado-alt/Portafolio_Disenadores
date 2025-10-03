@@ -36,12 +36,16 @@ namespace PortafolioDiseñadores
                     if (FrmHome.Rol == "admin")
                     {
                         // Admin ve todas las ofertas
-                        sql = @"SELECT O.Id, R.Empresa AS Reclutador, D.Nombre AS Diseñador,
-                                       O.Titulo, O.Descripcion, O.Contacto, O.Estado, O.Fecha
-                                FROM OfertasTrabajo O
-                                JOIN Reclutadores R ON O.ReclutadorId = R.Id
-                                JOIN Diseñadores D ON O.DiseñadorId = D.Id
-                                ORDER BY O.Fecha DESC";
+                        sql = @"SELECT O.Id, 
+       R.Empresa AS Reclutador, 
+       O.Titulo, 
+       O.Descripcion, 
+       O.Contacto, 
+       O.Estado, 
+       O.Fecha
+FROM OfertasTrabajo O
+JOIN Reclutadores R ON O.ReclutadorId = R.Id
+ORDER BY O.Fecha DESC";
                         da = new SqlDataAdapter(sql, con);
                     }
                     else if (FrmHome.Rol == "diseñador")
@@ -59,13 +63,18 @@ namespace PortafolioDiseñadores
                             }
                             int diseñadorId = Convert.ToInt32(res);
 
-                            sql = @"SELECT O.Id, R.Empresa AS Reclutador, D.Nombre AS Diseñador,
-                                           O.Titulo, O.Descripcion, O.Contacto, O.Estado, O.Fecha
-                                    FROM OfertasTrabajo O
-                                    JOIN Reclutadores R ON O.ReclutadorId = R.Id
-                                    JOIN Diseñadores D ON O.DiseñadorId = D.Id
-                                    WHERE O.DiseñadorId = @d
-                                    ORDER BY O.Fecha DESC";
+                            sql = @"SELECT O.Id, 
+       R.Empresa AS Reclutador, 
+       O.Titulo, 
+       O.Descripcion, 
+       O.Contacto, 
+       O.Estado, 
+       O.Fecha
+FROM OfertasTrabajo O
+JOIN Reclutadores R ON O.ReclutadorId = R.Id
+WHERE O.DiseñadorId = @d
+ORDER BY O.Fecha DESC
+";
                             da = new SqlDataAdapter(sql, con);
                             da.SelectCommand.Parameters.AddWithValue("@d", diseñadorId);
                         }
