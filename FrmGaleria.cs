@@ -24,7 +24,6 @@ namespace PortafolioDiseñadores
         }
         private void FrmGaleria_Load(object sender, EventArgs e)
         {
-            // Cargamos y mostramos sólo si hay resultados
             CargarProyectos();
             if (proyectos.Rows.Count > 0)
             {
@@ -33,10 +32,12 @@ namespace PortafolioDiseñadores
             }
             else
             {
-                // Muestra un mensaje claro y limpia UI
                 lblTitulo.Text = "No hay proyectos disponibles";
                 lblDescripcion.Text = "";
-                if (pictureBox1.Image != null) { pictureBox1.Image.Dispose(); pictureBox1.Image = null; }
+                lblLikes.Text = "Likes: 0";
+                lstComentarios.DataSource = null;
+                if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
+                pictureBox1.Image = null;
             }
         }
 
@@ -46,13 +47,12 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    // Usamos LEFT JOIN para incluir proyectos aunque falte ficha de diseñador
                     string sql = @"
                         SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
                                d.Nombre AS Diseñador
                         FROM Proyectos p
                         LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
-                        ORDER BY p.Id DESC"; // o por FechaCreacion si la tienes
+                        ORDER BY p.Id DESC";
                     SqlDataAdapter da = new SqlDataAdapter(sql, con);
                     proyectos.Clear();
                     da.Fill(proyectos);
@@ -84,40 +84,48 @@ namespace PortafolioDiseñadores
             string diseñador = row["Diseñador"] == DBNull.Value ? "Desconocido" : row["Diseñador"].ToString();
             lblDescripcion.Text = desc + Environment.NewLine + "Diseñador: " + diseñador;
 
+            // Imagen
             string nombreImg = row["RutaImagen"]?.ToString();
             string fullPath = ObtenerRutaCompletaImagen(nombreImg);
+            if (pictureBox1.Image != null) { pictureBox1.Image.Dispose(); pictureBox1.Image = null; }
 
-            // Manejo seguro de imágenes (liberar antes)
-            try
+            if (!string.IsNullOrEmpty(fullPath) && File.Exists(fullPath))
             {
-                if (pictureBox1.Image != null)
-                {
-                    pictureBox1.Image.Dispose();
-                    pictureBox1.Image = null;
-                }
-
-                if (!string.IsNullOrEmpty(fullPath) && File.Exists(fullPath))
-                {
-                    pictureBox1.Image = Image.FromFile(fullPath);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                else
-                {
-                    pictureBox1.Image = null; // imagen por defecto si quieres
-                }
+                pictureBox1.Image = Image.FromFile(fullPath);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-            catch (Exception ex)
+            else
             {
-                // No detener la app por error de imagen
                 pictureBox1.Image = null;
-                Console.WriteLine("Error mostrando imagen: " + ex.Message);
+            }
+
+            // Likes y comentarios
+            CargarLikes();
+            CargarComentarios();
+        }
+
+        private int ProyectoActualId()
+        {
+            if (proyectos.Rows.Count == 0) return 0;
+            return Convert.ToInt32(proyectos.Rows[index]["Id"]);
+        }
+
+        // ================== LIKES ==================
+        private void CargarLikes()
+        {
+            int proyectoId = ProyectoActualId();
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Likes WHERE ProyectoId=@p", con);
+                cmd.Parameters.AddWithValue("@p", proyectoId);
+                int total = Convert.ToInt32(cmd.ExecuteScalar());
+                lblLikes.Text = $"Likes: {total}";
             }
         }
 
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (proyectos == null || proyectos.Rows.Count == 0) return;
             if (index < proyectos.Rows.Count - 1)
             {
                 index++;
@@ -131,7 +139,6 @@ namespace PortafolioDiseñadores
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            if (proyectos == null || proyectos.Rows.Count == 0) return;
             if (index > 0)
             {
                 index--;
@@ -145,12 +152,81 @@ namespace PortafolioDiseñadores
 
         private void btnDetalles_Click(object sender, EventArgs e)
         {
-            if (proyectos == null || proyectos.Rows.Count == 0) return;
-            int proyectoId = Convert.ToInt32(proyectos.Rows[index]["Id"]);
-            FrmDetalles f = new FrmDetalles(proyectoId);
-            f.ShowDialog();
+            
+
+            
             // después de cerrar detalles podrías recargar si quieres:
             // CargarProyectos(); MostrarProyecto(index);
+            int proyectoId = Convert.ToInt32(proyectos.Rows[index]["Id"]);
+            MessageBox.Show("Abriendo proyecto ID: " + proyectoId);
+            FrmDetalles f = new FrmDetalles(proyectoId);
+            f.ShowDialog();
+
+        }
+
+        private void btnLike_Click(object sender, EventArgs e)
+        {
+            int proyectoId = ProyectoActualId();
+            if (proyectoId == 0) return;
+
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                // evitar likes repetidos por usuario
+                SqlCommand check = new SqlCommand("SELECT COUNT(*) FROM Likes WHERE ProyectoId=@p AND UsuarioId=@u", con);
+                check.Parameters.AddWithValue("@p", proyectoId);
+                check.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                int existe = Convert.ToInt32(check.ExecuteScalar());
+
+                if (existe > 0)
+                {
+                    MessageBox.Show("Ya diste like a este proyecto.");
+                    return;
+                }
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO Likes (ProyectoId, UsuarioId, Fecha) VALUES (@p, @u, GETDATE())", con);
+                cmd.Parameters.AddWithValue("@p", proyectoId);
+                cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                cmd.ExecuteNonQuery();
+            }
+            CargarLikes();
+        }
+        // ================== COMENTARIOS ==================
+        private void CargarComentarios()
+        {
+            int proyectoId = ProyectoActualId();
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                SqlDataAdapter da = new SqlDataAdapter(@"
+                    SELECT u.NombreUsuario + ': ' + c.Texto AS Comentario
+                    FROM Comentarios c
+                    JOIN Usuarios u ON c.UsuarioId = u.Id
+                    WHERE c.ProyectoId=@p
+                    ORDER BY c.Fecha DESC", con);
+                da.SelectCommand.Parameters.AddWithValue("@p", proyectoId);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                lstComentarios.DataSource = dt;
+                lstComentarios.DisplayMember = "Comentario";
+            }
+        }
+
+        private void btnComentar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtComentario.Text)) return;
+
+            int proyectoId = ProyectoActualId();
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                SqlCommand cmd = new SqlCommand("INSERT INTO Comentarios (ProyectoId, UsuarioId, Texto, Fecha) VALUES (@p, @u, @t, GETDATE())", con);
+                cmd.Parameters.AddWithValue("@p", proyectoId);
+                cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                cmd.Parameters.AddWithValue("@t", txtComentario.Text.Trim());
+                cmd.ExecuteNonQuery();
+            }
+
+            txtComentario.Clear();
+            CargarComentarios();
         }
     }
 }

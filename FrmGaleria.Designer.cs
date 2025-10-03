@@ -34,6 +34,11 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnDetalles = new System.Windows.Forms.Button();
+            this.lblLikes = new System.Windows.Forms.Label();
+            this.btnLike = new System.Windows.Forms.Button();
+            this.lstComentarios = new System.Windows.Forms.ListBox();
+            this.txtComentario = new System.Windows.Forms.TextBox();
+            this.btnComentar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +95,7 @@
             // 
             // btnDetalles
             // 
-            this.btnDetalles.Location = new System.Drawing.Point(628, 91);
+            this.btnDetalles.Location = new System.Drawing.Point(712, 13);
             this.btnDetalles.Margin = new System.Windows.Forms.Padding(4);
             this.btnDetalles.Name = "btnDetalles";
             this.btnDetalles.Size = new System.Drawing.Size(75, 23);
@@ -99,12 +104,62 @@
             this.btnDetalles.UseVisualStyleBackColor = true;
             this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
+            // lblLikes
+            // 
+            this.lblLikes.AutoSize = true;
+            this.lblLikes.Location = new System.Drawing.Point(225, 263);
+            this.lblLikes.Name = "lblLikes";
+            this.lblLikes.Size = new System.Drawing.Size(44, 16);
+            this.lblLikes.TabIndex = 6;
+            this.lblLikes.Text = "label1";
+            // 
+            // btnLike
+            // 
+            this.btnLike.Location = new System.Drawing.Point(83, 260);
+            this.btnLike.Name = "btnLike";
+            this.btnLike.Size = new System.Drawing.Size(75, 23);
+            this.btnLike.TabIndex = 7;
+            this.btnLike.Text = "Like";
+            this.btnLike.UseVisualStyleBackColor = true;
+            this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
+            // 
+            // lstComentarios
+            // 
+            this.lstComentarios.FormattingEnabled = true;
+            this.lstComentarios.ItemHeight = 16;
+            this.lstComentarios.Location = new System.Drawing.Point(628, 285);
+            this.lstComentarios.Name = "lstComentarios";
+            this.lstComentarios.Size = new System.Drawing.Size(120, 84);
+            this.lstComentarios.TabIndex = 8;
+            // 
+            // txtComentario
+            // 
+            this.txtComentario.Location = new System.Drawing.Point(628, 234);
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.Size = new System.Drawing.Size(100, 22);
+            this.txtComentario.TabIndex = 9;
+            // 
+            // btnComentar
+            // 
+            this.btnComentar.Location = new System.Drawing.Point(628, 205);
+            this.btnComentar.Name = "btnComentar";
+            this.btnComentar.Size = new System.Drawing.Size(88, 23);
+            this.btnComentar.TabIndex = 10;
+            this.btnComentar.Text = "Comentar";
+            this.btnComentar.UseVisualStyleBackColor = true;
+            this.btnComentar.Click += new System.EventHandler(this.btnComentar_Click);
+            // 
             // FrmGaleria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(29)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnComentar);
+            this.Controls.Add(this.txtComentario);
+            this.Controls.Add(this.lstComentarios);
+            this.Controls.Add(this.btnLike);
+            this.Controls.Add(this.lblLikes);
             this.Controls.Add(this.btnDetalles);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
@@ -129,5 +184,10 @@
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnDetalles;
+        private System.Windows.Forms.Label lblLikes;
+        private System.Windows.Forms.Button btnLike;
+        private System.Windows.Forms.ListBox lstComentarios;
+        private System.Windows.Forms.TextBox txtComentario;
+        private System.Windows.Forms.Button btnComentar;
     }
 }

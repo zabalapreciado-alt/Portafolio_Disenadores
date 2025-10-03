@@ -21,101 +21,92 @@ namespace PortafolioDiseñadores
         }
         private void FrmEstadisticas_Load(object sender, EventArgs e)
         {
-            using (SqlConnection con = new Conexion().Abrir())
-            {
-                string sql = @"
-            SELECT p.Id, p.Titulo,
-                   COUNT(DISTINCT l.Id) AS TotalLikes,
-                   COUNT(DISTINCT c.Id) AS TotalComentarios
-            FROM Proyectos p
-            LEFT JOIN Likes l ON l.ProyectoId = p.Id
-            LEFT JOIN Comentarios c ON c.ProyectoId = p.Id
-            GROUP BY p.Id, p.Titulo
-            ORDER BY TotalLikes DESC";
-
-                SqlDataAdapter da = new SqlDataAdapter(sql, con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                if (dt.Rows.Count == 0)
-                    MessageBox.Show("⚠ No se encontraron estadísticas. Revisa si ProyectoId en Likes/Comentarios coincide con Id en Proyectos.");
-
-                dgvEstadisticas.DataSource = dt;
-            }
+            CargarEstadisticas();
         }
 
         private void CargarEstadisticas()
         {
-            using (SqlConnection con = new Conexion().Abrir())
+            try
             {
-                string sql = @"
-                    SELECT p.Id, p.Titulo, p.RutaImagen,
-                           COUNT(DISTINCT l.Id) AS TotalLikes,
-                           COUNT(DISTINCT c.Id) AS TotalComentarios
-                    FROM Proyectos p
-                    LEFT JOIN Likes l ON l.ProyectoId = p.Id
-                    LEFT JOIN Comentarios c ON c.ProyectoId = p.Id
-                    GROUP BY p.Id, p.Titulo, p.RutaImagen
-                    ORDER BY TotalLikes DESC";
+                using (SqlConnection con = new Conexion().Abrir())
+                {
+                    string sql = @"
+                        SELECT p.Id, p.Titulo, p.RutaImagen,
+                               COUNT(DISTINCT l.Id) AS TotalLikes,
+                               COUNT(DISTINCT c.Id) AS TotalComentarios
+                        FROM Proyectos p
+                        LEFT JOIN Likes l ON p.Id = l.ProyectoId
+                        LEFT JOIN Comentarios c ON p.Id = c.ProyectoId
+                        GROUP BY p.Id, p.Titulo, p.RutaImagen
+                        ORDER BY TotalLikes DESC";
 
-                SqlDataAdapter da = new SqlDataAdapter(sql, con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                    SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-                dgvEstadisticas.DataSource = dt;
-
-                // Ocultar ruta si no quieres que se muestre
-                if (dgvEstadisticas.Columns["RutaImagen"] != null)
-                    dgvEstadisticas.Columns["RutaImagen"].Visible = false;
+                    dgvEstadisticas.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error cargando estadísticas: " + ex.Message);
             }
         }
 
-        private void dgvEstadisticas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvEstadisticas_SelectionChanged(object sender, EventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (dgvEstadisticas.CurrentRow == null) return;
 
-            int proyectoId = Convert.ToInt32(dgvEstadisticas.Rows[e.RowIndex].Cells["Id"].Value);
-            string titulo = dgvEstadisticas.Rows[e.RowIndex].Cells["Titulo"].Value.ToString();
-            string rutaImg = dgvEstadisticas.Rows[e.RowIndex].Cells["RutaImagen"].Value.ToString();
+            int proyectoId = Convert.ToInt32(dgvEstadisticas.CurrentRow.Cells["Id"].Value);
+            string titulo = dgvEstadisticas.CurrentRow.Cells["Titulo"].Value.ToString();
+            string rutaImg = dgvEstadisticas.CurrentRow.Cells["RutaImagen"].Value.ToString();
 
-            lblProyecto.Text = $"Proyecto: {titulo}";
+            lblProyecto.Text = "Proyecto: " + titulo;
+            MostrarComentarios(proyectoId);
             MostrarImagen(rutaImg);
-            CargarComentarios(proyectoId);
         }
 
-        private void MostrarImagen(string nombreArchivo)
+        private void MostrarComentarios(int proyectoId)
         {
-            if (string.IsNullOrEmpty(nombreArchivo))
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                string sql = @"
+                    SELECT u.NombreUsuario, c.Texto, c.Fecha
+                    FROM Comentarios c
+                    JOIN Usuarios u ON c.UsuarioId = u.Id
+                    WHERE c.ProyectoId = @p
+                    ORDER BY c.Fecha DESC";
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                da.SelectCommand.Parameters.AddWithValue("@p", proyectoId);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvComentarios.DataSource = dt;
+            }
+        }
+
+        private void MostrarImagen(string rutaImg)
+        {
+            if (string.IsNullOrEmpty(rutaImg))
             {
                 pbProyecto.Image = null;
                 return;
             }
 
-            string fullPath = Path.Combine(Application.StartupPath, "Imagenes", nombreArchivo);
+            string fullPath = Path.Combine(Application.StartupPath, "Imagenes", rutaImg);
             if (File.Exists(fullPath))
             {
+                if (pbProyecto.Image != null)
+                {
+                    pbProyecto.Image.Dispose();
+                    pbProyecto.Image = null;
+                }
                 pbProyecto.Image = Image.FromFile(fullPath);
                 pbProyecto.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             else
             {
                 pbProyecto.Image = null;
-            }
-        }
-
-        private void CargarComentarios(int proyectoId)
-        {
-            using (SqlConnection con = new Conexion().Abrir())
-            {
-                string sql = "SELECT Texto FROM Comentarios WHERE ProyectoId=@id";
-                SqlDataAdapter da = new SqlDataAdapter(sql, con);
-                da.SelectCommand.Parameters.AddWithValue("@id", proyectoId);
-
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                lstComentarios.DataSource = dt;
-                lstComentarios.DisplayMember = "Texto";
             }
         }
     }

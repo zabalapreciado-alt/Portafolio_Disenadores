@@ -27,7 +27,8 @@ namespace PortafolioDiseñadores
             CargarComentarios();
         }
 
-        private void CargarDetalles()
+        
+            private void CargarDetalles()
         {
             using (SqlConnection con = new Conexion().Abrir())
             {
@@ -39,15 +40,21 @@ namespace PortafolioDiseñadores
                 {
                     if (dr.Read())
                     {
-                        lblTitulo.Text = dr["Titulo"] != DBNull.Value ? dr["Titulo"].ToString() : "";
-                        lblDescripcion.Text = dr["Descripcion"] != DBNull.Value ? dr["Descripcion"].ToString() : "";
+                        lblTitulo.Text = dr["Titulo"]?.ToString() ?? "(Sin título)";
+                        lblDescripcion.Text = dr["Descripcion"]?.ToString() ?? "(Sin descripción)";
 
-                        string nombreImg = dr["RutaImagen"] != DBNull.Value ? dr["RutaImagen"].ToString() : "";
+                        string nombreImg = dr["RutaImagen"]?.ToString();
                         if (!string.IsNullOrEmpty(nombreImg))
                         {
                             string fullPath = Path.Combine(Application.StartupPath, "Imagenes", nombreImg);
                             if (File.Exists(fullPath))
                             {
+                                // liberar imagen previa antes de asignar
+                                if (pbImagen.Image != null)
+                                {
+                                    pbImagen.Image.Dispose();
+                                    pbImagen.Image = null;
+                                }
                                 pbImagen.Image = Image.FromFile(fullPath);
                                 pbImagen.SizeMode = PictureBoxSizeMode.StretchImage;
                             }
@@ -57,28 +64,32 @@ namespace PortafolioDiseñadores
                             }
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("No se encontró el proyecto con Id " + proyectoId);
+                    }
                 }
             }
         }
+        
 
         private void CargarComentarios()
         {
             using (SqlConnection con = new Conexion().Abrir())
             {
-                string sql = @"SELECT c.Texto, u.NombreUsuario 
-                               FROM Comentarios c 
-                               JOIN Usuarios u ON c.UsuarioId = u.Id
-                               WHERE c.ProyectoId=@id
-                               ORDER BY c.Fecha DESC";
+                string sql = @"SELECT u.NombreUsuario + ': ' + c.Texto AS Comentario
+                       FROM Comentarios c
+                       JOIN Usuarios u ON c.UsuarioId = u.Id
+                       WHERE c.ProyectoId=@id
+                       ORDER BY c.Fecha DESC";
 
                 SqlDataAdapter da = new SqlDataAdapter(sql, con);
                 da.SelectCommand.Parameters.AddWithValue("@id", proyectoId);
-
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
                 lstComentarios.DataSource = dt;
-                lstComentarios.DisplayMember = "Texto"; // puedes usar $"[{NombreUsuario}] {Texto}" si quieres más info
+                lstComentarios.DisplayMember = "Comentario";
             }
         }
 
@@ -94,7 +105,7 @@ namespace PortafolioDiseñadores
 
             using (SqlConnection con = new Conexion().Abrir())
             {
-                // verificar si ya existe el like
+                // validar duplicado
                 string check = "SELECT COUNT(*) FROM Likes WHERE ProyectoId=@p AND UsuarioId=@u";
                 SqlCommand cmdCheck = new SqlCommand(check, con);
                 cmdCheck.Parameters.AddWithValue("@p", proyectoId);
