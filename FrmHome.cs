@@ -31,8 +31,8 @@ namespace PortafolioDiseñadores
             btnLogin.Visible = (UsuarioId == 0);
             btnCerrarSesion.Visible = (UsuarioId > 0);
 
-            btnEstadisticas.Visible = (Rol == "admin");
-            btnAdminProyectos.Visible = (Rol == "admin");
+            btnEstadisticas.Visible = (Rol == "admin" || Rol == "diseñador");
+            btnAdminProyectos.Visible = (Rol == "admin" || Rol == "diseñador");
             btnOfertas.Visible = (Rol == "admin" || Rol == "diseñador");
             btnNuevaOferta.Visible = (Rol == "reclutador");
         }
@@ -92,6 +92,11 @@ namespace PortafolioDiseñadores
         {
             FrmContacto f = new FrmContacto();
             f.ShowDialog();
+        }
+
+        private void lblBienvenida_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
