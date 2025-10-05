@@ -31,7 +31,7 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    string sql = "SELECT Id, Instagram, Whatsapp, Correo FROM Perfiles WHERE UsuarioId=@u";
+                    string sql = "SELECT Id, Instagram, Whatsapp, CorreoContacto FROM Perfiles WHERE UsuarioId=@u";
                     SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
 
