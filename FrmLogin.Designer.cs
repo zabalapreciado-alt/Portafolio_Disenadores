@@ -63,7 +63,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(89, 24);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(118, 20);
             this.txtUsuario.TabIndex = 2;
@@ -71,7 +71,7 @@
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(107, 58);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(100, 20);
             this.txtContraseña.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             this.btnLogin.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(128, 99);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(68, 24);
             this.btnLogin.TabIndex = 4;
@@ -91,10 +91,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(332, 130);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(324, 130);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(58, 24);
+            this.btnCancelar.Size = new System.Drawing.Size(66, 24);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Usuario);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
             this.ResumeLayout(false);

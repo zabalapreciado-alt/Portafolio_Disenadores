@@ -98,7 +98,7 @@
             // btnEstadisticas
             // 
             this.btnEstadisticas.Font = new System.Drawing.Font("Mongolian Baiti", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(44, 520);
+            this.btnEstadisticas.Location = new System.Drawing.Point(876, 419);
             this.btnEstadisticas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Size = new System.Drawing.Size(116, 24);
@@ -111,7 +111,7 @@
             // btnAdminProyectos
             // 
             this.btnAdminProyectos.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminProyectos.Location = new System.Drawing.Point(181, 520);
+            this.btnAdminProyectos.Location = new System.Drawing.Point(44, 509);
             this.btnAdminProyectos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminProyectos.Name = "btnAdminProyectos";
             this.btnAdminProyectos.Size = new System.Drawing.Size(214, 24);
@@ -124,7 +124,7 @@
             // btnOfertas
             // 
             this.btnOfertas.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOfertas.Location = new System.Drawing.Point(430, 520);
+            this.btnOfertas.Location = new System.Drawing.Point(310, 509);
             this.btnOfertas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOfertas.Name = "btnOfertas";
             this.btnOfertas.Size = new System.Drawing.Size(137, 24);

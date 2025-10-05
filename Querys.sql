@@ -78,6 +78,19 @@ CREATE TABLE OfertasTrabajo (
 );
 GO
 
+--8. tabla Perfiles
+CREATE TABLE Perfiles (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    UsuarioId INT NOT NULL,
+    Biografia NVARCHAR(MAX) NULL,
+    WhatsApp NVARCHAR(20) NULL,
+    Instagram NVARCHAR(100) NULL,
+    CorreoContacto NVARCHAR(100) NULL,
+    FechaActualizacion DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (UsuarioId) REFERENCES Usuarios(Id)
+);
+GO
+
 -- Usuario admin
 INSERT INTO Usuarios (NombreUsuario, Contraseña, Rol)
 VALUES ('mariaclara', '1234', 'admin');

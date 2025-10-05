@@ -28,82 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMail = new System.Windows.Forms.Button();
-            this.btnWhatsapp = new System.Windows.Forms.Button();
-            this.btnInstagram = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.txtBiografia = new System.Windows.Forms.TextBox();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // panel1
+            // txtBiografia
             // 
-            this.panel1.Controls.Add(this.btnMail);
-            this.panel1.Controls.Add(this.btnWhatsapp);
-            this.panel1.Controls.Add(this.btnInstagram);
-            this.panel1.Location = new System.Drawing.Point(2, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(59, 170);
-            this.panel1.TabIndex = 0;
+            this.txtBiografia.Location = new System.Drawing.Point(28, 47);
+            this.txtBiografia.Multiline = true;
+            this.txtBiografia.Name = "txtBiografia";
+            this.txtBiografia.Size = new System.Drawing.Size(421, 123);
+            this.txtBiografia.TabIndex = 0;
             // 
-            // btnMail
+            // btnCrear
             // 
-            this.btnMail.BackColor = System.Drawing.Color.Transparent;
-            this.btnMail.BackgroundImage = global::PortafolioDiseñadores.Properties.Resources._732026;
-            this.btnMail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMail.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMail.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMail.Location = new System.Drawing.Point(0, 90);
-            this.btnMail.Name = "btnMail";
-            this.btnMail.Size = new System.Drawing.Size(59, 45);
-            this.btnMail.TabIndex = 2;
-            this.btnMail.UseVisualStyleBackColor = false;
+            this.btnCrear.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrear.Location = new System.Drawing.Point(28, 182);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(77, 25);
+            this.btnCrear.TabIndex = 1;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // btnWhatsapp
+            // label1
             // 
-            this.btnWhatsapp.BackColor = System.Drawing.Color.Transparent;
-            this.btnWhatsapp.BackgroundImage = global::PortafolioDiseñadores.Properties.Resources.png_clipart_whatsapp_computer_icons_whatsapp_text_whatsapp_icon_thumbnail;
-            this.btnWhatsapp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnWhatsapp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnWhatsapp.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWhatsapp.Location = new System.Drawing.Point(0, 45);
-            this.btnWhatsapp.Name = "btnWhatsapp";
-            this.btnWhatsapp.Size = new System.Drawing.Size(59, 45);
-            this.btnWhatsapp.TabIndex = 1;
-            this.btnWhatsapp.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(192, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Biografía";
             // 
-            // btnInstagram
+            // btnEditar
             // 
-            this.btnInstagram.BackColor = System.Drawing.Color.Transparent;
-            this.btnInstagram.BackgroundImage = global::PortafolioDiseñadores.Properties.Resources.instagram_black_logo_on_transparent_background_free_vector;
-            this.btnInstagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInstagram.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInstagram.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInstagram.Location = new System.Drawing.Point(0, 0);
-            this.btnInstagram.Name = "btnInstagram";
-            this.btnInstagram.Size = new System.Drawing.Size(59, 45);
-            this.btnInstagram.TabIndex = 0;
-            this.btnInstagram.UseVisualStyleBackColor = false;
+            this.btnEditar.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(196, 182);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(77, 25);
+            this.btnEditar.TabIndex = 3;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(372, 182);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(77, 25);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // FrmAcercaDe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(480, 171);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(480, 219);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCrear);
+            this.Controls.Add(this.txtBiografia);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAcercaDe";
             this.Text = "FrmAcercaDe";
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FrmAcercaDe_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnInstagram;
-        private System.Windows.Forms.Button btnWhatsapp;
-        private System.Windows.Forms.Button btnMail;
+        private System.Windows.Forms.TextBox txtBiografia;
+        private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
