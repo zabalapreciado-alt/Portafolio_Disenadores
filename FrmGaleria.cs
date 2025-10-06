@@ -197,46 +197,45 @@ namespace PortafolioDiseñadores
             }
         }
 
-        private void btnDetalles_Click(object sender, EventArgs e)
-        {
-            
 
-            
-            // después de cerrar detalles podrías recargar si quieres:
-            // CargarProyectos(); MostrarProyecto(index);
-            int proyectoId = Convert.ToInt32(proyectos.Rows[index]["Id"]);
-            MessageBox.Show("Abriendo proyecto ID: " + proyectoId);
-            FrmDetalles f = new FrmDetalles(proyectoId);
-            f.ShowDialog();
-
-        }
 
         private void btnLike_Click(object sender, EventArgs e)
         {
             int proyectoId = ProyectoActualId();
             if (proyectoId == 0) return;
 
+            // Validar inicio de sesión
+            if (FrmHome.UsuarioId <= 0)
+            {
+                MessageBox.Show("Debes iniciar sesión para dar like a un proyecto.", "Acceso restringido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             using (SqlConnection con = new Conexion().Abrir())
             {
-                // evitar likes repetidos por usuario
-                SqlCommand check = new SqlCommand("SELECT COUNT(*) FROM Likes WHERE ProyectoId=@p AND UsuarioId=@u", con);
+                // Evitar likes repetidos
+                SqlCommand check = new SqlCommand("SELECT COUNT(*) FROM Likes WHERE ProyectoId=@p AND UsuarioId=@u", con);
                 check.Parameters.AddWithValue("@p", proyectoId);
                 check.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
                 int existe = Convert.ToInt32(check.ExecuteScalar());
 
                 if (existe > 0)
                 {
-                    MessageBox.Show("Ya diste like a este proyecto.");
+                    MessageBox.Show("Ya diste like a este proyecto.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO Likes (ProyectoId, UsuarioId, Fecha) VALUES (@p, @u, GETDATE())", con);
+                // Insertar nuevo like
+                SqlCommand cmd = new SqlCommand("INSERT INTO Likes (ProyectoId, UsuarioId, Fecha) VALUES (@p, @u, GETDATE())", con);
                 cmd.Parameters.AddWithValue("@p", proyectoId);
                 cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
                 cmd.ExecuteNonQuery();
             }
+
+            MessageBox.Show("¡Gracias por apoyar este proyecto!", "Like registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             CargarLikes();
         }
+        
         // ================== COMENTARIOS ==================
         private void CargarComentarios()
         {
@@ -260,9 +259,20 @@ namespace PortafolioDiseñadores
 
         private void btnComentar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtComentario.Text)) return;
+            if (FrmHome.UsuarioId <= 0)
+            {
+                MessageBox.Show("Debes iniciar sesión para comentar un proyecto.", "Acceso restringido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtComentario.Text))
+            {
+                MessageBox.Show("Escribe un comentario antes de enviarlo.", "Comentario vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             int proyectoId = ProyectoActualId();
+
             using (SqlConnection con = new Conexion().Abrir())
             {
                 SqlCommand cmd = new SqlCommand("INSERT INTO Comentarios (ProyectoId, UsuarioId, Texto, Fecha) VALUES (@p, @u, @t, GETDATE())", con);
@@ -274,7 +284,9 @@ namespace PortafolioDiseñadores
 
             txtComentario.Clear();
             CargarComentarios();
+            MessageBox.Show("Comentario agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        
 
         private void btnFiltrarLikes_Click(object sender, EventArgs e)
         {
