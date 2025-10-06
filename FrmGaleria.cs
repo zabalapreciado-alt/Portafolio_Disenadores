@@ -41,28 +41,6 @@ namespace PortafolioDiseñadores
             }
         }
 
-        //private void CargarProyectos()
-        //{
-        //    try
-        //    {
-        //        using (SqlConnection con = new Conexion().Abrir())
-        //        {
-        //            string sql = @"
-        //                SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
-        //                       d.Nombre AS Diseñador
-        //                FROM Proyectos p
-        //                LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
-        //                ORDER BY p.Id DESC";
-        //            SqlDataAdapter da = new SqlDataAdapter(sql, con);
-        //            proyectos.Clear();
-        //            da.Fill(proyectos);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error cargando proyectos: " + ex.Message);
-        //    }
-        //}
         private void CargarProyectos(bool ordenarPorLikes = false)
         {
             try
@@ -359,7 +337,7 @@ namespace PortafolioDiseñadores
                     {
                         string insta = reader["Instagram"]?.ToString() ?? "No disponible";
                         string whatsapp = reader["Whatsapp"]?.ToString() ?? "No disponible";
-                        string correo = reader["Correo"]?.ToString() ?? "No disponible";
+                        string correo = reader["CorreoContacto"]?.ToString() ?? "No disponible";
 
                         string info = $"Instagram: {insta}\nWhatsapp: {whatsapp}\nCorreo: {correo}";
                         MessageBox.Show(info, "Contacto del Diseñador", MessageBoxButtons.OK, MessageBoxIcon.Information);
