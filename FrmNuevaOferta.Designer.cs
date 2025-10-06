@@ -71,7 +71,7 @@
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(100, 39);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(76, 20);
             this.txtTitulo.TabIndex = 3;
@@ -79,7 +79,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(100, 79);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(76, 20);
             this.txtDescripcion.TabIndex = 4;
@@ -87,7 +87,7 @@
             // txtContacto
             // 
             this.txtContacto.Location = new System.Drawing.Point(100, 119);
-            this.txtContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContacto.Margin = new System.Windows.Forms.Padding(2);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(76, 20);
             this.txtContacto.TabIndex = 5;
@@ -95,7 +95,7 @@
             // btnEnviar
             // 
             this.btnEnviar.Location = new System.Drawing.Point(91, 196);
-            this.btnEnviar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(56, 19);
             this.btnEnviar.TabIndex = 6;
@@ -106,7 +106,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(224, 195);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(56, 19);
             this.btnCancelar.TabIndex = 7;
@@ -128,9 +128,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmNuevaOferta";
-            this.Text = "FrmNuevaOferta";
+            this.Text = "Nueva Oferta";
             this.ResumeLayout(false);
             this.PerformLayout();
 

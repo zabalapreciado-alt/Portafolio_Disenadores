@@ -47,7 +47,7 @@
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(105, 58);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(102, 20);
             this.txtTitulo.TabIndex = 0;
@@ -55,7 +55,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(105, 97);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(102, 20);
             this.txtDescripcion.TabIndex = 1;
@@ -63,7 +63,7 @@
             // txtCategoria
             // 
             this.txtCategoria.Location = new System.Drawing.Point(105, 133);
-            this.txtCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(102, 20);
             this.txtCategoria.TabIndex = 2;
@@ -71,7 +71,7 @@
             // btnSeleccionarImagen
             // 
             this.btnSeleccionarImagen.Location = new System.Drawing.Point(552, 62);
-            this.btnSeleccionarImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSeleccionarImagen.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
             this.btnSeleccionarImagen.Size = new System.Drawing.Size(109, 22);
             this.btnSeleccionarImagen.TabIndex = 4;
@@ -82,7 +82,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(552, 115);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(109, 22);
             this.btnAgregar.TabIndex = 5;
@@ -93,7 +93,7 @@
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(552, 88);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(109, 22);
             this.btnEditar.TabIndex = 6;
@@ -104,7 +104,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(552, 141);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(109, 22);
             this.btnEliminar.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             this.dgvProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProyectos.Location = new System.Drawing.Point(20, 234);
-            this.dgvProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProyectos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProyectos.Name = "dgvProyectos";
             this.dgvProyectos.RowHeadersWidth = 51;
             this.dgvProyectos.RowTemplate.Height = 24;
@@ -182,9 +182,9 @@
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtTitulo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAdminProyectos";
-            this.Text = "FrmAdminProyectos";
+            this.Text = "Administrador De Proyectos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);

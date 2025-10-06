@@ -99,7 +99,7 @@
             this.Controls.Add(this.txtBiografia);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAcercaDe";
-            this.Text = "FrmAcercaDe";
+            this.Text = "Acerca De Mí";
             this.Load += new System.EventHandler(this.FrmAcercaDe_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

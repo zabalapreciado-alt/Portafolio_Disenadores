@@ -39,7 +39,7 @@
             this.dgvOfertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOfertas.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvOfertas.Location = new System.Drawing.Point(0, 0);
-            this.dgvOfertas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvOfertas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvOfertas.MultiSelect = false;
             this.dgvOfertas.Name = "dgvOfertas";
             this.dgvOfertas.ReadOnly = true;
@@ -79,9 +79,9 @@
             this.Controls.Add(this.btnRechazar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgvOfertas);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmOfertasTrabajo";
-            this.Text = "FrmOfertasTrabajo";
+            this.Text = "Ofertas De Trabajo";
             this.Load += new System.EventHandler(this.FrmOfertasTrabajo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOfertas)).EndInit();
             this.ResumeLayout(false);

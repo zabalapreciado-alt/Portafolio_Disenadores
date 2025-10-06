@@ -48,9 +48,10 @@
             this.lblBienvenida.BackColor = System.Drawing.Color.Transparent;
             this.lblBienvenida.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenida.ForeColor = System.Drawing.Color.Black;
-            this.lblBienvenida.Location = new System.Drawing.Point(51, 33);
+            this.lblBienvenida.Location = new System.Drawing.Point(38, 27);
+            this.lblBienvenida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(348, 41);
+            this.lblBienvenida.Size = new System.Drawing.Size(283, 33);
             this.lblBienvenida.TabIndex = 0;
             this.lblBienvenida.Text = "Bienvenido Invitado";
             this.lblBienvenida.Click += new System.EventHandler(this.lblBienvenida_Click);
@@ -59,10 +60,10 @@
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(59, 123);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogin.Location = new System.Drawing.Point(44, 100);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(215, 34);
+            this.btnLogin.Size = new System.Drawing.Size(161, 28);
             this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Iniciar Sesión";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -71,10 +72,10 @@
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(1161, 640);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(871, 520);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(161, 30);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(121, 24);
             this.btnCerrarSesion.TabIndex = 2;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -85,10 +86,10 @@
             // 
             this.btnGaleria.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGaleria.ForeColor = System.Drawing.Color.Black;
-            this.btnGaleria.Location = new System.Drawing.Point(255, 22);
-            this.btnGaleria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGaleria.Location = new System.Drawing.Point(191, 18);
+            this.btnGaleria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGaleria.Name = "btnGaleria";
-            this.btnGaleria.Size = new System.Drawing.Size(172, 34);
+            this.btnGaleria.Size = new System.Drawing.Size(129, 28);
             this.btnGaleria.TabIndex = 3;
             this.btnGaleria.Text = "Galería";
             this.btnGaleria.UseVisualStyleBackColor = true;
@@ -97,10 +98,10 @@
             // btnAdminProyectos
             // 
             this.btnAdminProyectos.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminProyectos.Location = new System.Drawing.Point(59, 626);
-            this.btnAdminProyectos.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnAdminProyectos.Location = new System.Drawing.Point(44, 509);
+            this.btnAdminProyectos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminProyectos.Name = "btnAdminProyectos";
-            this.btnAdminProyectos.Size = new System.Drawing.Size(285, 30);
+            this.btnAdminProyectos.Size = new System.Drawing.Size(214, 24);
             this.btnAdminProyectos.TabIndex = 5;
             this.btnAdminProyectos.Text = "Gestionar Proyectos";
             this.btnAdminProyectos.UseVisualStyleBackColor = true;
@@ -110,10 +111,10 @@
             // btnOfertas
             // 
             this.btnOfertas.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOfertas.Location = new System.Drawing.Point(413, 626);
-            this.btnOfertas.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnOfertas.Location = new System.Drawing.Point(310, 509);
+            this.btnOfertas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOfertas.Name = "btnOfertas";
-            this.btnOfertas.Size = new System.Drawing.Size(183, 30);
+            this.btnOfertas.Size = new System.Drawing.Size(137, 24);
             this.btnOfertas.TabIndex = 6;
             this.btnOfertas.Text = "Ver Ofertas";
             this.btnOfertas.UseVisualStyleBackColor = true;
@@ -124,10 +125,10 @@
             // 
             this.btnNuevaOferta.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaOferta.ForeColor = System.Drawing.Color.Black;
-            this.btnNuevaOferta.Location = new System.Drawing.Point(603, 368);
-            this.btnNuevaOferta.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnNuevaOferta.Location = new System.Drawing.Point(452, 299);
+            this.btnNuevaOferta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevaOferta.Name = "btnNuevaOferta";
-            this.btnNuevaOferta.Size = new System.Drawing.Size(220, 34);
+            this.btnNuevaOferta.Size = new System.Drawing.Size(165, 28);
             this.btnNuevaOferta.TabIndex = 7;
             this.btnNuevaOferta.Text = "Enviar Oferta";
             this.btnNuevaOferta.UseVisualStyleBackColor = true;
@@ -138,10 +139,10 @@
             // 
             this.btnAcercaDe.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcercaDe.ForeColor = System.Drawing.Color.Black;
-            this.btnAcercaDe.Location = new System.Drawing.Point(27, 22);
-            this.btnAcercaDe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAcercaDe.Location = new System.Drawing.Point(20, 18);
+            this.btnAcercaDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAcercaDe.Name = "btnAcercaDe";
-            this.btnAcercaDe.Size = new System.Drawing.Size(200, 34);
+            this.btnAcercaDe.Size = new System.Drawing.Size(150, 28);
             this.btnAcercaDe.TabIndex = 8;
             this.btnAcercaDe.Text = "Acerca de Mí";
             this.btnAcercaDe.UseVisualStyleBackColor = true;
@@ -152,10 +153,10 @@
             // 
             this.btnContacto.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContacto.ForeColor = System.Drawing.Color.Black;
-            this.btnContacto.Location = new System.Drawing.Point(460, 22);
-            this.btnContacto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnContacto.Location = new System.Drawing.Point(345, 18);
+            this.btnContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnContacto.Name = "btnContacto";
-            this.btnContacto.Size = new System.Drawing.Size(172, 34);
+            this.btnContacto.Size = new System.Drawing.Size(129, 28);
             this.btnContacto.TabIndex = 9;
             this.btnContacto.Text = "Contacto";
             this.btnContacto.UseVisualStyleBackColor = true;
@@ -169,30 +170,29 @@
             this.panel1.Controls.Add(this.btnGaleria);
             this.panel1.Controls.Add(this.btnContacto);
             this.panel1.ForeColor = System.Drawing.Color.RosyBrown;
-            this.panel1.Location = new System.Drawing.Point(369, 262);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(277, 213);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(657, 82);
+            this.panel1.Size = new System.Drawing.Size(493, 67);
             this.panel1.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(621, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(466, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 46);
+            this.label1.Size = new System.Drawing.Size(151, 37);
             this.label1.TabIndex = 11;
             this.label1.Text = "ShowArt";
             // 
             // FrmHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Turquoise;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1407, 690);
+            this.ClientSize = new System.Drawing.Size(1028, 561);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNuevaOferta);
             this.Controls.Add(this.panel1);
@@ -201,9 +201,9 @@
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblBienvenida);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmHome";
-            this.Text = "FrmHome";
+            this.Text = "Home";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

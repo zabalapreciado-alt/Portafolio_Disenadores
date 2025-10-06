@@ -221,7 +221,7 @@
             this.Controls.Add(this.txtInstagram);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmContacto";
-            this.Text = "FrmContacto";
+            this.Text = "Contacto";
             this.Load += new System.EventHandler(this.FrmContacto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

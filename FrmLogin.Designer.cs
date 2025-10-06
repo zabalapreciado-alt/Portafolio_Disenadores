@@ -98,6 +98,7 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FrmLogin
             // 
@@ -113,7 +114,7 @@
             this.Controls.Add(this.Usuario);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogin";
-            this.Text = "FrmLogin";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
