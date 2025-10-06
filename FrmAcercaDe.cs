@@ -24,12 +24,12 @@ namespace PortafolioDiseñadores
         {
             diseñadorId = ObtenerDiseñadorId(FrmHome.UsuarioId);
 
-            if (diseñadorId == 0)
-            {
-                MessageBox.Show("Solo los diseñadores pueden editar esta información.");
-                this.Close();
-                return;
-            }
+            //if (diseñadorId == 0)
+            //{
+            //    MessageBox.Show("Solo los diseñadores pueden editar esta información.");
+            //    this.Close();
+            //    return;
+            //}
 
             CargarBiografia();
         }

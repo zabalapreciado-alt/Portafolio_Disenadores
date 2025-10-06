@@ -27,12 +27,12 @@ namespace PortafolioDiseñadores
             // Obtener el DiseñadorId
             diseñadorId = ObtenerDiseñadorId(FrmHome.UsuarioId);
 
-            if (diseñadorId == 0)
-            {
-                MessageBox.Show("Solo los diseñadores pueden gestionar la información de contacto.");
-                this.Close();
-                return;
-            }
+            //if (diseñadorId == 0)
+            //{
+            //    MessageBox.Show("Solo los diseñadores pueden gestionar la información de contacto.");
+            //    this.Close();
+            //    return;
+            //}
 
             CargarContacto();
         }
