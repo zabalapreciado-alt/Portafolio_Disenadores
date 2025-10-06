@@ -75,6 +75,7 @@ namespace PortafolioDiseñadores
                     {
                         sql = @"
                     SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
+                           p.DiseñadorId,
                            d.Nombre AS Diseñador,
                            ISNULL(l.TotalLikes, 0) AS LikesTotales
                     FROM Proyectos p
@@ -90,11 +91,12 @@ namespace PortafolioDiseñadores
                     {
                         // Orden normal (por fecha/ID descendente)
                         sql = @"
-                    SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
-                           d.Nombre AS Diseñador
-                    FROM Proyectos p
-                    LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
-                    ORDER BY p.Id DESC";
+                        SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
+                               p.DiseñadorId,
+                               d.Nombre AS Diseñador
+                        FROM Proyectos p
+                        LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
+                        ORDER BY p.Id DESC";
                     }
 
                     SqlDataAdapter da = new SqlDataAdapter(sql, con);
@@ -290,6 +292,71 @@ namespace PortafolioDiseñadores
                 lstComentarios.DataSource = null;
                 if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
                 pictureBox1.Image = null;
+            }
+        }
+
+        private int ObtenerDiseñadorActualId()
+        {
+            if (proyectos.Rows.Count == 0) return 0;
+
+            // Necesitamos el Id del diseñador, así que incluye DiseñadorId en la consulta de CargarProyectos
+            return Convert.ToInt32(proyectos.Rows[index]["DiseñadorId"]);
+        }
+
+        private void btnBiografia_Click(object sender, EventArgs e)
+        {
+            int diseñadorId = ObtenerDiseñadorActualId();
+            if (diseñadorId == 0)
+            {
+                MessageBox.Show("No se encontró el diseñador de este proyecto.");
+                return;
+            }
+
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT Biografia FROM Perfiles WHERE DiseñadorId=@d", con);
+                cmd.Parameters.AddWithValue("@d", diseñadorId);
+
+                object result = cmd.ExecuteScalar();
+                string bio = result != null ? result.ToString() : "Sin biografía disponible.";
+
+                MessageBox.Show(bio, "Biografía del Diseñador", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnContacto_Click(object sender, EventArgs e)
+        {
+            
+            int diseñadorId = ObtenerDiseñadorActualId();
+            if (diseñadorId == 0)
+            {
+                MessageBox.Show("No se encontró el diseñador de este proyecto.");
+                return;
+            }
+
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT Instagram, Whatsapp, CorreoContacto FROM Perfiles WHERE DiseñadorId=@d", con);
+                cmd.Parameters.AddWithValue("@d", diseñadorId);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string insta = reader["Instagram"]?.ToString() ?? "No disponible";
+                        string whatsapp = reader["Whatsapp"]?.ToString() ?? "No disponible";
+                        string correo = reader["Correo"]?.ToString() ?? "No disponible";
+
+                        string info = $"Instagram: {insta}\nWhatsapp: {whatsapp}\nCorreo: {correo}";
+                        MessageBox.Show(info, "Contacto del Diseñador", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró la información de contacto para este diseñador.");
+                    }
+                }
             }
         }
     }

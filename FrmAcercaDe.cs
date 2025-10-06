@@ -18,9 +18,19 @@ namespace PortafolioDiseñadores
         {
             InitializeComponent();
         }
+        private int diseñadorId = 0; // Guardará el Id del diseñador
 
         private void FrmAcercaDe_Load(object sender, EventArgs e)
         {
+            diseñadorId = ObtenerDiseñadorId(FrmHome.UsuarioId);
+
+            if (diseñadorId == 0)
+            {
+                MessageBox.Show("Solo los diseñadores pueden editar esta información.");
+                this.Close();
+                return;
+            }
+
             CargarBiografia();
         }
 
@@ -30,16 +40,16 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    string sql = "SELECT Id, Biografia FROM Perfiles WHERE UsuarioId=@u";
+                    string sql = "SELECT Id, Biografia FROM Perfiles WHERE DiseñadorId=@d";
                     SqlCommand cmd = new SqlCommand(sql, con);
-                    cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                    cmd.Parameters.AddWithValue("@d", diseñadorId);
 
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
                         perfilId = Convert.ToInt32(dr["Id"]);
                         txtBiografia.Text = dr["Biografia"].ToString();
-                        btnCrear.Enabled = false;    // Ya existe, no se crea otra
+                        btnCrear.Enabled = false;
                         btnEditar.Enabled = true;
                         btnEliminar.Enabled = true;
                     }
@@ -71,10 +81,10 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    string sql = @"INSERT INTO Perfiles (UsuarioId, Biografia) 
-                                   VALUES (@u, @b)";
+                    string sql = @"INSERT INTO Perfiles (DiseñadorId, Biografia) 
+               VALUES (@d, @b)";
                     SqlCommand cmd = new SqlCommand(sql, con);
-                    cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                    cmd.Parameters.AddWithValue("@d", diseñadorId);
                     cmd.Parameters.AddWithValue("@b", txtBiografia.Text.Trim());
                     cmd.ExecuteNonQuery();
                 }
@@ -153,5 +163,20 @@ namespace PortafolioDiseñadores
                 }
             }
         }
+
+        private int ObtenerDiseñadorId(int usuarioId)
+        {
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                string sql = "SELECT Id FROM Diseñadores WHERE UsuarioId=@u";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@u", usuarioId);
+
+                object result = cmd.ExecuteScalar();
+                return result != null ? Convert.ToInt32(result) : 0;
+            }
+        }
+
+
     }
 }

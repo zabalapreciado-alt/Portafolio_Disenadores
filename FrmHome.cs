@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace PortafolioDiseñadores
         }
         private void FrmHome_Load(object sender, EventArgs e)
         {
+            
             ActualizarUI();
         }
 
@@ -28,11 +30,11 @@ namespace PortafolioDiseñadores
         {
             lblBienvenida.Text = "Bienvenido " + (UsuarioId > 0 ? NombreUsuario : "Invitado");
 
+
             btnLogin.Visible = (UsuarioId == 0);
             btnCerrarSesion.Visible = (UsuarioId > 0);
             
 
-            btnEstadisticas.Visible = (Rol == "admin" || Rol == "diseñador" || Rol == "reclutador");
             btnAdminProyectos.Visible = (Rol == "admin" || Rol == "diseñador");
             btnOfertas.Visible = (Rol == "admin" || Rol == "diseñador");
             btnNuevaOferta.Visible = (Rol == "reclutador");
@@ -99,5 +101,18 @@ namespace PortafolioDiseñadores
         {
 
         }
+
+        private bool EsDiseñador(int usuarioId)
+        {
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT COUNT(*) FROM Diseñadores WHERE UsuarioId=@u", con);
+                cmd.Parameters.AddWithValue("@u", usuarioId);
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
+
     }
 }

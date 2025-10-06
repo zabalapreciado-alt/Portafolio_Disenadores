@@ -32,7 +32,6 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnGaleria = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.btnAdminProyectos = new System.Windows.Forms.Button();
             this.btnOfertas = new System.Windows.Forms.Button();
             this.btnNuevaOferta = new System.Windows.Forms.Button();
@@ -94,19 +93,6 @@
             this.btnGaleria.Text = "Galería";
             this.btnGaleria.UseVisualStyleBackColor = true;
             this.btnGaleria.Click += new System.EventHandler(this.btnGaleria_Click);
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Font = new System.Drawing.Font("Mongolian Baiti", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(876, 419);
-            this.btnEstadisticas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(116, 24);
-            this.btnEstadisticas.TabIndex = 4;
-            this.btnEstadisticas.Text = "Estadísticas";
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            this.btnEstadisticas.Visible = false;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
             // btnAdminProyectos
             // 
@@ -198,7 +184,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOfertas);
             this.Controls.Add(this.btnAdminProyectos);
-            this.Controls.Add(this.btnEstadisticas);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblBienvenida);
@@ -217,7 +202,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnGaleria;
-        private System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Button btnAdminProyectos;
         private System.Windows.Forms.Button btnOfertas;
         private System.Windows.Forms.Button btnNuevaOferta;

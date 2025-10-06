@@ -13,16 +13,28 @@ namespace PortafolioDiseñadores
 {
     public partial class FrmContacto : Form
     {
-        private int perfilId = 0; // ID del registro en Perfiles
+        private int perfilId = 0;         // ID del registro en Perfiles
+        private int diseñadorId = 0;      // ID del diseñador actual
         public FrmContacto()
         {
             InitializeComponent();
         }
 
+
         private void FrmContacto_Load(object sender, EventArgs e)
         {
+
+            // Obtener el DiseñadorId
+            diseñadorId = ObtenerDiseñadorId(FrmHome.UsuarioId);
+
+            if (diseñadorId == 0)
+            {
+                MessageBox.Show("Solo los diseñadores pueden gestionar la información de contacto.");
+                this.Close();
+                return;
+            }
+
             CargarContacto();
-            this.Load += FrmContacto_Load; // asegura que el evento Load esté suscrito
         }
 
         private void CargarContacto()
@@ -31,17 +43,19 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    string sql = "SELECT Id, Instagram, Whatsapp, CorreoContacto FROM Perfiles WHERE UsuarioId=@u";
+                    string sql = @"SELECT Id, Instagram, WhatsApp, CorreoContacto
+                                   FROM Perfiles
+                                   WHERE DiseñadorId = @d";
                     SqlCommand cmd = new SqlCommand(sql, con);
-                    cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                    cmd.Parameters.AddWithValue("@d", diseñadorId);
 
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
                         perfilId = Convert.ToInt32(dr["Id"]);
                         txtInstagram.Text = dr["Instagram"]?.ToString();
-                        txtWhatsapp.Text = dr["Whatsapp"]?.ToString();
-                        txtCorreo.Text = dr["Correo"]?.ToString();
+                        txtWhatsapp.Text = dr["WhatsApp"]?.ToString();
+                        txtCorreo.Text = dr["CorreoContacto"]?.ToString();
                     }
                     else
                     {
@@ -110,9 +124,9 @@ namespace PortafolioDiseñadores
             }
 
             if (perfilId == 0)
-                CrearPerfil("Whatsapp", txtWhatsapp.Text);
+                CrearPerfil("WhatsApp", txtWhatsapp.Text);
             else
-                ActualizarCampo("Whatsapp", txtWhatsapp.Text);
+                ActualizarCampo("WhatsApp", txtWhatsapp.Text);
         }
 
         private void btnEditarWhatsapp_Click(object sender, EventArgs e)
@@ -129,7 +143,7 @@ namespace PortafolioDiseñadores
                 return;
             }
 
-            ActualizarCampo("Whatsapp", txtWhatsapp.Text);
+            ActualizarCampo("WhatsApp", txtWhatsapp.Text);
         }
 
         private void btnBorrarWhatsapp_Click(object sender, EventArgs e)
@@ -140,7 +154,7 @@ namespace PortafolioDiseñadores
                 return;
             }
 
-            ActualizarCampo("Whatsapp", null);
+            ActualizarCampo("WhatsApp", null);
             txtWhatsapp.Clear();
         }
 
@@ -153,9 +167,9 @@ namespace PortafolioDiseñadores
             }
 
             if (perfilId == 0)
-                CrearPerfil("Correo", txtCorreo.Text);
+                CrearPerfil("CorreoContacto", txtCorreo.Text);
             else
-                ActualizarCampo("Correo", txtCorreo.Text);
+                ActualizarCampo("CorreoContacto", txtCorreo.Text);
         }
 
         private void btnEditarCorreo_Click(object sender, EventArgs e)
@@ -172,7 +186,7 @@ namespace PortafolioDiseñadores
                 return;
             }
 
-            ActualizarCampo("Correo", txtCorreo.Text);
+            ActualizarCampo("CorreoContacto", txtCorreo.Text);
         }
 
         private void btnBorrarCorreo_Click(object sender, EventArgs e)
@@ -183,7 +197,7 @@ namespace PortafolioDiseñadores
                 return;
             }
 
-            ActualizarCampo("Correo", null);
+            ActualizarCampo("CorreoContacto", null);
             txtCorreo.Clear();
         }
 
@@ -193,12 +207,12 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    string insert = $@"INSERT INTO Perfiles (UsuarioId, {campo})
-                                       VALUES (@u, @v);
+                    string insert = $@"INSERT INTO Perfiles (DiseñadorId, {campo})
+                                       VALUES (@d, @v);
                                        SELECT SCOPE_IDENTITY();";
 
                     SqlCommand cmd = new SqlCommand(insert, con);
-                    cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                    cmd.Parameters.AddWithValue("@d", diseñadorId);
                     cmd.Parameters.AddWithValue("@v", valor);
 
                     perfilId = Convert.ToInt32(cmd.ExecuteScalar());
@@ -218,7 +232,7 @@ namespace PortafolioDiseñadores
                 using (SqlConnection con = new Conexion().Abrir())
                 {
                     string update = $@"UPDATE Perfiles
-                                       SET {campo} = @v
+                                       SET {campo} = @v, FechaActualizacion = GETDATE()
                                        WHERE Id = @id";
 
                     SqlCommand cmd = new SqlCommand(update, con);
@@ -238,7 +252,32 @@ namespace PortafolioDiseñadores
                 MessageBox.Show("Error al actualizar el contacto: " + ex.Message);
             }
         }
+        //private bool EsDiseñador(int usuarioId)
+        //{
+        //    using (SqlConnection con = new Conexion().Abrir())
+        //    {
+        //        SqlCommand cmd = new SqlCommand(
+        //            "SELECT COUNT(*) FROM Diseñadores WHERE UsuarioId=@u", con);
+        //        cmd.Parameters.AddWithValue("@u", usuarioId);
+
+        //        return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+        //    }
+        //}
+        private int ObtenerDiseñadorId(int usuarioId)
+        {
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                string sql = "SELECT Id FROM Diseñadores WHERE UsuarioId=@u";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@u", usuarioId);
+
+                object result = cmd.ExecuteScalar();
+                return result != null ? Convert.ToInt32(result) : 0;
+            }
+        }
+
+
     }
-    
+
 }
 

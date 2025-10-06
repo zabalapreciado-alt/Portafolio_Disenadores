@@ -32,7 +32,6 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
-            this.btnDetalles = new System.Windows.Forms.Button();
             this.lblLikes = new System.Windows.Forms.Label();
             this.btnLike = new System.Windows.Forms.Button();
             this.lstComentarios = new System.Windows.Forms.ListBox();
@@ -40,8 +39,8 @@
             this.btnComentar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnFiltrarLikes = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBiografia = new System.Windows.Forms.Button();
+            this.btnContacto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,16 +83,6 @@
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
-            // btnDetalles
-            // 
-            this.btnDetalles.Location = new System.Drawing.Point(534, 11);
-            this.btnDetalles.Name = "btnDetalles";
-            this.btnDetalles.Size = new System.Drawing.Size(56, 19);
-            this.btnDetalles.TabIndex = 5;
-            this.btnDetalles.Text = "Detalles";
-            this.btnDetalles.UseVisualStyleBackColor = true;
-            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
             // lblLikes
             // 
@@ -163,25 +152,27 @@
             this.btnFiltrarLikes.UseVisualStyleBackColor = true;
             this.btnFiltrarLikes.Click += new System.EventHandler(this.btnFiltrarLikes_Click);
             // 
-            // button1
+            // btnBiografia
             // 
-            this.button1.Location = new System.Drawing.Point(35, 332);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 26);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Biografia";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBiografia.Location = new System.Drawing.Point(35, 332);
+            this.btnBiografia.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBiografia.Name = "btnBiografia";
+            this.btnBiografia.Size = new System.Drawing.Size(66, 26);
+            this.btnBiografia.TabIndex = 12;
+            this.btnBiografia.Text = "Biografia";
+            this.btnBiografia.UseVisualStyleBackColor = true;
+            this.btnBiografia.Click += new System.EventHandler(this.btnBiografia_Click);
             // 
-            // button2
+            // btnContacto
             // 
-            this.button2.Location = new System.Drawing.Point(148, 336);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(76, 22);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Contacto";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnContacto.Location = new System.Drawing.Point(128, 335);
+            this.btnContacto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnContacto.Name = "btnContacto";
+            this.btnContacto.Size = new System.Drawing.Size(76, 23);
+            this.btnContacto.TabIndex = 13;
+            this.btnContacto.Text = "Contacto";
+            this.btnContacto.UseVisualStyleBackColor = true;
+            this.btnContacto.Click += new System.EventHandler(this.btnContacto_Click);
             // 
             // FrmGaleria
             // 
@@ -189,15 +180,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnContacto);
+            this.Controls.Add(this.btnBiografia);
             this.Controls.Add(this.btnFiltrarLikes);
             this.Controls.Add(this.btnComentar);
             this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.lstComentarios);
             this.Controls.Add(this.btnLike);
             this.Controls.Add(this.lblLikes);
-            this.Controls.Add(this.btnDetalles);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.lblDescripcion);
@@ -220,14 +210,13 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnSiguiente;
-        private System.Windows.Forms.Button btnDetalles;
         private System.Windows.Forms.Label lblLikes;
         private System.Windows.Forms.Button btnLike;
         private System.Windows.Forms.ListBox lstComentarios;
         private System.Windows.Forms.TextBox txtComentario;
         private System.Windows.Forms.Button btnComentar;
         private System.Windows.Forms.Button btnFiltrarLikes;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBiografia;
+        private System.Windows.Forms.Button btnContacto;
     }
 }
