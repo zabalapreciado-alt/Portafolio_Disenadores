@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +116,7 @@
             // dgvProyectos
             // 
             this.dgvProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProyectos.Location = new System.Drawing.Point(20, 234);
+            this.dgvProyectos.Location = new System.Drawing.Point(25, 215);
             this.dgvProyectos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProyectos.Name = "dgvProyectos";
             this.dgvProyectos.RowHeadersWidth = 51;
@@ -164,12 +165,23 @@
             this.pbImagen.TabIndex = 3;
             this.pbImagen.TabStop = false;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(582, 449);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(134, 24);
+            this.btnVolver.TabIndex = 15;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FrmAdminProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(728, 485);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -206,5 +218,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -41,6 +41,7 @@
             this.btnFiltrarLikes = new System.Windows.Forms.Button();
             this.btnBiografia = new System.Windows.Forms.Button();
             this.btnContacto = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // 
             this.btnAnterior.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnterior.Location = new System.Drawing.Point(215, 263);
-            this.btnAnterior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(65, 25);
             this.btnAnterior.TabIndex = 3;
@@ -79,7 +80,7 @@
             // 
             this.btnSiguiente.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSiguiente.Location = new System.Drawing.Point(323, 263);
-            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(65, 25);
             this.btnSiguiente.TabIndex = 4;
@@ -102,7 +103,7 @@
             // 
             this.btnLike.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLike.Location = new System.Drawing.Point(62, 211);
-            this.btnLike.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLike.Margin = new System.Windows.Forms.Padding(2);
             this.btnLike.Name = "btnLike";
             this.btnLike.Size = new System.Drawing.Size(56, 19);
             this.btnLike.TabIndex = 7;
@@ -116,7 +117,7 @@
             this.lstComentarios.FormattingEnabled = true;
             this.lstComentarios.ItemHeight = 11;
             this.lstComentarios.Location = new System.Drawing.Point(471, 232);
-            this.lstComentarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstComentarios.Margin = new System.Windows.Forms.Padding(2);
             this.lstComentarios.Name = "lstComentarios";
             this.lstComentarios.Size = new System.Drawing.Size(91, 59);
             this.lstComentarios.TabIndex = 8;
@@ -125,7 +126,7 @@
             // 
             this.txtComentario.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComentario.Location = new System.Drawing.Point(471, 190);
-            this.txtComentario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtComentario.Margin = new System.Windows.Forms.Padding(2);
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(76, 19);
             this.txtComentario.TabIndex = 9;
@@ -134,7 +135,7 @@
             // 
             this.btnComentar.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComentar.Location = new System.Drawing.Point(471, 167);
-            this.btnComentar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnComentar.Margin = new System.Windows.Forms.Padding(2);
             this.btnComentar.Name = "btnComentar";
             this.btnComentar.Size = new System.Drawing.Size(66, 19);
             this.btnComentar.TabIndex = 10;
@@ -145,7 +146,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(171, 45);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(227, 162);
             this.pictureBox1.TabIndex = 0;
@@ -166,7 +167,7 @@
             // 
             this.btnBiografia.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBiografia.Location = new System.Drawing.Point(35, 332);
-            this.btnBiografia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBiografia.Margin = new System.Windows.Forms.Padding(2);
             this.btnBiografia.Name = "btnBiografia";
             this.btnBiografia.Size = new System.Drawing.Size(66, 26);
             this.btnBiografia.TabIndex = 12;
@@ -178,7 +179,7 @@
             // 
             this.btnContacto.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContacto.Location = new System.Drawing.Point(124, 332);
-            this.btnContacto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnContacto.Margin = new System.Windows.Forms.Padding(2);
             this.btnContacto.Name = "btnContacto";
             this.btnContacto.Size = new System.Drawing.Size(76, 26);
             this.btnContacto.TabIndex = 13;
@@ -186,12 +187,23 @@
             this.btnContacto.UseVisualStyleBackColor = true;
             this.btnContacto.Click += new System.EventHandler(this.btnContacto_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(482, 333);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(79, 24);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FrmGaleria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnContacto);
             this.Controls.Add(this.btnBiografia);
             this.Controls.Add(this.btnFiltrarLikes);
@@ -205,7 +217,7 @@
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmGaleria";
             this.Text = "Galeria";
             this.Load += new System.EventHandler(this.FrmGaleria_Load);
@@ -230,5 +242,6 @@
         private System.Windows.Forms.Button btnFiltrarLikes;
         private System.Windows.Forms.Button btnBiografia;
         private System.Windows.Forms.Button btnContacto;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

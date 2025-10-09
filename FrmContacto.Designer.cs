@@ -43,6 +43,7 @@
             this.btnBorrarInstagram = new System.Windows.Forms.Button();
             this.btnBorrarWhatsapp = new System.Windows.Forms.Button();
             this.btnBorrarCorreo = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtInstagram
@@ -198,12 +199,23 @@
             this.btnBorrarCorreo.UseVisualStyleBackColor = true;
             this.btnBorrarCorreo.Click += new System.EventHandler(this.btnBorrarCorreo_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(347, 288);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(79, 24);
+            this.btnVolver.TabIndex = 15;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FrmContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(485, 276);
+            this.ClientSize = new System.Drawing.Size(539, 348);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnBorrarCorreo);
             this.Controls.Add(this.btnBorrarWhatsapp);
             this.Controls.Add(this.btnBorrarInstagram);
@@ -245,5 +257,6 @@
         private System.Windows.Forms.Button btnBorrarInstagram;
         private System.Windows.Forms.Button btnBorrarWhatsapp;
         private System.Windows.Forms.Button btnBorrarCorreo;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -197,6 +197,11 @@ namespace PortafolioDiseñadores
             pbImagen.Image = null;
             rutaImagenNombre = "";
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

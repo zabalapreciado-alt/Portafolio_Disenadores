@@ -36,6 +36,7 @@
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -97,7 +98,7 @@
             this.btnEnviar.Location = new System.Drawing.Point(91, 196);
             this.btnEnviar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(56, 19);
+            this.btnEnviar.Size = new System.Drawing.Size(69, 24);
             this.btnEnviar.TabIndex = 6;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
@@ -108,11 +109,21 @@
             this.btnCancelar.Location = new System.Drawing.Point(224, 195);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(56, 19);
+            this.btnCancelar.Size = new System.Drawing.Size(71, 25);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(371, 196);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(79, 24);
+            this.btnVolver.TabIndex = 15;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // FrmNuevaOferta
             // 
@@ -120,6 +131,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.txtContacto);
@@ -146,5 +158,6 @@
         private System.Windows.Forms.TextBox txtContacto;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

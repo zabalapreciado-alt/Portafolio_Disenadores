@@ -31,6 +31,7 @@
             this.dgvOfertas = new System.Windows.Forms.DataGridView();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnRechazar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOfertas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(273, 452);
+            this.btnAceptar.Location = new System.Drawing.Point(303, 452);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(80, 37);
             this.btnAceptar.TabIndex = 1;
@@ -62,7 +63,7 @@
             // 
             // btnRechazar
             // 
-            this.btnRechazar.Location = new System.Drawing.Point(575, 452);
+            this.btnRechazar.Location = new System.Drawing.Point(514, 452);
             this.btnRechazar.Name = "btnRechazar";
             this.btnRechazar.Size = new System.Drawing.Size(80, 37);
             this.btnRechazar.TabIndex = 2;
@@ -70,12 +71,23 @@
             this.btnRechazar.UseVisualStyleBackColor = true;
             this.btnRechazar.Click += new System.EventHandler(this.btnRechazar_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(746, 452);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(98, 37);
+            this.btnVolver.TabIndex = 15;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FrmOfertasTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(879, 519);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnRechazar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgvOfertas);
@@ -93,5 +105,6 @@
         private System.Windows.Forms.DataGridView dgvOfertas;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnRechazar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }
