@@ -73,6 +73,16 @@ namespace PortafolioDiseñadores.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_23969_1280 {
+            get {
+                object obj = ResourceManager.GetObject("button-23969_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ChatGPT_Image_1_oct_2025__02_08_34_p_m_ {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT Image 1 oct 2025, 02_08_34 p.m.", resourceCulture);
@@ -116,6 +126,26 @@ namespace PortafolioDiseñadores.Properties {
         internal static System.Drawing.Bitmap png_clipart_whatsapp_computer_icons_whatsapp_text_whatsapp_icon_thumbnail {
             get {
                 object obj = ResourceManager.GetObject("png-clipart-whatsapp-computer-icons-whatsapp-text-whatsapp-icon-thumbnail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Professional_Wordmark_Logo_for_ShowArt_Portfolio {
+            get {
+                object obj = ResourceManager.GetObject("Professional Wordmark Logo for ShowArt Portfolio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Professional_Wordmark_Logo_for_ShowArt_Portfolio_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Professional_Wordmark_Logo_for_ShowArt_Portfolio-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -189,6 +189,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DbPortafolio.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\button-23969_1280.png" />
+    <None Include="Resources\Professional_Wordmark_Logo_for_ShowArt_Portfolio-removebg-preview.png" />
+    <None Include="Resources\Professional Wordmark Logo for ShowArt Portfolio.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
