@@ -38,7 +38,7 @@ namespace PortafolioDiseñadores
             btnContacto.Visible = (Rol == "admin" || Rol == "diseñador");
             btnAdminProyectos.Visible = (Rol == "admin" || Rol == "diseñador");
             btnOfertas.Visible = (Rol == "admin" || Rol == "diseñador");
-            btnNuevaOferta.Visible = (Rol == "reclutador");
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

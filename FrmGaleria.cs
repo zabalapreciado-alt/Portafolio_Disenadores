@@ -354,5 +354,11 @@ namespace PortafolioDiseñadores
         {
             this.Close();
         }
+
+        private void btnNuevaOferta_Click(object sender, EventArgs e)
+        {
+            FrmNuevaOferta f = new FrmNuevaOferta();
+            f.ShowDialog();
+        }
     }
 }

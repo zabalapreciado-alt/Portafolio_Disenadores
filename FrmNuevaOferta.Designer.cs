@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAsunto = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.TextBox();
@@ -39,30 +39,30 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblAsunto
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Titulo";
+            this.lblAsunto.AutoSize = true;
+            this.lblAsunto.Location = new System.Drawing.Point(33, 28);
+            this.lblAsunto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAsunto.Name = "lblAsunto";
+            this.lblAsunto.Size = new System.Drawing.Size(40, 13);
+            this.lblAsunto.TabIndex = 0;
+            this.lblAsunto.Text = "Asunto";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 79);
+            this.label2.Location = new System.Drawing.Point(33, 79);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Descripcion";
+            this.label2.Text = "Mensaje";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 119);
+            this.label3.Location = new System.Drawing.Point(33, 207);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
@@ -71,31 +71,33 @@
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(100, 39);
+            this.txtTitulo.Location = new System.Drawing.Point(100, 25);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTitulo.Multiline = true;
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(76, 20);
+            this.txtTitulo.Size = new System.Drawing.Size(254, 34);
             this.txtTitulo.TabIndex = 3;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(100, 79);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(76, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(254, 112);
             this.txtDescripcion.TabIndex = 4;
             // 
             // txtContacto
             // 
-            this.txtContacto.Location = new System.Drawing.Point(100, 119);
+            this.txtContacto.Location = new System.Drawing.Point(100, 204);
             this.txtContacto.Margin = new System.Windows.Forms.Padding(2);
             this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(76, 20);
+            this.txtContacto.Size = new System.Drawing.Size(167, 20);
             this.txtContacto.TabIndex = 5;
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(91, 196);
+            this.btnEnviar.Location = new System.Drawing.Point(54, 246);
             this.btnEnviar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(69, 24);
@@ -106,7 +108,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(224, 195);
+            this.btnCancelar.Location = new System.Drawing.Point(195, 245);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(71, 25);
@@ -117,7 +119,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(371, 196);
+            this.btnVolver.Location = new System.Drawing.Point(347, 246);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(79, 24);
             this.btnVolver.TabIndex = 15;
@@ -130,7 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(465, 301);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEnviar);
@@ -139,7 +141,7 @@
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAsunto);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmNuevaOferta";
             this.Text = "Nueva Oferta";
@@ -150,7 +152,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAsunto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTitulo;

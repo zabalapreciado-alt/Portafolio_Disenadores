@@ -42,6 +42,7 @@
             this.btnBiografia = new System.Windows.Forms.Button();
             this.btnContacto = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnNuevaOferta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,12 +198,25 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnNuevaOferta
+            // 
+            this.btnNuevaOferta.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaOferta.Location = new System.Drawing.Point(215, 333);
+            this.btnNuevaOferta.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevaOferta.Name = "btnNuevaOferta";
+            this.btnNuevaOferta.Size = new System.Drawing.Size(115, 26);
+            this.btnNuevaOferta.TabIndex = 15;
+            this.btnNuevaOferta.Text = "Enviar Oferta";
+            this.btnNuevaOferta.UseVisualStyleBackColor = true;
+            this.btnNuevaOferta.Click += new System.EventHandler(this.btnNuevaOferta_Click);
+            // 
             // FrmGaleria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnNuevaOferta);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnContacto);
             this.Controls.Add(this.btnBiografia);
@@ -243,5 +257,6 @@
         private System.Windows.Forms.Button btnBiografia;
         private System.Windows.Forms.Button btnContacto;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnNuevaOferta;
     }
 }
