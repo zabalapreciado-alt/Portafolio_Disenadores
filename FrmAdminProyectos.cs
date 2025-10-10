@@ -202,6 +202,11 @@ namespace PortafolioDiseñadores
         {
             this.Close();
         }
+
+        private void txtCategoria_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -49,16 +49,16 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Impact", 10F);
             this.lblTitulo.Location = new System.Drawing.Point(32, 57);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(33, 11);
+            this.lblTitulo.Size = new System.Drawing.Size(42, 18);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "label1";
             // 
             // lblDescripcion
             // 
-            this.lblDescripcion.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Font = new System.Drawing.Font("Impact", 10F);
             this.lblDescripcion.Location = new System.Drawing.Point(32, 92);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(124, 75);
@@ -67,7 +67,7 @@
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior.Font = new System.Drawing.Font("Impact", 13F);
             this.btnAnterior.Location = new System.Drawing.Point(215, 263);
             this.btnAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnterior.Name = "btnAnterior";
@@ -79,7 +79,7 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.Font = new System.Drawing.Font("Impact", 13F);
             this.btnSiguiente.Location = new System.Drawing.Point(323, 263);
             this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btnSiguiente.Name = "btnSiguiente";
@@ -92,21 +92,21 @@
             // lblLikes
             // 
             this.lblLikes.AutoSize = true;
-            this.lblLikes.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLikes.Font = new System.Drawing.Font("Impact", 13F);
             this.lblLikes.Location = new System.Drawing.Point(169, 214);
             this.lblLikes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLikes.Name = "lblLikes";
-            this.lblLikes.Size = new System.Drawing.Size(33, 11);
+            this.lblLikes.Size = new System.Drawing.Size(54, 22);
             this.lblLikes.TabIndex = 6;
             this.lblLikes.Text = "label1";
             // 
             // btnLike
             // 
-            this.btnLike.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLike.Location = new System.Drawing.Point(62, 211);
+            this.btnLike.Font = new System.Drawing.Font("Impact", 13F);
+            this.btnLike.Location = new System.Drawing.Point(62, 199);
             this.btnLike.Margin = new System.Windows.Forms.Padding(2);
             this.btnLike.Name = "btnLike";
-            this.btnLike.Size = new System.Drawing.Size(56, 19);
+            this.btnLike.Size = new System.Drawing.Size(70, 37);
             this.btnLike.TabIndex = 7;
             this.btnLike.Text = "Like";
             this.btnLike.UseVisualStyleBackColor = true;
@@ -114,31 +114,31 @@
             // 
             // lstComentarios
             // 
-            this.lstComentarios.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstComentarios.Font = new System.Drawing.Font("Impact", 10F);
             this.lstComentarios.FormattingEnabled = true;
-            this.lstComentarios.ItemHeight = 11;
-            this.lstComentarios.Location = new System.Drawing.Point(471, 232);
+            this.lstComentarios.ItemHeight = 17;
+            this.lstComentarios.Location = new System.Drawing.Point(471, 199);
             this.lstComentarios.Margin = new System.Windows.Forms.Padding(2);
             this.lstComentarios.Name = "lstComentarios";
-            this.lstComentarios.Size = new System.Drawing.Size(91, 59);
+            this.lstComentarios.Size = new System.Drawing.Size(102, 106);
             this.lstComentarios.TabIndex = 8;
             // 
             // txtComentario
             // 
-            this.txtComentario.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComentario.Location = new System.Drawing.Point(471, 190);
+            this.txtComentario.Font = new System.Drawing.Font("Impact", 10F);
+            this.txtComentario.Location = new System.Drawing.Point(471, 171);
             this.txtComentario.Margin = new System.Windows.Forms.Padding(2);
             this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(76, 19);
+            this.txtComentario.Size = new System.Drawing.Size(102, 24);
             this.txtComentario.TabIndex = 9;
             // 
             // btnComentar
             // 
-            this.btnComentar.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComentar.Location = new System.Drawing.Point(471, 167);
+            this.btnComentar.Font = new System.Drawing.Font("Impact", 12F);
+            this.btnComentar.Location = new System.Drawing.Point(471, 136);
             this.btnComentar.Margin = new System.Windows.Forms.Padding(2);
             this.btnComentar.Name = "btnComentar";
-            this.btnComentar.Size = new System.Drawing.Size(66, 19);
+            this.btnComentar.Size = new System.Drawing.Size(102, 31);
             this.btnComentar.TabIndex = 10;
             this.btnComentar.Text = "Comentar";
             this.btnComentar.UseVisualStyleBackColor = true;
@@ -155,10 +155,10 @@
             // 
             // btnFiltrarLikes
             // 
-            this.btnFiltrarLikes.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrarLikes.Location = new System.Drawing.Point(488, 45);
+            this.btnFiltrarLikes.Font = new System.Drawing.Font("Impact", 10F);
+            this.btnFiltrarLikes.Location = new System.Drawing.Point(471, 45);
             this.btnFiltrarLikes.Name = "btnFiltrarLikes";
-            this.btnFiltrarLikes.Size = new System.Drawing.Size(102, 25);
+            this.btnFiltrarLikes.Size = new System.Drawing.Size(102, 53);
             this.btnFiltrarLikes.TabIndex = 11;
             this.btnFiltrarLikes.Text = "Ordenar por Likes";
             this.btnFiltrarLikes.UseVisualStyleBackColor = true;
@@ -166,11 +166,11 @@
             // 
             // btnBiografia
             // 
-            this.btnBiografia.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBiografia.Location = new System.Drawing.Point(35, 332);
+            this.btnBiografia.Font = new System.Drawing.Font("Impact", 13F);
+            this.btnBiografia.Location = new System.Drawing.Point(35, 326);
             this.btnBiografia.Margin = new System.Windows.Forms.Padding(2);
             this.btnBiografia.Name = "btnBiografia";
-            this.btnBiografia.Size = new System.Drawing.Size(66, 26);
+            this.btnBiografia.Size = new System.Drawing.Size(97, 32);
             this.btnBiografia.TabIndex = 12;
             this.btnBiografia.Text = "Biografia";
             this.btnBiografia.UseVisualStyleBackColor = true;
@@ -178,11 +178,11 @@
             // 
             // btnContacto
             // 
-            this.btnContacto.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContacto.Location = new System.Drawing.Point(124, 332);
+            this.btnContacto.Font = new System.Drawing.Font("Impact", 13F);
+            this.btnContacto.Location = new System.Drawing.Point(136, 326);
             this.btnContacto.Margin = new System.Windows.Forms.Padding(2);
             this.btnContacto.Name = "btnContacto";
-            this.btnContacto.Size = new System.Drawing.Size(76, 26);
+            this.btnContacto.Size = new System.Drawing.Size(87, 32);
             this.btnContacto.TabIndex = 13;
             this.btnContacto.Text = "Contacto";
             this.btnContacto.UseVisualStyleBackColor = true;
@@ -190,9 +190,10 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(482, 333);
+            this.btnVolver.Font = new System.Drawing.Font("Impact", 13F);
+            this.btnVolver.Location = new System.Drawing.Point(471, 326);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(79, 24);
+            this.btnVolver.Size = new System.Drawing.Size(102, 30);
             this.btnVolver.TabIndex = 14;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -200,11 +201,11 @@
             // 
             // btnNuevaOferta
             // 
-            this.btnNuevaOferta.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaOferta.Location = new System.Drawing.Point(215, 333);
+            this.btnNuevaOferta.Font = new System.Drawing.Font("Impact", 13F);
+            this.btnNuevaOferta.Location = new System.Drawing.Point(227, 327);
             this.btnNuevaOferta.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevaOferta.Name = "btnNuevaOferta";
-            this.btnNuevaOferta.Size = new System.Drawing.Size(115, 26);
+            this.btnNuevaOferta.Size = new System.Drawing.Size(115, 32);
             this.btnNuevaOferta.TabIndex = 15;
             this.btnNuevaOferta.Text = "Enviar Oferta";
             this.btnNuevaOferta.UseVisualStyleBackColor = true;
