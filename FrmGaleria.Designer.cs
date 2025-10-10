@@ -219,7 +219,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmGaleria";
-            this.Text = "Galeria";
+            this.Text = "Proyectos";
             this.Load += new System.EventHandler(this.FrmGaleria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

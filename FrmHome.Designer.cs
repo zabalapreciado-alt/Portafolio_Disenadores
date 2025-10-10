@@ -83,7 +83,7 @@
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Impact", 12F);
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(481, 501);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(429, 501);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(126, 37);
@@ -192,9 +192,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PortafolioDiseñadores.Properties.Resources.Professional_Wordmark_Logo_for_ShowArt_Portfolio_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(317, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(301, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(302, 177);
+            this.pictureBox1.Size = new System.Drawing.Size(254, 153);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -215,7 +215,7 @@
             this.btnGaleria.Name = "btnGaleria";
             this.btnGaleria.Size = new System.Drawing.Size(163, 35);
             this.btnGaleria.TabIndex = 3;
-            this.btnGaleria.Text = "Galería";
+            this.btnGaleria.Text = "Proyectos";
             this.btnGaleria.UseVisualStyleBackColor = false;
             this.btnGaleria.Click += new System.EventHandler(this.btnGaleria_Click);
             // 
@@ -236,7 +236,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(619, 561);
+            this.ClientSize = new System.Drawing.Size(569, 561);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnContacto);
             this.Controls.Add(this.btnGaleria);
