@@ -152,7 +152,7 @@
             this.dgvProyectos.Name = "dgvProyectos";
             this.dgvProyectos.RowHeadersWidth = 51;
             this.dgvProyectos.RowTemplate.Height = 24;
-            this.dgvProyectos.Size = new System.Drawing.Size(692, 225);
+            this.dgvProyectos.Size = new System.Drawing.Size(677, 225);
             this.dgvProyectos.TabIndex = 8;
             this.dgvProyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProyectos_CellContentClick);
             // 

@@ -113,7 +113,7 @@
             this.btnCrearInstagram.Name = "btnCrearInstagram";
             this.btnCrearInstagram.Size = new System.Drawing.Size(67, 26);
             this.btnCrearInstagram.TabIndex = 6;
-            this.btnCrearInstagram.Text = "Crear";
+            this.btnCrearInstagram.Text = "Guardar";
             this.btnCrearInstagram.UseVisualStyleBackColor = false;
             this.btnCrearInstagram.Click += new System.EventHandler(this.btnCrearInstagram_Click);
             // 
@@ -130,7 +130,7 @@
             this.btnCrearWhatsapp.Name = "btnCrearWhatsapp";
             this.btnCrearWhatsapp.Size = new System.Drawing.Size(67, 27);
             this.btnCrearWhatsapp.TabIndex = 7;
-            this.btnCrearWhatsapp.Text = "Crear";
+            this.btnCrearWhatsapp.Text = "Guardar";
             this.btnCrearWhatsapp.UseVisualStyleBackColor = false;
             this.btnCrearWhatsapp.Click += new System.EventHandler(this.btnCrearWhatsapp_Click);
             // 
@@ -147,7 +147,7 @@
             this.btnCrearCorreo.Name = "btnCrearCorreo";
             this.btnCrearCorreo.Size = new System.Drawing.Size(67, 27);
             this.btnCrearCorreo.TabIndex = 8;
-            this.btnCrearCorreo.Text = "Crear";
+            this.btnCrearCorreo.Text = "Guardar";
             this.btnCrearCorreo.UseVisualStyleBackColor = false;
             this.btnCrearCorreo.Click += new System.EventHandler(this.btnCrearCorreo_Click);
             // 

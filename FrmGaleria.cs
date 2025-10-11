@@ -39,6 +39,15 @@ namespace PortafolioDiseñadores
                 if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
                 pictureBox1.Image = null;
             }
+            // 🔹 Validar si el usuario es reclutador
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Reclutadores WHERE UsuarioId=@u", con);
+                cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                int esReclutador = Convert.ToInt32(cmd.ExecuteScalar());
+
+                btnNuevaOferta.Visible = (esReclutador > 0); // Solo visible si es reclutador
+            }
         }
 
         private void CargarProyectos(bool ordenarPorLikes = false)
@@ -357,7 +366,36 @@ namespace PortafolioDiseñadores
 
         private void btnNuevaOferta_Click(object sender, EventArgs e)
         {
+            int diseñadorId = ObtenerDiseñadorActualId();
+            if (diseñadorId == 0)
+            {
+                MessageBox.Show("No se encontró el diseñador del proyecto actual.");
+                return;
+            }
+
+            if (FrmHome.UsuarioId <= 0)
+            {
+                MessageBox.Show("Debes iniciar sesión para enviar una oferta.", "Acceso restringido",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Reclutadores WHERE UsuarioId=@u", con);
+                cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                int esReclutador = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (esReclutador == 0)
+                {
+                    MessageBox.Show("Solo los reclutadores pueden enviar ofertas.", "Acceso restringido",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
             FrmNuevaOferta f = new FrmNuevaOferta();
+            f.DiseñadorId = diseñadorId; // 🔹 Pasar el diseñador del proyecto actual
             f.ShowDialog();
         }
     }

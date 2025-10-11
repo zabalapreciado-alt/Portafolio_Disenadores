@@ -75,11 +75,6 @@ namespace PortafolioDiseñadores
             f.ShowDialog();
         }
 
-        private void btnNuevaOferta_Click(object sender, EventArgs e)
-        {
-            FrmNuevaOferta f = new FrmNuevaOferta();
-            f.ShowDialog();
-        }
 
         private void btnAcercaDe_Click(object sender, EventArgs e)
         {
@@ -98,17 +93,6 @@ namespace PortafolioDiseñadores
 
         }
 
-        private bool EsDiseñador(int usuarioId)
-        {
-            using (SqlConnection con = new Conexion().Abrir())
-            {
-                SqlCommand cmd = new SqlCommand(
-                    "SELECT COUNT(*) FROM Diseñadores WHERE UsuarioId=@u", con);
-                cmd.Parameters.AddWithValue("@u", usuarioId);
-
-                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
-            }
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -120,9 +104,11 @@ namespace PortafolioDiseñadores
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void btnBuscarDiseñador_Click(object sender, EventArgs e)
+        {
+            frmBuscarDiseñador f = new frmBuscarDiseñador();
+            f.ShowDialog();
         }
     }
 }

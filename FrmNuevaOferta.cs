@@ -23,7 +23,7 @@ namespace PortafolioDiseñadores
         {
             using (SqlConnection con = new Conexion().Abrir())
             {
-                // 1. Obtener el ReclutadorId real desde la tabla Reclutadores
+                // Obtener ReclutadorId desde el UsuarioId actual
                 string q = "SELECT Id FROM Reclutadores WHERE UsuarioId = @u";
                 SqlCommand cmdGet = new SqlCommand(q, con);
                 cmdGet.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
@@ -37,14 +37,21 @@ namespace PortafolioDiseñadores
 
                 int reclutadorId = Convert.ToInt32(res);
 
-                // 2. Insertar la oferta con el ReclutadorId correcto
+                // Validar que haya DiseñadorId recibido
+                if (DiseñadorId <= 0)
+                {
+                    MessageBox.Show("No se encontró el diseñador para esta oferta.");
+                    return;
+                }
+
+                // Insertar la nueva oferta
                 string sql = @"INSERT INTO OfertasTrabajo 
                        (ReclutadorId, DiseñadorId, Titulo, Descripcion, Contacto, Estado, Fecha) 
                        VALUES (@r, @d, @t, @desc, @c, 'Pendiente', GETDATE())";
 
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@r", reclutadorId);
-                cmd.Parameters.AddWithValue("@d", 2); // DiseñadorId de Maria Clara (o dinámico)
+                cmd.Parameters.AddWithValue("@d", DiseñadorId); // 🔹 Dinámico
                 cmd.Parameters.AddWithValue("@t", txtTitulo.Text.Trim());
                 cmd.Parameters.AddWithValue("@desc", txtDescripcion.Text.Trim());
                 cmd.Parameters.AddWithValue("@c", txtContacto.Text.Trim());
@@ -54,6 +61,8 @@ namespace PortafolioDiseñadores
             MessageBox.Show("Oferta enviada correctamente.");
             this.Close();
         }
+        public int DiseñadorId { get; set; } // 🔹 Recibe el diseñador desde frmGaleria
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

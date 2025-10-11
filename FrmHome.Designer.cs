@@ -35,8 +35,9 @@
             this.btnOfertas = new System.Windows.Forms.Button();
             this.btnAcercaDe = new System.Windows.Forms.Button();
             this.btnContacto = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGaleria = new System.Windows.Forms.Button();
+            this.btnBuscarDiseñador = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -140,7 +141,7 @@
             this.btnAcercaDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcercaDe.Font = new System.Drawing.Font("Impact", 13F);
             this.btnAcercaDe.ForeColor = System.Drawing.Color.White;
-            this.btnAcercaDe.Location = new System.Drawing.Point(28, 265);
+            this.btnAcercaDe.Location = new System.Drawing.Point(28, 312);
             this.btnAcercaDe.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcercaDe.Name = "btnAcercaDe";
             this.btnAcercaDe.Size = new System.Drawing.Size(163, 35);
@@ -159,7 +160,7 @@
             this.btnContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContacto.Font = new System.Drawing.Font("Impact", 13F);
             this.btnContacto.ForeColor = System.Drawing.Color.White;
-            this.btnContacto.Location = new System.Drawing.Point(28, 336);
+            this.btnContacto.Location = new System.Drawing.Point(28, 366);
             this.btnContacto.Margin = new System.Windows.Forms.Padding(2);
             this.btnContacto.Name = "btnContacto";
             this.btnContacto.Size = new System.Drawing.Size(163, 35);
@@ -168,16 +169,6 @@
             this.btnContacto.UseVisualStyleBackColor = false;
             this.btnContacto.Visible = false;
             this.btnContacto.Click += new System.EventHandler(this.btnContacto_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PortafolioDiseñadores.Properties.Resources.Professional_Wordmark_Logo_for_ShowArt_Portfolio_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(285, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(247, 142);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // btnGaleria
             // 
@@ -199,6 +190,35 @@
             this.btnGaleria.UseVisualStyleBackColor = false;
             this.btnGaleria.Click += new System.EventHandler(this.btnGaleria_Click);
             // 
+            // btnBuscarDiseñador
+            // 
+            this.btnBuscarDiseñador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnBuscarDiseñador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarDiseñador.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.btnBuscarDiseñador.FlatAppearance.BorderSize = 0;
+            this.btnBuscarDiseñador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnBuscarDiseñador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarDiseñador.Font = new System.Drawing.Font("Impact", 13F);
+            this.btnBuscarDiseñador.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarDiseñador.Location = new System.Drawing.Point(28, 261);
+            this.btnBuscarDiseñador.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarDiseñador.Name = "btnBuscarDiseñador";
+            this.btnBuscarDiseñador.Size = new System.Drawing.Size(163, 35);
+            this.btnBuscarDiseñador.TabIndex = 13;
+            this.btnBuscarDiseñador.Text = "Buscar Diseñador";
+            this.btnBuscarDiseñador.UseVisualStyleBackColor = false;
+            this.btnBuscarDiseñador.Click += new System.EventHandler(this.btnBuscarDiseñador_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PortafolioDiseñadores.Properties.Resources.Professional_Wordmark_Logo_for_ShowArt_Portfolio_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(285, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(247, 142);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -217,6 +237,7 @@
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(535, 495);
+            this.Controls.Add(this.btnBuscarDiseñador);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnContacto);
             this.Controls.Add(this.btnGaleria);
@@ -249,6 +270,7 @@
         private System.Windows.Forms.Button btnContacto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnBuscarDiseñador;
     }
 }
 
