@@ -20,10 +20,6 @@ namespace PortafolioDiseñadores
         {
             InitializeComponent();
         }
-        private void FrmAdminProyectos_Load(object sender, EventArgs e)
-        {
-            CargarProyectos();
-        }
 
         private void CargarProyectos()
         {
