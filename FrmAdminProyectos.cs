@@ -27,14 +27,36 @@ namespace PortafolioDiseñadores
 
         private void CargarProyectos()
         {
+            
+
             try
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
+                    // Verificamos que haya usuario logueado
+                    if (FrmHome.UsuarioId == 0)
+                    {
+                        MessageBox.Show("Debes iniciar sesión como diseñador.");
+                        return;
+                    }
+
+                    // Obtenemos el ID del diseñador vinculado al usuario
+                    int disenadorId = ObtenerDisenadorId(con, FrmHome.UsuarioId);
+
+                    if (disenadorId == 0)
+                    {
+                        MessageBox.Show("No se encontró el perfil del diseñador.");
+                        return;
+                    }
+
                     string sql = @"SELECT p.Id, d.Nombre AS Diseñador, p.Titulo, p.Descripcion, p.Categoria, p.RutaImagen
-                                   FROM Proyectos p
-                                   JOIN Diseñadores d ON p.DiseñadorId = d.Id";
+                           FROM Proyectos p
+                           JOIN Diseñadores d ON p.DiseñadorId = d.Id
+                           WHERE p.DiseñadorId = @disenadorId";
+
                     SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                    da.SelectCommand.Parameters.AddWithValue("@disenadorId", disenadorId);
+
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dgvProyectos.DataSource = dt;
@@ -45,6 +67,8 @@ namespace PortafolioDiseñadores
                 MessageBox.Show("Error cargando proyectos: " + ex.Message);
             }
         }
+
+        
 
         // Copia la imagen a la carpeta Imagenes del proyecto y guarda sólo el nombre
 
@@ -173,21 +197,16 @@ namespace PortafolioDiseñadores
         }
         private int ObtenerDisenadorId(SqlConnection con, int usuarioId)
         {
+            
+
             string sql = "SELECT Id FROM Diseñadores WHERE UsuarioId = @u";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.AddWithValue("@u", usuarioId);
             object res = cmd.ExecuteScalar();
             return (res == null) ? 0 : Convert.ToInt32(res);
+
         }
 
-        private void dgvProyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-            DataGridViewRow row = dgvProyectos.Rows[e.RowIndex];
-            txtTitulo.Text = row.Cells["Titulo"].Value?.ToString();
-            txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
-            txtCategoria.Text = row.Cells["Categoria"].Value?.ToString();
-        }
 
         private void LimpiarCampos()
         {
@@ -206,6 +225,45 @@ namespace PortafolioDiseñadores
         private void txtCategoria_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmAdminProyectos_Load_1(object sender, EventArgs e)
+        {
+            CargarProyectos();
+        }
+
+        private void dgvProyectos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; // evita errores al hacer clic en encabezado
+
+            DataGridViewRow row = dgvProyectos.Rows[e.RowIndex];
+
+            // Cargar los datos en los campos de texto
+            txtTitulo.Text = row.Cells["Titulo"].Value?.ToString();
+            txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
+            txtCategoria.Text = row.Cells["Categoria"].Value?.ToString();
+
+            // Obtener la ruta de la imagen desde la columna 'RutaImagen'
+            string nombreImagen = row.Cells["RutaImagen"].Value?.ToString();
+
+            if (!string.IsNullOrEmpty(nombreImagen))
+            {
+                string rutaCompleta = Path.Combine(Application.StartupPath, "Imagenes", nombreImagen);
+                if (File.Exists(rutaCompleta))
+                {
+                    pbImagen.Image = Image.FromFile(rutaCompleta);
+                    pbImagen.SizeMode = PictureBoxSizeMode.Zoom; // para que se ajuste bien
+                }
+                else
+                {
+                    pbImagen.Image = null;
+                    MessageBox.Show("La imagen no se encontró en la carpeta del proyecto.");
+                }
+            }
+            else
+            {
+                pbImagen.Image = null;
+            }
         }
     }
 }

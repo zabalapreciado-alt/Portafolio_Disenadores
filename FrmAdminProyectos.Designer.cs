@@ -154,7 +154,7 @@
             this.dgvProyectos.RowTemplate.Height = 24;
             this.dgvProyectos.Size = new System.Drawing.Size(677, 225);
             this.dgvProyectos.TabIndex = 8;
-            this.dgvProyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProyectos_CellContentClick);
+            this.dgvProyectos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProyectos_CellClick);
             // 
             // label1
             // 
@@ -238,6 +238,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAdminProyectos";
             this.Text = "Administrador De Proyectos";
+            this.Load += new System.EventHandler(this.FrmAdminProyectos_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
