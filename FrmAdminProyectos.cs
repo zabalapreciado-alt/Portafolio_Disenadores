@@ -29,21 +29,21 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    // Verificamos que haya usuario logueado
-                    if (FrmHome.UsuarioId == 0)
-                    {
-                        MessageBox.Show("Debes iniciar sesión como diseñador.");
-                        return;
-                    }
+                    //// Verificamos que haya usuario logueado
+                    //if (FrmHome.UsuarioId == 0)
+                    //{
+                    //    MessageBox.Show("Debes iniciar sesión como diseñador.");
+                    //    return;
+                    //}
 
                     // Obtenemos el ID del diseñador vinculado al usuario
                     int disenadorId = ObtenerDisenadorId(con, FrmHome.UsuarioId);
 
-                    if (disenadorId == 0)
-                    {
-                        MessageBox.Show("No se encontró el perfil del diseñador.");
-                        return;
-                    }
+                    //if (disenadorId == 0)
+                    //{
+                    //    MessageBox.Show("No se encontró el perfil del diseñador.");
+                    //    return;
+                    //}
 
                     string sql = @"SELECT p.Id, d.Nombre AS Diseñador, p.Titulo, p.Descripcion, p.Categoria, p.RutaImagen
                            FROM Proyectos p
@@ -70,11 +70,11 @@ namespace PortafolioDiseñadores
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (FrmHome.UsuarioId == 0)
-            {
-                MessageBox.Show("Debes iniciar sesión como diseñador o admin.");
-                return;
-            }
+            //if (FrmHome.UsuarioId == 0)
+            //{
+            //    MessageBox.Show("Debes iniciar sesión como diseñador o admin.");
+            //    return;
+            //}
 
             try
             {
