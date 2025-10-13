@@ -66,7 +66,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(134, 23);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(118, 29);
+            this.txtUsuario.Size = new System.Drawing.Size(140, 29);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtContraseña
@@ -75,7 +75,7 @@
             this.txtContraseña.Location = new System.Drawing.Point(134, 56);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(118, 29);
+            this.txtContraseña.Size = new System.Drawing.Size(140, 29);
             this.txtContraseña.TabIndex = 3;
             // 
             // btnLogin
@@ -87,7 +87,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Impact", 12F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(71, 110);
+            this.btnLogin.Location = new System.Drawing.Point(91, 110);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(93, 28);
@@ -105,7 +105,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Impact", 12F);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(192, 110);
+            this.btnCancelar.Location = new System.Drawing.Point(204, 110);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 28);

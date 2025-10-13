@@ -67,26 +67,36 @@
             // 
             // btnAnterior
             // 
+            this.btnAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnAnterior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnterior.FlatAppearance.BorderSize = 0;
+            this.btnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnterior.Font = new System.Drawing.Font("Impact", 13F);
-            this.btnAnterior.Location = new System.Drawing.Point(215, 263);
+            this.btnAnterior.Location = new System.Drawing.Point(185, 251);
             this.btnAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(65, 25);
+            this.btnAnterior.Size = new System.Drawing.Size(65, 33);
             this.btnAnterior.TabIndex = 3;
-            this.btnAnterior.Text = "Anterior";
-            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Text = "🡸";
+            this.btnAnterior.UseVisualStyleBackColor = false;
             this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnSiguiente
             // 
+            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnSiguiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.Font = new System.Drawing.Font("Impact", 13F);
-            this.btnSiguiente.Location = new System.Drawing.Point(323, 263);
+            this.btnSiguiente.Location = new System.Drawing.Point(312, 251);
             this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(65, 25);
+            this.btnSiguiente.Size = new System.Drawing.Size(65, 33);
             this.btnSiguiente.TabIndex = 4;
-            this.btnSiguiente.Text = "Siguiente";
-            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Text = "🡺";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // lblLikes
@@ -102,46 +112,61 @@
             // 
             // btnLike
             // 
+            this.btnLike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnLike.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLike.FlatAppearance.BorderSize = 0;
+            this.btnLike.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnLike.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLike.Font = new System.Drawing.Font("Impact", 13F);
-            this.btnLike.Location = new System.Drawing.Point(62, 199);
+            this.btnLike.Location = new System.Drawing.Point(72, 206);
             this.btnLike.Margin = new System.Windows.Forms.Padding(2);
             this.btnLike.Name = "btnLike";
-            this.btnLike.Size = new System.Drawing.Size(70, 37);
+            this.btnLike.Size = new System.Drawing.Size(55, 37);
             this.btnLike.TabIndex = 7;
-            this.btnLike.Text = "Like";
-            this.btnLike.UseVisualStyleBackColor = true;
+            this.btnLike.Text = "👍";
+            this.btnLike.UseVisualStyleBackColor = false;
             this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
             // 
             // lstComentarios
             // 
+            this.lstComentarios.BackColor = System.Drawing.Color.Cyan;
+            this.lstComentarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstComentarios.Font = new System.Drawing.Font("Impact", 10F);
             this.lstComentarios.FormattingEnabled = true;
             this.lstComentarios.ItemHeight = 17;
-            this.lstComentarios.Location = new System.Drawing.Point(471, 199);
+            this.lstComentarios.Location = new System.Drawing.Point(471, 178);
             this.lstComentarios.Margin = new System.Windows.Forms.Padding(2);
             this.lstComentarios.Name = "lstComentarios";
-            this.lstComentarios.Size = new System.Drawing.Size(102, 106);
+            this.lstComentarios.Size = new System.Drawing.Size(102, 102);
             this.lstComentarios.TabIndex = 8;
             // 
             // txtComentario
             // 
+            this.txtComentario.BackColor = System.Drawing.Color.White;
+            this.txtComentario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComentario.Font = new System.Drawing.Font("Impact", 10F);
-            this.txtComentario.Location = new System.Drawing.Point(471, 171);
+            this.txtComentario.Location = new System.Drawing.Point(471, 150);
             this.txtComentario.Margin = new System.Windows.Forms.Padding(2);
             this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(102, 24);
+            this.txtComentario.Size = new System.Drawing.Size(102, 17);
             this.txtComentario.TabIndex = 9;
             // 
             // btnComentar
             // 
+            this.btnComentar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnComentar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnComentar.FlatAppearance.BorderSize = 0;
+            this.btnComentar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnComentar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComentar.Font = new System.Drawing.Font("Impact", 12F);
-            this.btnComentar.Location = new System.Drawing.Point(471, 136);
+            this.btnComentar.ForeColor = System.Drawing.Color.White;
+            this.btnComentar.Location = new System.Drawing.Point(471, 115);
             this.btnComentar.Margin = new System.Windows.Forms.Padding(2);
             this.btnComentar.Name = "btnComentar";
             this.btnComentar.Size = new System.Drawing.Size(102, 31);
             this.btnComentar.TabIndex = 10;
             this.btnComentar.Text = "Comentar";
-            this.btnComentar.UseVisualStyleBackColor = true;
+            this.btnComentar.UseVisualStyleBackColor = false;
             this.btnComentar.Click += new System.EventHandler(this.btnComentar_Click);
             // 
             // pictureBox1
@@ -155,60 +180,90 @@
             // 
             // btnFiltrarLikes
             // 
+            this.btnFiltrarLikes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnFiltrarLikes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltrarLikes.FlatAppearance.BorderSize = 0;
+            this.btnFiltrarLikes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnFiltrarLikes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrarLikes.Font = new System.Drawing.Font("Impact", 10F);
+            this.btnFiltrarLikes.ForeColor = System.Drawing.Color.White;
             this.btnFiltrarLikes.Location = new System.Drawing.Point(471, 45);
             this.btnFiltrarLikes.Name = "btnFiltrarLikes";
             this.btnFiltrarLikes.Size = new System.Drawing.Size(102, 53);
             this.btnFiltrarLikes.TabIndex = 11;
             this.btnFiltrarLikes.Text = "Ordenar por Likes";
-            this.btnFiltrarLikes.UseVisualStyleBackColor = true;
+            this.btnFiltrarLikes.UseVisualStyleBackColor = false;
             this.btnFiltrarLikes.Click += new System.EventHandler(this.btnFiltrarLikes_Click);
             // 
             // btnBiografia
             // 
+            this.btnBiografia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnBiografia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBiografia.FlatAppearance.BorderSize = 0;
+            this.btnBiografia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnBiografia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBiografia.Font = new System.Drawing.Font("Impact", 13F);
-            this.btnBiografia.Location = new System.Drawing.Point(35, 326);
+            this.btnBiografia.ForeColor = System.Drawing.Color.White;
+            this.btnBiografia.Location = new System.Drawing.Point(30, 322);
             this.btnBiografia.Margin = new System.Windows.Forms.Padding(2);
             this.btnBiografia.Name = "btnBiografia";
             this.btnBiografia.Size = new System.Drawing.Size(97, 32);
             this.btnBiografia.TabIndex = 12;
             this.btnBiografia.Text = "Biografia";
-            this.btnBiografia.UseVisualStyleBackColor = true;
+            this.btnBiografia.UseVisualStyleBackColor = false;
             this.btnBiografia.Click += new System.EventHandler(this.btnBiografia_Click);
             // 
             // btnContacto
             // 
+            this.btnContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnContacto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnContacto.FlatAppearance.BorderSize = 0;
+            this.btnContacto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContacto.Font = new System.Drawing.Font("Impact", 13F);
-            this.btnContacto.Location = new System.Drawing.Point(136, 326);
+            this.btnContacto.ForeColor = System.Drawing.Color.White;
+            this.btnContacto.Location = new System.Drawing.Point(131, 322);
             this.btnContacto.Margin = new System.Windows.Forms.Padding(2);
             this.btnContacto.Name = "btnContacto";
             this.btnContacto.Size = new System.Drawing.Size(87, 32);
             this.btnContacto.TabIndex = 13;
             this.btnContacto.Text = "Contacto";
-            this.btnContacto.UseVisualStyleBackColor = true;
+            this.btnContacto.UseVisualStyleBackColor = false;
             this.btnContacto.Click += new System.EventHandler(this.btnContacto_Click);
             // 
             // btnVolver
             // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Impact", 13F);
-            this.btnVolver.Location = new System.Drawing.Point(471, 326);
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(471, 322);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(102, 30);
             this.btnVolver.TabIndex = 14;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnNuevaOferta
             // 
+            this.btnNuevaOferta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnNuevaOferta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaOferta.FlatAppearance.BorderSize = 0;
+            this.btnNuevaOferta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnNuevaOferta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaOferta.Font = new System.Drawing.Font("Impact", 13F);
-            this.btnNuevaOferta.Location = new System.Drawing.Point(227, 327);
+            this.btnNuevaOferta.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaOferta.Location = new System.Drawing.Point(222, 323);
             this.btnNuevaOferta.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevaOferta.Name = "btnNuevaOferta";
-            this.btnNuevaOferta.Size = new System.Drawing.Size(115, 32);
+            this.btnNuevaOferta.Size = new System.Drawing.Size(115, 31);
             this.btnNuevaOferta.TabIndex = 15;
             this.btnNuevaOferta.Text = "Enviar Oferta";
-            this.btnNuevaOferta.UseVisualStyleBackColor = true;
+            this.btnNuevaOferta.UseVisualStyleBackColor = false;
             this.btnNuevaOferta.Click += new System.EventHandler(this.btnNuevaOferta_Click);
             // 
             // FrmGaleria
