@@ -223,6 +223,11 @@ namespace PortafolioDiseñadores
                 MessageBox.Show("Primer proyecto.");
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

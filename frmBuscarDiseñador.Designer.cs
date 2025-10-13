@@ -43,6 +43,7 @@
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.lblLikes = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picProyectos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -111,7 +112,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Impact", 10F);
-            this.btnBuscar.Location = new System.Drawing.Point(336, 22);
+            this.btnBuscar.Location = new System.Drawing.Point(320, 22);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(67, 23);
             this.btnBuscar.TabIndex = 6;
@@ -191,12 +192,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Perfil";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Impact", 10F);
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(298, 467);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(80, 23);
+            this.btnVolver.TabIndex = 15;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmBuscarDiseñador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(425, 500);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblLikes);
             this.Controls.Add(this.btnSiguiente);
@@ -234,5 +253,6 @@
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Label lblLikes;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnVolver;
     }
 }
