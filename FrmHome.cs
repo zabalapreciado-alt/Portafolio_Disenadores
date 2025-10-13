@@ -32,6 +32,7 @@ namespace PortafolioDiseñadores
 
 
             btnLogin.Visible = (UsuarioId == 0);
+            btnRegistarse.Visible = (UsuarioId == 0);
             btnCerrarSesion.Visible = (UsuarioId > 0);
 
             btnAcercaDe.Visible = (Rol == "admin" || Rol == "diseñador");
@@ -108,6 +109,12 @@ namespace PortafolioDiseñadores
         private void btnBuscarDiseñador_Click(object sender, EventArgs e)
         {
             frmBuscarDiseñador f = new frmBuscarDiseñador();
+            f.ShowDialog();
+        }
+
+        private void btnRegistarse_Click(object sender, EventArgs e)
+        {
+            frmRegistrarse f = new frmRegistrarse();
             f.ShowDialog();
         }
     }

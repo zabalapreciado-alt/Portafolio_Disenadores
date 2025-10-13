@@ -39,6 +39,7 @@
             this.btnBuscarDiseñador = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRegistarse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,7 +182,7 @@
             this.btnGaleria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGaleria.Font = new System.Drawing.Font("Impact", 13F);
             this.btnGaleria.ForeColor = System.Drawing.Color.White;
-            this.btnGaleria.Location = new System.Drawing.Point(28, 203);
+            this.btnGaleria.Location = new System.Drawing.Point(28, 222);
             this.btnGaleria.Margin = new System.Windows.Forms.Padding(2);
             this.btnGaleria.Name = "btnGaleria";
             this.btnGaleria.Size = new System.Drawing.Size(163, 35);
@@ -230,6 +231,26 @@
             this.label1.TabIndex = 11;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btnRegistarse
+            // 
+            this.btnRegistarse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnRegistarse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegistarse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistarse.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRegistarse.FlatAppearance.BorderSize = 0;
+            this.btnRegistarse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnRegistarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistarse.Font = new System.Drawing.Font("Impact", 13F);
+            this.btnRegistarse.ForeColor = System.Drawing.Color.White;
+            this.btnRegistarse.Location = new System.Drawing.Point(28, 146);
+            this.btnRegistarse.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegistarse.Name = "btnRegistarse";
+            this.btnRegistarse.Size = new System.Drawing.Size(163, 35);
+            this.btnRegistarse.TabIndex = 14;
+            this.btnRegistarse.Text = "Registrarse";
+            this.btnRegistarse.UseVisualStyleBackColor = false;
+            this.btnRegistarse.Click += new System.EventHandler(this.btnRegistarse_Click);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,6 +258,7 @@
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(535, 495);
+            this.Controls.Add(this.btnRegistarse);
             this.Controls.Add(this.btnBuscarDiseñador);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnContacto);
@@ -271,6 +293,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnBuscarDiseñador;
+        private System.Windows.Forms.Button btnRegistarse;
     }
 }
 
