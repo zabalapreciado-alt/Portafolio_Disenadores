@@ -22,10 +22,7 @@ namespace PortafolioDiseñadores
         {
             InitializeComponent();
 
-            if (FrmHome.Rol == "reclutador")
-                btnNuevaOferta.Visible = false;
-            else
-                btnNuevaOferta.Visible = false;
+            btnNuevaOferta.Visible = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -110,9 +107,9 @@ namespace PortafolioDiseñadores
                 MessageBox.Show("Error al buscar diseñador: " + ex.Message);
             }
 
-            if (FrmHome.Rol == "reclutador" && DiseñadorIdBuscado > 0)
+            if ((FrmHome.Rol == "reclutador" || FrmHome.Rol == "admin") && DiseñadorIdBuscado > 0)
             {
-                btnNuevaOferta.Visible = true; 
+                btnNuevaOferta.Visible = true;
             }
             else
             {

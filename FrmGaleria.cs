@@ -39,14 +39,31 @@ namespace PortafolioDiseñadores
                 if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
                 pictureBox1.Image = null;
             }
-            // 🔹 Validar si el usuario es reclutador
+
             using (SqlConnection con = new Conexion().Abrir())
             {
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Reclutadores WHERE UsuarioId=@u", con);
-                cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
-                int esReclutador = Convert.ToInt32(cmd.ExecuteScalar());
+                
+                SqlCommand cmdRol = new SqlCommand("SELECT Rol FROM Usuarios WHERE Id=@u", con);
+                cmdRol.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                string rol = Convert.ToString(cmdRol.ExecuteScalar());
 
-                btnNuevaOferta.Visible = (esReclutador > 0); 
+                
+                bool puedeOfertar = false;
+
+                if (rol == "admin")
+                {
+                    puedeOfertar = true;
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Reclutadores WHERE UsuarioId=@u", con);
+                    cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
+                    int esReclutador = Convert.ToInt32(cmd.ExecuteScalar());
+                    puedeOfertar = (esReclutador > 0);
+                }
+
+                btnNuevaOferta.Visible = puedeOfertar;
+
             }
         }
 

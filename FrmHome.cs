@@ -20,11 +20,7 @@ namespace PortafolioDiseñadores
         {
             InitializeComponent();
         }
-        private void FrmHome_Load(object sender, EventArgs e)
-        {
-            
-            ActualizarUI();
-        }
+        
 
         private void ActualizarUI()
         {
@@ -102,7 +98,7 @@ namespace PortafolioDiseñadores
 
         private void FrmHome_Load_1(object sender, EventArgs e)
         {
-
+            ActualizarUI();
         }
 
 
