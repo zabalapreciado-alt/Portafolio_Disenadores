@@ -182,7 +182,7 @@
             this.btnGaleria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGaleria.Font = new System.Drawing.Font("Impact", 13F);
             this.btnGaleria.ForeColor = System.Drawing.Color.White;
-            this.btnGaleria.Location = new System.Drawing.Point(28, 222);
+            this.btnGaleria.Location = new System.Drawing.Point(28, 211);
             this.btnGaleria.Margin = new System.Windows.Forms.Padding(2);
             this.btnGaleria.Name = "btnGaleria";
             this.btnGaleria.Size = new System.Drawing.Size(163, 35);
