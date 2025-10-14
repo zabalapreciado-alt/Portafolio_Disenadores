@@ -44,6 +44,7 @@
             this.lblLikes = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnNuevaOferta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picProyectos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -228,12 +229,31 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnNuevaOferta
+            // 
+            this.btnNuevaOferta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnNuevaOferta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaOferta.FlatAppearance.BorderSize = 0;
+            this.btnNuevaOferta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnNuevaOferta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaOferta.Font = new System.Drawing.Font("Impact", 10F);
+            this.btnNuevaOferta.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaOferta.Location = new System.Drawing.Point(283, 407);
+            this.btnNuevaOferta.Name = "btnNuevaOferta";
+            this.btnNuevaOferta.Size = new System.Drawing.Size(112, 32);
+            this.btnNuevaOferta.TabIndex = 16;
+            this.btnNuevaOferta.Text = "Enviar Oferta";
+            this.btnNuevaOferta.UseVisualStyleBackColor = false;
+            this.btnNuevaOferta.Visible = false;
+            this.btnNuevaOferta.Click += new System.EventHandler(this.btnNuevaOferta_Click);
+            // 
             // frmBuscarDiseñador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(425, 500);
+            this.Controls.Add(this.btnNuevaOferta);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblLikes);
@@ -273,5 +293,6 @@
         private System.Windows.Forms.Label lblLikes;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnNuevaOferta;
     }
 }

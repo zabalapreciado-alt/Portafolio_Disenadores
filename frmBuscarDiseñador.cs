@@ -17,10 +17,15 @@ namespace PortafolioDiseñadores
     {
         private DataTable proyectos = new DataTable();
         private int index = 0;
-        public int DiseñadorIdBuscado { get; set; } // se asigna desde el form anterior
+        public int DiseñadorIdBuscado { get; set; } //se asigna desde el form anterior
         public frmBuscarDiseñador()
         {
             InitializeComponent();
+
+            if (FrmHome.Rol == "reclutador")
+                btnNuevaOferta.Visible = false; //Visible solo después de buscar diseñador
+            else
+                btnNuevaOferta.Visible = false; //Nunca visible para otros roles
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -37,7 +42,7 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    // 🔹 1. Buscar el ID del diseñador a partir del nombre de usuario
+                    //Buscar el ID del diseñador a partir del nombre de usuario
                     SqlCommand cmdId = new SqlCommand(@"
                 SELECT d.Id 
                 FROM Diseñadores d
@@ -55,7 +60,7 @@ namespace PortafolioDiseñadores
 
                     DiseñadorIdBuscado = Convert.ToInt32(result);
 
-                    // 🔹 2. Cargar datos del perfil del diseñador
+                    //Cargar datos del perfil del diseñador
                     SqlCommand cmdPerfil = new SqlCommand(@"
                 SELECT u.NombreUsuario, p.Biografia, p.Instagram, p.Whatsapp, p.CorreoContacto
                 FROM Diseñadores d
@@ -81,11 +86,11 @@ namespace PortafolioDiseñadores
                         }
                     }
 
-                    // 🔹 3. Cargar los proyectos del diseñador
+                    //Cargar los proyectos del diseñador
                     CargarProyectosDelDiseñador(con);
                 }
 
-                // 🔹 4. Mostrar el primer proyecto si existen
+                //Mostrar el primer proyecto si existen
                 if (proyectos.Rows.Count > 0)
                 {
                     index = 0;
@@ -103,6 +108,15 @@ namespace PortafolioDiseñadores
             catch (Exception ex)
             {
                 MessageBox.Show("Error al buscar diseñador: " + ex.Message);
+            }
+
+            if (FrmHome.Rol == "reclutador" && DiseñadorIdBuscado > 0)
+            {
+                btnNuevaOferta.Visible = true; //Mostrar botón solo si hay diseñador encontrado
+            }
+            else
+            {
+                btnNuevaOferta.Visible = false;
             }
         }
 
@@ -171,7 +185,6 @@ namespace PortafolioDiseñadores
                 picProyectos.Image = null;
             }
 
-            // Likes
             CargarLikes();
         }
 
@@ -227,6 +240,20 @@ namespace PortafolioDiseñadores
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnNuevaOferta_Click(object sender, EventArgs e)
+        {
+            if (DiseñadorIdBuscado <= 0)
+            {
+                MessageBox.Show("Debe buscar un diseñador antes de crear una oferta.");
+                return;
+            }
+
+            //Abrir el formulario de nueva oferta y pasarle el DiseñadorId
+            FrmNuevaOferta frm = new FrmNuevaOferta();
+            frm.DiseñadorId = DiseñadorIdBuscado;
+            frm.ShowDialog();
         }
     }
 }

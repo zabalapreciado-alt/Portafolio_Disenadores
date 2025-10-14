@@ -49,7 +49,7 @@
             // txtInstagram
             // 
             this.txtInstagram.Font = new System.Drawing.Font("Impact", 13F);
-            this.txtInstagram.Location = new System.Drawing.Point(141, 34);
+            this.txtInstagram.Location = new System.Drawing.Point(122, 33);
             this.txtInstagram.Name = "txtInstagram";
             this.txtInstagram.Size = new System.Drawing.Size(261, 29);
             this.txtInstagram.TabIndex = 0;
@@ -57,7 +57,7 @@
             // txtWhatsapp
             // 
             this.txtWhatsapp.Font = new System.Drawing.Font("Impact", 13F);
-            this.txtWhatsapp.Location = new System.Drawing.Point(141, 112);
+            this.txtWhatsapp.Location = new System.Drawing.Point(122, 111);
             this.txtWhatsapp.Name = "txtWhatsapp";
             this.txtWhatsapp.Size = new System.Drawing.Size(261, 29);
             this.txtWhatsapp.TabIndex = 1;
@@ -65,7 +65,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Impact", 13F);
-            this.txtCorreo.Location = new System.Drawing.Point(141, 189);
+            this.txtCorreo.Location = new System.Drawing.Point(122, 188);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(261, 29);
             this.txtCorreo.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 13F);
-            this.label1.Location = new System.Drawing.Point(40, 37);
+            this.label1.Location = new System.Drawing.Point(21, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 22);
             this.label1.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Impact", 13F);
-            this.label2.Location = new System.Drawing.Point(40, 115);
+            this.label2.Location = new System.Drawing.Point(21, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 22);
             this.label2.TabIndex = 4;
@@ -94,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Impact", 13F);
-            this.label3.Location = new System.Drawing.Point(40, 192);
+            this.label3.Location = new System.Drawing.Point(21, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 22);
             this.label3.TabIndex = 5;
@@ -109,7 +109,7 @@
             this.btnCrearInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearInstagram.Font = new System.Drawing.Font("Impact", 11F);
             this.btnCrearInstagram.ForeColor = System.Drawing.Color.White;
-            this.btnCrearInstagram.Location = new System.Drawing.Point(141, 69);
+            this.btnCrearInstagram.Location = new System.Drawing.Point(122, 68);
             this.btnCrearInstagram.Name = "btnCrearInstagram";
             this.btnCrearInstagram.Size = new System.Drawing.Size(67, 26);
             this.btnCrearInstagram.TabIndex = 6;
@@ -126,7 +126,7 @@
             this.btnCrearWhatsapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearWhatsapp.Font = new System.Drawing.Font("Impact", 11F);
             this.btnCrearWhatsapp.ForeColor = System.Drawing.Color.White;
-            this.btnCrearWhatsapp.Location = new System.Drawing.Point(141, 147);
+            this.btnCrearWhatsapp.Location = new System.Drawing.Point(122, 146);
             this.btnCrearWhatsapp.Name = "btnCrearWhatsapp";
             this.btnCrearWhatsapp.Size = new System.Drawing.Size(67, 27);
             this.btnCrearWhatsapp.TabIndex = 7;
@@ -143,7 +143,7 @@
             this.btnCrearCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearCorreo.Font = new System.Drawing.Font("Impact", 11F);
             this.btnCrearCorreo.ForeColor = System.Drawing.Color.White;
-            this.btnCrearCorreo.Location = new System.Drawing.Point(141, 236);
+            this.btnCrearCorreo.Location = new System.Drawing.Point(122, 235);
             this.btnCrearCorreo.Name = "btnCrearCorreo";
             this.btnCrearCorreo.Size = new System.Drawing.Size(67, 27);
             this.btnCrearCorreo.TabIndex = 8;
@@ -160,7 +160,7 @@
             this.btnEditarInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarInstagram.Font = new System.Drawing.Font("Impact", 11F);
             this.btnEditarInstagram.ForeColor = System.Drawing.Color.White;
-            this.btnEditarInstagram.Location = new System.Drawing.Point(238, 69);
+            this.btnEditarInstagram.Location = new System.Drawing.Point(219, 68);
             this.btnEditarInstagram.Name = "btnEditarInstagram";
             this.btnEditarInstagram.Size = new System.Drawing.Size(67, 26);
             this.btnEditarInstagram.TabIndex = 9;
@@ -177,7 +177,7 @@
             this.btnEditarWhatsapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarWhatsapp.Font = new System.Drawing.Font("Impact", 11F);
             this.btnEditarWhatsapp.ForeColor = System.Drawing.Color.White;
-            this.btnEditarWhatsapp.Location = new System.Drawing.Point(238, 147);
+            this.btnEditarWhatsapp.Location = new System.Drawing.Point(219, 146);
             this.btnEditarWhatsapp.Name = "btnEditarWhatsapp";
             this.btnEditarWhatsapp.Size = new System.Drawing.Size(67, 27);
             this.btnEditarWhatsapp.TabIndex = 10;
@@ -194,7 +194,7 @@
             this.btnEditarCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarCorreo.Font = new System.Drawing.Font("Impact", 11F);
             this.btnEditarCorreo.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCorreo.Location = new System.Drawing.Point(238, 236);
+            this.btnEditarCorreo.Location = new System.Drawing.Point(219, 235);
             this.btnEditarCorreo.Name = "btnEditarCorreo";
             this.btnEditarCorreo.Size = new System.Drawing.Size(67, 27);
             this.btnEditarCorreo.TabIndex = 11;
@@ -211,7 +211,7 @@
             this.btnBorrarInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarInstagram.Font = new System.Drawing.Font("Impact", 11F);
             this.btnBorrarInstagram.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarInstagram.Location = new System.Drawing.Point(335, 69);
+            this.btnBorrarInstagram.Location = new System.Drawing.Point(316, 68);
             this.btnBorrarInstagram.Name = "btnBorrarInstagram";
             this.btnBorrarInstagram.Size = new System.Drawing.Size(67, 26);
             this.btnBorrarInstagram.TabIndex = 12;
@@ -228,7 +228,7 @@
             this.btnBorrarWhatsapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarWhatsapp.Font = new System.Drawing.Font("Impact", 11F);
             this.btnBorrarWhatsapp.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarWhatsapp.Location = new System.Drawing.Point(335, 147);
+            this.btnBorrarWhatsapp.Location = new System.Drawing.Point(316, 146);
             this.btnBorrarWhatsapp.Name = "btnBorrarWhatsapp";
             this.btnBorrarWhatsapp.Size = new System.Drawing.Size(67, 27);
             this.btnBorrarWhatsapp.TabIndex = 13;
@@ -245,7 +245,7 @@
             this.btnBorrarCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarCorreo.Font = new System.Drawing.Font("Impact", 11F);
             this.btnBorrarCorreo.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarCorreo.Location = new System.Drawing.Point(335, 236);
+            this.btnBorrarCorreo.Location = new System.Drawing.Point(316, 235);
             this.btnBorrarCorreo.Name = "btnBorrarCorreo";
             this.btnBorrarCorreo.Size = new System.Drawing.Size(67, 27);
             this.btnBorrarCorreo.TabIndex = 14;
@@ -262,7 +262,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Impact", 11F);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(318, 312);
+            this.btnVolver.Location = new System.Drawing.Point(299, 296);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 24);
             this.btnVolver.TabIndex = 15;
@@ -275,7 +275,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(434, 361);
+            this.ClientSize = new System.Drawing.Size(411, 333);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnBorrarCorreo);
             this.Controls.Add(this.btnBorrarWhatsapp);

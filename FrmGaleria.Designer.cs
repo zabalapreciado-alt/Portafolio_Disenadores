@@ -140,7 +140,7 @@
             this.lstComentarios.ForeColor = System.Drawing.Color.White;
             this.lstComentarios.FormattingEnabled = true;
             this.lstComentarios.ItemHeight = 17;
-            this.lstComentarios.Location = new System.Drawing.Point(374, 115);
+            this.lstComentarios.Location = new System.Drawing.Point(374, 143);
             this.lstComentarios.Margin = new System.Windows.Forms.Padding(2);
             this.lstComentarios.Name = "lstComentarios";
             this.lstComentarios.Size = new System.Drawing.Size(102, 102);
@@ -151,7 +151,7 @@
             this.txtComentario.BackColor = System.Drawing.Color.Gainsboro;
             this.txtComentario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComentario.Font = new System.Drawing.Font("Impact", 10F);
-            this.txtComentario.Location = new System.Drawing.Point(374, 47);
+            this.txtComentario.Location = new System.Drawing.Point(374, 83);
             this.txtComentario.Margin = new System.Windows.Forms.Padding(2);
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(102, 17);
@@ -166,7 +166,7 @@
             this.btnComentar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComentar.Font = new System.Drawing.Font("Impact", 11F);
             this.btnComentar.ForeColor = System.Drawing.Color.White;
-            this.btnComentar.Location = new System.Drawing.Point(374, 80);
+            this.btnComentar.Location = new System.Drawing.Point(374, 104);
             this.btnComentar.Margin = new System.Windows.Forms.Padding(2);
             this.btnComentar.Name = "btnComentar";
             this.btnComentar.Size = new System.Drawing.Size(102, 31);
