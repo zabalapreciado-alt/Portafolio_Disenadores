@@ -146,6 +146,7 @@
             // 
             // dgvProyectos
             // 
+            this.dgvProyectos.BackgroundColor = System.Drawing.Color.Teal;
             this.dgvProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProyectos.Location = new System.Drawing.Point(25, 215);
             this.dgvProyectos.Margin = new System.Windows.Forms.Padding(2);
@@ -208,7 +209,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Impact", 12F);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(583, 445);
+            this.btnVolver.Location = new System.Drawing.Point(568, 445);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(134, 35);
             this.btnVolver.TabIndex = 15;
