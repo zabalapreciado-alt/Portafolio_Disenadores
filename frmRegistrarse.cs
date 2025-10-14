@@ -65,7 +65,7 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    //Insertar el nuevo usuario en la tabla Usuarios
+                   
                     string sqlUsuario = "INSERT INTO Usuarios (NombreUsuario, Contraseña, Rol) " +
                                         "VALUES (@u, @p, @r); SELECT SCOPE_IDENTITY();";
 
@@ -76,7 +76,7 @@ namespace PortafolioDiseñadores
 
                     int nuevoUsuarioId = Convert.ToInt32(cmdUsuario.ExecuteScalar());
 
-                    //Insertar datos adicionales según el rol
+                   
                     if (rol == "diseñador")
                     {
                         if (string.IsNullOrWhiteSpace(txtNombre.Text) ||

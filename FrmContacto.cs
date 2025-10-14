@@ -13,8 +13,8 @@ namespace PortafolioDiseñadores
 {
     public partial class FrmContacto : Form
     {
-        private int perfilId = 0;         // ID del registro en Perfiles
-        private int diseñadorId = 0;      // ID del diseñador actual
+        private int perfilId = 0;
+        private int diseñadorId = 0;
         public FrmContacto()
         {
             InitializeComponent();
@@ -24,15 +24,8 @@ namespace PortafolioDiseñadores
         private void FrmContacto_Load(object sender, EventArgs e)
         {
 
-            // Obtener el DiseñadorId
+           
             diseñadorId = ObtenerDiseñadorId(FrmHome.UsuarioId);
-
-            //if (diseñadorId == 0)
-            //{
-            //    MessageBox.Show("Solo los diseñadores pueden gestionar la información de contacto.");
-            //    this.Close();
-            //    return;
-            //}
 
             CargarContacto();
         }
@@ -252,17 +245,7 @@ namespace PortafolioDiseñadores
                 MessageBox.Show("Error al actualizar el contacto: " + ex.Message);
             }
         }
-        //private bool EsDiseñador(int usuarioId)
-        //{
-        //    using (SqlConnection con = new Conexion().Abrir())
-        //    {
-        //        SqlCommand cmd = new SqlCommand(
-        //            "SELECT COUNT(*) FROM Diseñadores WHERE UsuarioId=@u", con);
-        //        cmd.Parameters.AddWithValue("@u", usuarioId);
-
-        //        return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
-        //    }
-        //}
+        
         private int ObtenerDiseñadorId(int usuarioId)
         {
             using (SqlConnection con = new Conexion().Abrir())

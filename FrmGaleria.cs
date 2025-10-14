@@ -46,7 +46,7 @@ namespace PortafolioDiseñadores
                 cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
                 int esReclutador = Convert.ToInt32(cmd.ExecuteScalar());
 
-                btnNuevaOferta.Visible = (esReclutador > 0); // Solo visible si es reclutador
+                btnNuevaOferta.Visible = (esReclutador > 0); 
             }
         }
 
@@ -76,7 +76,7 @@ namespace PortafolioDiseñadores
                     }
                     else
                     {
-                        // Orden normal (por fecha/ID descendente)
+                       
                         sql = @"
                         SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
                                p.DiseñadorId,
@@ -118,7 +118,7 @@ namespace PortafolioDiseñadores
             string diseñador = row["Diseñador"] == DBNull.Value ? "Desconocido" : row["Diseñador"].ToString();
             lblDescripcion.Text = desc + Environment.NewLine + "Diseñador: " + diseñador;
 
-            // Imagen
+            
             string nombreImg = row["RutaImagen"]?.ToString();
             string fullPath = ObtenerRutaCompletaImagen(nombreImg);
             if (pictureBox1.Image != null) { pictureBox1.Image.Dispose(); pictureBox1.Image = null; }
@@ -133,7 +133,7 @@ namespace PortafolioDiseñadores
                 pictureBox1.Image = null;
             }
 
-            // Likes y comentarios
+           
             CargarLikes();
             CargarComentarios();
         }
@@ -144,7 +144,7 @@ namespace PortafolioDiseñadores
             return Convert.ToInt32(proyectos.Rows[index]["Id"]);
         }
 
-        // ================== LIKES ==================
+       
         private void CargarLikes()
         {
             int proyectoId = ProyectoActualId();
@@ -191,7 +191,7 @@ namespace PortafolioDiseñadores
             int proyectoId = ProyectoActualId();
             if (proyectoId == 0) return;
 
-            // Validar inicio de sesión
+            
             if (FrmHome.UsuarioId <= 0)
             {
                 MessageBox.Show("Debes iniciar sesión para dar like a un proyecto.", "Acceso restringido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -200,7 +200,7 @@ namespace PortafolioDiseñadores
 
             using (SqlConnection con = new Conexion().Abrir())
             {
-                // Evitar likes repetidos
+                
                 SqlCommand check = new SqlCommand("SELECT COUNT(*) FROM Likes WHERE ProyectoId=@p AND UsuarioId=@u", con);
                 check.Parameters.AddWithValue("@p", proyectoId);
                 check.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
@@ -212,7 +212,7 @@ namespace PortafolioDiseñadores
                     return;
                 }
 
-                // Insertar nuevo like
+                
                 SqlCommand cmd = new SqlCommand("INSERT INTO Likes (ProyectoId, UsuarioId, Fecha) VALUES (@p, @u, GETDATE())", con);
                 cmd.Parameters.AddWithValue("@p", proyectoId);
                 cmd.Parameters.AddWithValue("@u", FrmHome.UsuarioId);
@@ -223,7 +223,7 @@ namespace PortafolioDiseñadores
             CargarLikes();
         }
         
-        // ================== COMENTARIOS ==================
+        
         private void CargarComentarios()
         {
             int proyectoId = ProyectoActualId();
@@ -277,7 +277,7 @@ namespace PortafolioDiseñadores
 
         private void btnFiltrarLikes_Click(object sender, EventArgs e)
         {
-            CargarProyectos(true); // true para ordenar por likes
+            CargarProyectos(true);
             if (proyectos.Rows.Count > 0)
             {
                 index = 0;
@@ -298,7 +298,6 @@ namespace PortafolioDiseñadores
         {
             if (proyectos.Rows.Count == 0) return 0;
 
-            // Necesitamos el Id del diseñador, así que incluye DiseñadorId en la consulta de CargarProyectos
             return Convert.ToInt32(proyectos.Rows[index]["DiseñadorId"]);
         }
 
@@ -395,7 +394,7 @@ namespace PortafolioDiseñadores
             }
 
             FrmNuevaOferta f = new FrmNuevaOferta();
-            f.DiseñadorId = diseñadorId; // 🔹 Pasar el diseñador del proyecto actual
+            f.DiseñadorId = diseñadorId;
             f.ShowDialog();
         }
     }

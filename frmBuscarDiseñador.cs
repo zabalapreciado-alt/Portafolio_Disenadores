@@ -17,15 +17,15 @@ namespace PortafolioDiseñadores
     {
         private DataTable proyectos = new DataTable();
         private int index = 0;
-        public int DiseñadorIdBuscado { get; set; } //se asigna desde el form anterior
+        public int DiseñadorIdBuscado { get; set; }
         public frmBuscarDiseñador()
         {
             InitializeComponent();
 
             if (FrmHome.Rol == "reclutador")
-                btnNuevaOferta.Visible = false; //Visible solo después de buscar diseñador
+                btnNuevaOferta.Visible = false;
             else
-                btnNuevaOferta.Visible = false; //Nunca visible para otros roles
+                btnNuevaOferta.Visible = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    //Buscar el ID del diseñador a partir del nombre de usuario
+                    
                     SqlCommand cmdId = new SqlCommand(@"
                 SELECT d.Id 
                 FROM Diseñadores d
@@ -60,7 +60,7 @@ namespace PortafolioDiseñadores
 
                     DiseñadorIdBuscado = Convert.ToInt32(result);
 
-                    //Cargar datos del perfil del diseñador
+                    
                     SqlCommand cmdPerfil = new SqlCommand(@"
                 SELECT u.NombreUsuario, p.Biografia, p.Instagram, p.Whatsapp, p.CorreoContacto
                 FROM Diseñadores d
@@ -86,11 +86,11 @@ namespace PortafolioDiseñadores
                         }
                     }
 
-                    //Cargar los proyectos del diseñador
+                   
                     CargarProyectosDelDiseñador(con);
                 }
 
-                //Mostrar el primer proyecto si existen
+                
                 if (proyectos.Rows.Count > 0)
                 {
                     index = 0;
@@ -112,7 +112,7 @@ namespace PortafolioDiseñadores
 
             if (FrmHome.Rol == "reclutador" && DiseñadorIdBuscado > 0)
             {
-                btnNuevaOferta.Visible = true; //Mostrar botón solo si hay diseñador encontrado
+                btnNuevaOferta.Visible = true; 
             }
             else
             {
@@ -165,7 +165,7 @@ namespace PortafolioDiseñadores
             string diseñador = row["Diseñador"]?.ToString() ?? "Desconocido";
             lblDescripcion.Text = desc + Environment.NewLine + "Diseñador: " + diseñador;
 
-            // Imagen
+            
             string nombreImg = row["RutaImagen"]?.ToString();
             string fullPath = ObtenerRutaCompletaImagen(nombreImg);
 
@@ -250,7 +250,7 @@ namespace PortafolioDiseñadores
                 return;
             }
 
-            //Abrir el formulario de nueva oferta y pasarle el DiseñadorId
+            
             FrmNuevaOferta frm = new FrmNuevaOferta();
             frm.DiseñadorId = DiseñadorIdBuscado;
             frm.ShowDialog();

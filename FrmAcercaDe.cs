@@ -13,23 +13,16 @@ namespace PortafolioDiseñadores
 {
     public partial class FrmAcercaDe : Form
     {
-        private int perfilId = 0; // Guardará el Id del perfil si existe
+        private int perfilId = 0;
         public FrmAcercaDe()
         {
             InitializeComponent();
         }
-        private int diseñadorId = 0; // Guardará el Id del diseñador
+        private int diseñadorId = 0; 
 
         private void FrmAcercaDe_Load(object sender, EventArgs e)
         {
             diseñadorId = ObtenerDiseñadorId(FrmHome.UsuarioId);
-
-            //if (diseñadorId == 0)
-            //{
-            //    MessageBox.Show("Solo los diseñadores pueden editar esta información.");
-            //    this.Close();
-            //    return;
-            //}
 
             CargarBiografia();
         }

@@ -35,22 +35,22 @@ namespace PortafolioDiseñadores
 
                     if (FrmHome.Rol == "admin")
                     {
-                        // Admin ve todas las ofertas
+                        
                         sql = @"SELECT O.Id, 
-       R.Empresa AS Reclutador, 
-       O.Titulo, 
-       O.Descripcion, 
-       O.Contacto, 
-       O.Estado, 
-       O.Fecha
-FROM OfertasTrabajo O
-JOIN Reclutadores R ON O.ReclutadorId = R.Id
-ORDER BY O.Fecha DESC";
+                               R.Empresa AS Reclutador, 
+                               O.Titulo, 
+                               O.Descripcion, 
+                               O.Contacto, 
+                               O.Estado, 
+                               O.Fecha
+                        FROM OfertasTrabajo O
+                        JOIN Reclutadores R ON O.ReclutadorId = R.Id
+                        ORDER BY O.Fecha DESC";
                         da = new SqlDataAdapter(sql, con);
                     }
                     else if (FrmHome.Rol == "diseñador")
                     {
-                        // Diseñador ve solo sus ofertas
+                        
                         string q = "SELECT Id FROM Diseñadores WHERE UsuarioId = @u";
                         using (SqlCommand cmd = new SqlCommand(q, con))
                         {
@@ -64,17 +64,17 @@ ORDER BY O.Fecha DESC";
                             int diseñadorId = Convert.ToInt32(res);
 
                             sql = @"SELECT O.Id, 
-       R.Empresa AS Reclutador, 
-       O.Titulo, 
-       O.Descripcion, 
-       O.Contacto, 
-       O.Estado, 
-       O.Fecha
-FROM OfertasTrabajo O
-JOIN Reclutadores R ON O.ReclutadorId = R.Id
-WHERE O.DiseñadorId = @d
-ORDER BY O.Fecha DESC
-";
+                                   R.Empresa AS Reclutador, 
+                                   O.Titulo, 
+                                   O.Descripcion, 
+                                   O.Contacto, 
+                                   O.Estado, 
+                                   O.Fecha
+                            FROM OfertasTrabajo O
+                            JOIN Reclutadores R ON O.ReclutadorId = R.Id
+                            WHERE O.DiseñadorId = @d
+                            ORDER BY O.Fecha DESC
+                            ";
                             da = new SqlDataAdapter(sql, con);
                             da.SelectCommand.Parameters.AddWithValue("@d", diseñadorId);
                         }
@@ -96,7 +96,6 @@ ORDER BY O.Fecha DESC
             }
         }
 
-        // 🔹 Método para cambiar estado de la oferta
         private void CambiarEstadoSeleccion(string nuevoEstado)
         {
             if (dgvOfertas.CurrentRow == null) return;

@@ -230,16 +230,16 @@ namespace PortafolioDiseñadores
 
         private void dgvProyectos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return; // evita errores al hacer clic en encabezado
+            if (e.RowIndex < 0) return; 
 
             DataGridViewRow row = dgvProyectos.Rows[e.RowIndex];
 
-            // Cargar los datos en los campos de texto
+            
             txtTitulo.Text = row.Cells["Titulo"].Value?.ToString();
             txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
             txtCategoria.Text = row.Cells["Categoria"].Value?.ToString();
 
-            // Obtener la ruta de la imagen desde la columna 'RutaImagen'
+            
             string nombreImagen = row.Cells["RutaImagen"].Value?.ToString();
 
             if (!string.IsNullOrEmpty(nombreImagen))
@@ -248,7 +248,7 @@ namespace PortafolioDiseñadores
                 if (File.Exists(rutaCompleta))
                 {
                     pbImagen.Image = Image.FromFile(rutaCompleta);
-                    pbImagen.SizeMode = PictureBoxSizeMode.Zoom; // para que se ajuste bien
+                    pbImagen.SizeMode = PictureBoxSizeMode.Zoom; 
                 }
                 else
                 {
