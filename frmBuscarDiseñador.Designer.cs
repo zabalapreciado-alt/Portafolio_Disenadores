@@ -45,6 +45,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnNuevaOferta = new System.Windows.Forms.Button();
+            this.lblOfertasRecibidas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picProyectos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -247,12 +248,22 @@
             this.btnNuevaOferta.Visible = false;
             this.btnNuevaOferta.Click += new System.EventHandler(this.btnNuevaOferta_Click);
             // 
+            // lblOfertasRecibidas
+            // 
+            this.lblOfertasRecibidas.Font = new System.Drawing.Font("Impact", 10F);
+            this.lblOfertasRecibidas.Location = new System.Drawing.Point(283, 383);
+            this.lblOfertasRecibidas.Name = "lblOfertasRecibidas";
+            this.lblOfertasRecibidas.Size = new System.Drawing.Size(139, 21);
+            this.lblOfertasRecibidas.TabIndex = 17;
+            this.lblOfertasRecibidas.Text = "Ofertas Recibidas: ";
+            // 
             // frmBuscarDiseñador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(425, 500);
+            this.Controls.Add(this.lblOfertasRecibidas);
             this.Controls.Add(this.btnNuevaOferta);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.groupBox1);
@@ -294,5 +305,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnNuevaOferta;
+        private System.Windows.Forms.Label lblOfertasRecibidas;
     }
 }

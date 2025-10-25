@@ -39,13 +39,15 @@
             this.grbDiseñador = new System.Windows.Forms.GroupBox();
             this.txtEspecialidad = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.grbReclutador = new System.Windows.Forms.GroupBox();
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.grbDiseñador.SuspendLayout();
             this.grbReclutador.SuspendLayout();
             this.SuspendLayout();
@@ -115,7 +117,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Impact", 12F);
             this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(85, 296);
+            this.btnRegistrar.Location = new System.Drawing.Point(78, 331);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(93, 28);
@@ -133,7 +135,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Impact", 12F);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(265, 296);
+            this.btnCancelar.Location = new System.Drawing.Point(265, 331);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 28);
@@ -144,6 +146,8 @@
             // 
             // grbDiseñador
             // 
+            this.grbDiseñador.Controls.Add(this.txtCorreo);
+            this.grbDiseñador.Controls.Add(this.label6);
             this.grbDiseñador.Controls.Add(this.txtEspecialidad);
             this.grbDiseñador.Controls.Add(this.txtNombre);
             this.grbDiseñador.Controls.Add(this.label5);
@@ -151,7 +155,7 @@
             this.grbDiseñador.Font = new System.Drawing.Font("Impact", 8F);
             this.grbDiseñador.Location = new System.Drawing.Point(26, 165);
             this.grbDiseñador.Name = "grbDiseñador";
-            this.grbDiseñador.Size = new System.Drawing.Size(396, 109);
+            this.grbDiseñador.Size = new System.Drawing.Size(396, 145);
             this.grbDiseñador.TabIndex = 8;
             this.grbDiseñador.TabStop = false;
             this.grbDiseñador.Text = "Diseñador";
@@ -159,7 +163,7 @@
             // txtEspecialidad
             // 
             this.txtEspecialidad.Font = new System.Drawing.Font("Impact", 10F);
-            this.txtEspecialidad.Location = new System.Drawing.Point(139, 68);
+            this.txtEspecialidad.Location = new System.Drawing.Point(139, 108);
             this.txtEspecialidad.Name = "txtEspecialidad";
             this.txtEspecialidad.Size = new System.Drawing.Size(198, 24);
             this.txtEspecialidad.TabIndex = 12;
@@ -172,16 +176,6 @@
             this.txtNombre.Size = new System.Drawing.Size(198, 24);
             this.txtNombre.TabIndex = 11;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Impact", 10F);
-            this.label4.Location = new System.Drawing.Point(19, 70);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 18);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Especialidad";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -191,6 +185,16 @@
             this.label5.Size = new System.Drawing.Size(108, 18);
             this.label5.TabIndex = 9;
             this.label5.Text = "Nombre Completo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Impact", 10F);
+            this.label4.Location = new System.Drawing.Point(18, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 18);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Correo electronico";
             // 
             // grbReclutador
             // 
@@ -242,13 +246,31 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Contacto";
             // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Font = new System.Drawing.Font("Impact", 10F);
+            this.txtCorreo.Location = new System.Drawing.Point(139, 67);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(198, 24);
+            this.txtCorreo.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Impact", 10F);
+            this.label6.Location = new System.Drawing.Point(19, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 18);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Especialidad";
+            // 
             // frmRegistrarse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(444, 336);
+            this.ClientSize = new System.Drawing.Size(444, 370);
             this.Controls.Add(this.grbReclutador);
             this.Controls.Add(this.grbDiseñador);
             this.Controls.Add(this.btnCancelar);
@@ -291,5 +313,7 @@
         private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.Label label6;
     }
 }

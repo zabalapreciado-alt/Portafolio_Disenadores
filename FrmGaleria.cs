@@ -329,12 +329,18 @@ namespace PortafolioDiseñadores
 
             using (SqlConnection con = new Conexion().Abrir())
             {
-                SqlCommand cmd = new SqlCommand(
-                    "SELECT Biografia FROM Perfiles WHERE DiseñadorId=@d", con);
-                cmd.Parameters.AddWithValue("@d", diseñadorId);
+                SqlCommand cmd = new SqlCommand(@"
+            SELECT u.Biografia
+            FROM Diseñadores d
+            INNER JOIN Usuarios u ON d.UsuarioId = u.Id
+            WHERE d.Id = @d", con);
 
+                cmd.Parameters.AddWithValue("@d", diseñadorId);
                 object result = cmd.ExecuteScalar();
-                string bio = result != null ? result.ToString() : "Sin biografía disponible.";
+
+                string bio = result != null && result != DBNull.Value
+                    ? result.ToString()
+                    : "Sin biografía disponible.";
 
                 MessageBox.Show(bio, "Biografía del Diseñador", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -342,7 +348,7 @@ namespace PortafolioDiseñadores
 
         private void btnContacto_Click(object sender, EventArgs e)
         {
-            
+
             int diseñadorId = ObtenerDiseñadorActualId();
             if (diseñadorId == 0)
             {
@@ -352,8 +358,12 @@ namespace PortafolioDiseñadores
 
             using (SqlConnection con = new Conexion().Abrir())
             {
-                SqlCommand cmd = new SqlCommand(
-                    "SELECT Instagram, Whatsapp, CorreoContacto FROM Perfiles WHERE DiseñadorId=@d", con);
+                SqlCommand cmd = new SqlCommand(@"
+            SELECT u.Instagram, u.WhatsApp, u.CorreoContacto
+            FROM Diseñadores d
+            INNER JOIN Usuarios u ON d.UsuarioId = u.Id
+            WHERE d.Id = @d", con);
+
                 cmd.Parameters.AddWithValue("@d", diseñadorId);
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -361,10 +371,10 @@ namespace PortafolioDiseñadores
                     if (reader.Read())
                     {
                         string insta = reader["Instagram"]?.ToString() ?? "No disponible";
-                        string whatsapp = reader["Whatsapp"]?.ToString() ?? "No disponible";
+                        string whatsapp = reader["WhatsApp"]?.ToString() ?? "No disponible";
                         string correo = reader["CorreoContacto"]?.ToString() ?? "No disponible";
 
-                        string info = $"Instagram: {insta}\nWhatsapp: {whatsapp}\nCorreo: {correo}";
+                        string info = $"Instagram: {insta}\nWhatsApp: {whatsapp}\nCorreo: {correo}";
                         MessageBox.Show(info, "Contacto del Diseñador", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

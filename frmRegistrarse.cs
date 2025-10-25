@@ -52,8 +52,8 @@ namespace PortafolioDiseñadores
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
-                string.IsNullOrWhiteSpace(txtContraseña.Text) ||
-                cmbRol.SelectedItem == null)
+        string.IsNullOrWhiteSpace(txtContraseña.Text) ||
+        cmbRol.SelectedItem == null)
             {
                 MessageBox.Show("Por favor complete los campos obligatorios.");
                 return;
@@ -65,29 +65,46 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                   
-                    string sqlUsuario = "INSERT INTO Usuarios (NombreUsuario, Contraseña, Rol) " +
-                                        "VALUES (@u, @p, @r); SELECT SCOPE_IDENTITY();";
+                    // Primero insertamos en la tabla Usuarios
+                    string sqlUsuario = @"INSERT INTO Usuarios 
+                                 (NombreUsuario, Contraseña, Rol, Biografia, WhatsApp, Instagram, CorreoContacto)
+                                 VALUES (@u, @p, @r, NULL, NULL, NULL, @correo);
+                                 SELECT SCOPE_IDENTITY();";
 
                     SqlCommand cmdUsuario = new SqlCommand(sqlUsuario, con);
                     cmdUsuario.Parameters.AddWithValue("@u", txtUsuario.Text.Trim());
                     cmdUsuario.Parameters.AddWithValue("@p", txtContraseña.Text.Trim());
                     cmdUsuario.Parameters.AddWithValue("@r", rol);
 
+                    // Para los diseñadores se guarda el correo, para los reclutadores queda NULL
+                    if (rol == "diseñador")
+                    {
+                        if (string.IsNullOrWhiteSpace(txtCorreo.Text))
+                        {
+                            MessageBox.Show("Por favor ingrese un correo de contacto para el diseñador.");
+                            return;
+                        }
+                        cmdUsuario.Parameters.AddWithValue("@correo", txtCorreo.Text.Trim());
+                    }
+                    else
+                    {
+                        cmdUsuario.Parameters.AddWithValue("@correo", DBNull.Value);
+                    }
+
                     int nuevoUsuarioId = Convert.ToInt32(cmdUsuario.ExecuteScalar());
 
-                   
+                    // Segundo: insertamos según el rol
                     if (rol == "diseñador")
                     {
                         if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                             string.IsNullOrWhiteSpace(txtEspecialidad.Text))
                         {
-                            MessageBox.Show("Por favor complete los campos del diseñador.");
+                            MessageBox.Show("Por favor complete los campos del diseñador (nombre y especialidad).");
                             return;
                         }
 
-                        string sqlDis = "INSERT INTO Diseñadores (UsuarioId, Nombre, Especialidad) " +
-                                        "VALUES (@idU, @n, @e)";
+                        string sqlDis = @"INSERT INTO Diseñadores (UsuarioId, Nombre, Especialidad)
+                                 VALUES (@idU, @n, @e)";
                         SqlCommand cmdDis = new SqlCommand(sqlDis, con);
                         cmdDis.Parameters.AddWithValue("@idU", nuevoUsuarioId);
                         cmdDis.Parameters.AddWithValue("@n", txtNombre.Text.Trim());
@@ -99,12 +116,12 @@ namespace PortafolioDiseñadores
                         if (string.IsNullOrWhiteSpace(txtEmpresa.Text) ||
                             string.IsNullOrWhiteSpace(txtContacto.Text))
                         {
-                            MessageBox.Show("Por favor complete los campos del reclutador.");
+                            MessageBox.Show("Por favor complete los campos del reclutador (empresa y contacto).");
                             return;
                         }
 
-                        string sqlRec = "INSERT INTO Reclutadores (UsuarioId, Empresa, Contacto) " +
-                                        "VALUES (@idU, @emp, @con)";
+                        string sqlRec = @"INSERT INTO Reclutadores (UsuarioId, Empresa, Contacto)
+                                 VALUES (@idU, @emp, @con)";
                         SqlCommand cmdRec = new SqlCommand(sqlRec, con);
                         cmdRec.Parameters.AddWithValue("@idU", nuevoUsuarioId);
                         cmdRec.Parameters.AddWithValue("@emp", txtEmpresa.Text.Trim());

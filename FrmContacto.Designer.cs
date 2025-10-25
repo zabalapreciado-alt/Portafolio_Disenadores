@@ -30,19 +30,14 @@
         {
             this.txtInstagram = new System.Windows.Forms.TextBox();
             this.txtWhatsapp = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnCrearInstagram = new System.Windows.Forms.Button();
             this.btnCrearWhatsapp = new System.Windows.Forms.Button();
-            this.btnCrearCorreo = new System.Windows.Forms.Button();
             this.btnEditarInstagram = new System.Windows.Forms.Button();
             this.btnEditarWhatsapp = new System.Windows.Forms.Button();
-            this.btnEditarCorreo = new System.Windows.Forms.Button();
             this.btnBorrarInstagram = new System.Windows.Forms.Button();
             this.btnBorrarWhatsapp = new System.Windows.Forms.Button();
-            this.btnBorrarCorreo = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -61,14 +56,6 @@
             this.txtWhatsapp.Name = "txtWhatsapp";
             this.txtWhatsapp.Size = new System.Drawing.Size(261, 29);
             this.txtWhatsapp.TabIndex = 1;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Font = new System.Drawing.Font("Impact", 13F);
-            this.txtCorreo.Location = new System.Drawing.Point(122, 188);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(261, 29);
-            this.txtCorreo.TabIndex = 2;
             // 
             // label1
             // 
@@ -89,16 +76,6 @@
             this.label2.Size = new System.Drawing.Size(83, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "Whatsapp";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Impact", 13F);
-            this.label3.Location = new System.Drawing.Point(21, 191);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 22);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "E-Mail";
             // 
             // btnCrearInstagram
             // 
@@ -134,23 +111,6 @@
             this.btnCrearWhatsapp.UseVisualStyleBackColor = false;
             this.btnCrearWhatsapp.Click += new System.EventHandler(this.btnCrearWhatsapp_Click);
             // 
-            // btnCrearCorreo
-            // 
-            this.btnCrearCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
-            this.btnCrearCorreo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCrearCorreo.FlatAppearance.BorderSize = 0;
-            this.btnCrearCorreo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.btnCrearCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearCorreo.Font = new System.Drawing.Font("Impact", 11F);
-            this.btnCrearCorreo.ForeColor = System.Drawing.Color.White;
-            this.btnCrearCorreo.Location = new System.Drawing.Point(122, 235);
-            this.btnCrearCorreo.Name = "btnCrearCorreo";
-            this.btnCrearCorreo.Size = new System.Drawing.Size(67, 27);
-            this.btnCrearCorreo.TabIndex = 8;
-            this.btnCrearCorreo.Text = "Guardar";
-            this.btnCrearCorreo.UseVisualStyleBackColor = false;
-            this.btnCrearCorreo.Click += new System.EventHandler(this.btnCrearCorreo_Click);
-            // 
             // btnEditarInstagram
             // 
             this.btnEditarInstagram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
@@ -184,23 +144,6 @@
             this.btnEditarWhatsapp.Text = "Editar";
             this.btnEditarWhatsapp.UseVisualStyleBackColor = false;
             this.btnEditarWhatsapp.Click += new System.EventHandler(this.btnEditarWhatsapp_Click);
-            // 
-            // btnEditarCorreo
-            // 
-            this.btnEditarCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
-            this.btnEditarCorreo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarCorreo.FlatAppearance.BorderSize = 0;
-            this.btnEditarCorreo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.btnEditarCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarCorreo.Font = new System.Drawing.Font("Impact", 11F);
-            this.btnEditarCorreo.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCorreo.Location = new System.Drawing.Point(219, 235);
-            this.btnEditarCorreo.Name = "btnEditarCorreo";
-            this.btnEditarCorreo.Size = new System.Drawing.Size(67, 27);
-            this.btnEditarCorreo.TabIndex = 11;
-            this.btnEditarCorreo.Text = "Editar";
-            this.btnEditarCorreo.UseVisualStyleBackColor = false;
-            this.btnEditarCorreo.Click += new System.EventHandler(this.btnEditarCorreo_Click);
             // 
             // btnBorrarInstagram
             // 
@@ -236,23 +179,6 @@
             this.btnBorrarWhatsapp.UseVisualStyleBackColor = false;
             this.btnBorrarWhatsapp.Click += new System.EventHandler(this.btnBorrarWhatsapp_Click);
             // 
-            // btnBorrarCorreo
-            // 
-            this.btnBorrarCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
-            this.btnBorrarCorreo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBorrarCorreo.FlatAppearance.BorderSize = 0;
-            this.btnBorrarCorreo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.btnBorrarCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrarCorreo.Font = new System.Drawing.Font("Impact", 11F);
-            this.btnBorrarCorreo.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarCorreo.Location = new System.Drawing.Point(316, 235);
-            this.btnBorrarCorreo.Name = "btnBorrarCorreo";
-            this.btnBorrarCorreo.Size = new System.Drawing.Size(67, 27);
-            this.btnBorrarCorreo.TabIndex = 14;
-            this.btnBorrarCorreo.Text = "Borrar";
-            this.btnBorrarCorreo.UseVisualStyleBackColor = false;
-            this.btnBorrarCorreo.Click += new System.EventHandler(this.btnBorrarCorreo_Click);
-            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
@@ -262,7 +188,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Impact", 11F);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(299, 296);
+            this.btnVolver.Location = new System.Drawing.Point(299, 196);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 24);
             this.btnVolver.TabIndex = 15;
@@ -275,21 +201,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(411, 333);
+            this.ClientSize = new System.Drawing.Size(411, 236);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnBorrarCorreo);
             this.Controls.Add(this.btnBorrarWhatsapp);
             this.Controls.Add(this.btnBorrarInstagram);
-            this.Controls.Add(this.btnEditarCorreo);
             this.Controls.Add(this.btnEditarWhatsapp);
             this.Controls.Add(this.btnEditarInstagram);
-            this.Controls.Add(this.btnCrearCorreo);
             this.Controls.Add(this.btnCrearWhatsapp);
             this.Controls.Add(this.btnCrearInstagram);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.txtWhatsapp);
             this.Controls.Add(this.txtInstagram);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -305,19 +226,14 @@
 
         private System.Windows.Forms.TextBox txtInstagram;
         private System.Windows.Forms.TextBox txtWhatsapp;
-        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCrearInstagram;
         private System.Windows.Forms.Button btnCrearWhatsapp;
-        private System.Windows.Forms.Button btnCrearCorreo;
         private System.Windows.Forms.Button btnEditarInstagram;
         private System.Windows.Forms.Button btnEditarWhatsapp;
-        private System.Windows.Forms.Button btnEditarCorreo;
         private System.Windows.Forms.Button btnBorrarInstagram;
         private System.Windows.Forms.Button btnBorrarWhatsapp;
-        private System.Windows.Forms.Button btnBorrarCorreo;
         private System.Windows.Forms.Button btnVolver;
     }
 }

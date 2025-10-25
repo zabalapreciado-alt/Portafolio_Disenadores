@@ -39,12 +39,12 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    
+                    // 1️⃣ Buscar el Id del diseñador
                     SqlCommand cmdId = new SqlCommand(@"
-                SELECT d.Id 
-                FROM Diseñadores d
-                JOIN Usuarios u ON d.UsuarioId = u.Id
-                WHERE u.NombreUsuario = @n", con);
+                        SELECT d.Id 
+                        FROM Diseñadores d
+                        JOIN Usuarios u ON d.UsuarioId = u.Id
+                        WHERE u.NombreUsuario = @n", con);
                     cmdId.Parameters.AddWithValue("@n", nombreUsuario);
 
                     object result = cmdId.ExecuteScalar();
@@ -57,13 +57,17 @@ namespace PortafolioDiseñadores
 
                     DiseñadorIdBuscado = Convert.ToInt32(result);
 
-                    
+                    // 2️⃣ Obtener la información del diseñador
                     SqlCommand cmdPerfil = new SqlCommand(@"
-                SELECT u.NombreUsuario, p.Biografia, p.Instagram, p.Whatsapp, p.CorreoContacto
-                FROM Diseñadores d
-                JOIN Usuarios u ON d.UsuarioId = u.Id
-                LEFT JOIN Perfiles p ON p.DiseñadorId = d.Id
-                WHERE d.Id = @id", con);
+                        SELECT 
+                            u.NombreUsuario,
+                            u.Biografia,
+                            u.Instagram,
+                            u.WhatsApp,
+                            u.CorreoContacto
+                        FROM Diseñadores d
+                        JOIN Usuarios u ON d.UsuarioId = u.Id
+                        WHERE d.Id = @id", con);
                     cmdPerfil.Parameters.AddWithValue("@id", DiseñadorIdBuscado);
 
                     using (SqlDataReader reader = cmdPerfil.ExecuteReader())
@@ -73,7 +77,7 @@ namespace PortafolioDiseñadores
                             lblUsuario.Text = reader["NombreUsuario"]?.ToString() ?? "No disponible";
                             lblBio.Text = reader["Biografia"]?.ToString() ?? "Sin biografía.";
                             lblInstagram.Text = reader["Instagram"]?.ToString() ?? "No disponible";
-                            lblWhatsapp.Text = reader["Whatsapp"]?.ToString() ?? "No disponible";
+                            lblWhatsapp.Text = reader["WhatsApp"]?.ToString() ?? "No disponible";
                             lblCorreo.Text = reader["CorreoContacto"]?.ToString() ?? "No disponible";
                         }
                         else
@@ -83,11 +87,21 @@ namespace PortafolioDiseñadores
                         }
                     }
 
-                   
+                    // 3️⃣ Mostrar cantidad de ofertas recibidas
+                    SqlCommand cmdOfertas = new SqlCommand(@"
+                        SELECT COUNT(*) 
+                        FROM OfertasTrabajo 
+                        WHERE DiseñadorId = @id", con);
+                    cmdOfertas.Parameters.AddWithValue("@id", DiseñadorIdBuscado);
+
+                    int totalOfertas = Convert.ToInt32(cmdOfertas.ExecuteScalar());
+                    lblOfertasRecibidas.Text = $"Ofertas Recibidas: {totalOfertas}";
+
+                    // 4️⃣ Cargar proyectos del diseñador
                     CargarProyectosDelDiseñador(con);
                 }
 
-                
+                // 5️⃣ Mostrar el primer proyecto
                 if (proyectos.Rows.Count > 0)
                 {
                     index = 0;
@@ -107,6 +121,7 @@ namespace PortafolioDiseñadores
                 MessageBox.Show("Error al buscar diseñador: " + ex.Message);
             }
 
+            // 6️⃣ Mostrar botón solo a reclutador o admin
             if ((FrmHome.Rol == "reclutador" || FrmHome.Rol == "admin") && DiseñadorIdBuscado > 0)
             {
                 btnNuevaOferta.Visible = true;
@@ -117,17 +132,18 @@ namespace PortafolioDiseñadores
             }
         }
 
+
         private void CargarProyectosDelDiseñador(SqlConnection con)
         {
             try
             {
                 string sql = @"
-            SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
-                   p.DiseñadorId, d.Nombre AS Diseñador
-            FROM Proyectos p
-            LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
-            WHERE p.DiseñadorId = @d
-            ORDER BY p.Id DESC";
+                    SELECT p.Id, p.Titulo, p.Descripcion, p.RutaImagen,
+                           p.DiseñadorId, d.Nombre AS Diseñador
+                    FROM Proyectos p
+                    LEFT JOIN Diseñadores d ON p.DiseñadorId = d.Id
+                    WHERE p.DiseñadorId = @d
+                    ORDER BY p.Id DESC";
 
                 SqlDataAdapter da = new SqlDataAdapter(sql, con);
                 da.SelectCommand.Parameters.AddWithValue("@d", DiseñadorIdBuscado);
@@ -162,7 +178,6 @@ namespace PortafolioDiseñadores
             string diseñador = row["Diseñador"]?.ToString() ?? "Desconocido";
             lblDescripcion.Text = desc + Environment.NewLine + "Diseñador: " + diseñador;
 
-            
             string nombreImg = row["RutaImagen"]?.ToString();
             string fullPath = ObtenerRutaCompletaImagen(nombreImg);
 

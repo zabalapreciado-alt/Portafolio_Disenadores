@@ -13,42 +13,42 @@ namespace PortafolioDiseñadores
 {
     public partial class FrmAcercaDe : Form
     {
-        private int perfilId = 0;
+        private int usuarioId = 0; // Usuario logueado
+
         public FrmAcercaDe()
         {
             InitializeComponent();
         }
-        private int diseñadorId = 0; 
+        
 
         private void FrmAcercaDe_Load(object sender, EventArgs e)
         {
-            diseñadorId = ObtenerDiseñadorId(FrmHome.UsuarioId);
-
+            usuarioId = FrmHome.UsuarioId; // Lo tomamos del usuario que inició sesión
             CargarBiografia();
         }
 
+        // 🔹 Cargar la biografía del usuario desde la tabla Usuarios
         private void CargarBiografia()
         {
             try
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    string sql = "SELECT Id, Biografia FROM Perfiles WHERE DiseñadorId=@d";
+                    string sql = "SELECT Biografia FROM Usuarios WHERE Id=@u";
                     SqlCommand cmd = new SqlCommand(sql, con);
-                    cmd.Parameters.AddWithValue("@d", diseñadorId);
+                    cmd.Parameters.AddWithValue("@u", usuarioId);
 
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.Read())
+                    object bio = cmd.ExecuteScalar();
+
+                    if (bio != null && !Convert.IsDBNull(bio) && !string.IsNullOrWhiteSpace(bio.ToString()))
                     {
-                        perfilId = Convert.ToInt32(dr["Id"]);
-                        txtBiografia.Text = dr["Biografia"].ToString();
+                        txtBiografia.Text = bio.ToString();
                         btnCrear.Enabled = false;
                         btnEditar.Enabled = true;
                         btnEliminar.Enabled = true;
                     }
                     else
                     {
-                        perfilId = 0;
                         txtBiografia.Clear();
                         btnCrear.Enabled = true;
                         btnEditar.Enabled = false;
@@ -74,11 +74,10 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    string sql = @"INSERT INTO Perfiles (DiseñadorId, Biografia) 
-               VALUES (@d, @b)";
+                    string sql = "UPDATE Usuarios SET Biografia=@b, FechaActualizacion=GETDATE() WHERE Id=@u";
                     SqlCommand cmd = new SqlCommand(sql, con);
-                    cmd.Parameters.AddWithValue("@d", diseñadorId);
                     cmd.Parameters.AddWithValue("@b", txtBiografia.Text.Trim());
+                    cmd.Parameters.AddWithValue("@u", usuarioId);
                     cmd.ExecuteNonQuery();
                 }
 
@@ -93,9 +92,9 @@ namespace PortafolioDiseñadores
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (perfilId == 0)
+            if (string.IsNullOrWhiteSpace(txtBiografia.Text))
             {
-                MessageBox.Show("No hay biografía para editar.");
+                MessageBox.Show("Escribe una biografía antes de guardar los cambios.");
                 return;
             }
 
@@ -103,12 +102,10 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    string sql = @"UPDATE Perfiles 
-                                   SET Biografia=@b, FechaActualizacion=GETDATE() 
-                                   WHERE Id=@id";
+                    string sql = "UPDATE Usuarios SET Biografia=@b, FechaActualizacion=GETDATE() WHERE Id=@u";
                     SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("@b", txtBiografia.Text.Trim());
-                    cmd.Parameters.AddWithValue("@id", perfilId);
+                    cmd.Parameters.AddWithValue("@u", usuarioId);
                     cmd.ExecuteNonQuery();
                 }
 
@@ -120,15 +117,10 @@ namespace PortafolioDiseñadores
                 MessageBox.Show("Error al editar la biografía: " + ex.Message);
             }
         }
+        
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (perfilId == 0)
-            {
-                MessageBox.Show("No hay biografía para eliminar.");
-                return;
-            }
-
             DialogResult r = MessageBox.Show(
                 "¿Estás seguro de eliminar tu biografía?",
                 "Confirmar",
@@ -141,9 +133,9 @@ namespace PortafolioDiseñadores
                 {
                     using (SqlConnection con = new Conexion().Abrir())
                     {
-                        string sql = "DELETE FROM Perfiles WHERE Id=@id";
+                        string sql = "UPDATE Usuarios SET Biografia=NULL, FechaActualizacion=GETDATE() WHERE Id=@u";
                         SqlCommand cmd = new SqlCommand(sql, con);
-                        cmd.Parameters.AddWithValue("@id", perfilId);
+                        cmd.Parameters.AddWithValue("@u", usuarioId);
                         cmd.ExecuteNonQuery();
                     }
 
@@ -157,18 +149,6 @@ namespace PortafolioDiseñadores
             }
         }
 
-        private int ObtenerDiseñadorId(int usuarioId)
-        {
-            using (SqlConnection con = new Conexion().Abrir())
-            {
-                string sql = "SELECT Id FROM Diseñadores WHERE UsuarioId=@u";
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@u", usuarioId);
-
-                object result = cmd.ExecuteScalar();
-                return result != null ? Convert.ToInt32(result) : 0;
-            }
-        }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
