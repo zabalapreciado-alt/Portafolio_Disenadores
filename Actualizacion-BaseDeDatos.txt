@@ -1,0 +1,19 @@
+ALTER TABLE Usuarios
+ADD Biografia NVARCHAR(MAX) NULL,
+    WhatsApp NVARCHAR(20) NULL,
+    Instagram NVARCHAR(100) NULL,
+    CorreoContacto NVARCHAR(100) NULL,
+    FechaActualizacion DATETIME DEFAULT GETDATE();
+
+UPDATE u
+SET u.Biografia = p.Biografia,
+    u.WhatsApp = p.WhatsApp,
+    u.Instagram = p.Instagram,
+    u.CorreoContacto = p.CorreoContacto,
+    u.FechaActualizacion = p.FechaActualizacion
+FROM Usuarios u
+INNER JOIN Diseñadores d ON d.UsuarioId = u.Id
+INNER JOIN Perfiles p ON p.DiseñadorId = d.Id;
+
+DROP TABLE Perfiles;
+GO
