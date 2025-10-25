@@ -37,6 +37,8 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.grbDiseñador = new System.Windows.Forms.GroupBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtEspecialidad = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.grbDiseñador.SuspendLayout();
             this.grbReclutador.SuspendLayout();
             this.SuspendLayout();
@@ -160,6 +160,24 @@
             this.grbDiseñador.TabStop = false;
             this.grbDiseñador.Text = "Diseñador";
             // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Font = new System.Drawing.Font("Impact", 10F);
+            this.txtCorreo.Location = new System.Drawing.Point(139, 67);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(198, 24);
+            this.txtCorreo.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Impact", 10F);
+            this.label6.Location = new System.Drawing.Point(19, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 18);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Especialidad";
+            // 
             // txtEspecialidad
             // 
             this.txtEspecialidad.Font = new System.Drawing.Font("Impact", 10F);
@@ -242,27 +260,9 @@
             this.label7.Font = new System.Drawing.Font("Impact", 10F);
             this.label7.Location = new System.Drawing.Point(19, 70);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 18);
+            this.label7.Size = new System.Drawing.Size(114, 18);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Contacto";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Font = new System.Drawing.Font("Impact", 10F);
-            this.txtCorreo.Location = new System.Drawing.Point(139, 67);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(198, 24);
-            this.txtCorreo.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Impact", 10F);
-            this.label6.Location = new System.Drawing.Point(19, 111);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 18);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Especialidad";
+            this.label7.Text = "Correo Electronico";
             // 
             // frmRegistrarse
             // 
