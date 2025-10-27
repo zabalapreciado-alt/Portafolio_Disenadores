@@ -32,13 +32,10 @@
             this.txtWhatsapp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCrearInstagram = new System.Windows.Forms.Button();
-            this.btnCrearWhatsapp = new System.Windows.Forms.Button();
-            this.btnEditarInstagram = new System.Windows.Forms.Button();
-            this.btnEditarWhatsapp = new System.Windows.Forms.Button();
-            this.btnBorrarInstagram = new System.Windows.Forms.Button();
-            this.btnBorrarWhatsapp = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtInstagram
@@ -48,14 +45,16 @@
             this.txtInstagram.Name = "txtInstagram";
             this.txtInstagram.Size = new System.Drawing.Size(261, 29);
             this.txtInstagram.TabIndex = 0;
+            this.txtInstagram.TextChanged += new System.EventHandler(this.txtInstagram_TextChanged);
             // 
             // txtWhatsapp
             // 
             this.txtWhatsapp.Font = new System.Drawing.Font("Impact", 13F);
-            this.txtWhatsapp.Location = new System.Drawing.Point(122, 111);
+            this.txtWhatsapp.Location = new System.Drawing.Point(122, 81);
             this.txtWhatsapp.Name = "txtWhatsapp";
             this.txtWhatsapp.Size = new System.Drawing.Size(261, 29);
             this.txtWhatsapp.TabIndex = 1;
+            this.txtWhatsapp.TextChanged += new System.EventHandler(this.txtWhatsapp_TextChanged);
             // 
             // label1
             // 
@@ -71,113 +70,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Impact", 13F);
-            this.label2.Location = new System.Drawing.Point(21, 114);
+            this.label2.Location = new System.Drawing.Point(21, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "Whatsapp";
-            // 
-            // btnCrearInstagram
-            // 
-            this.btnCrearInstagram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
-            this.btnCrearInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCrearInstagram.FlatAppearance.BorderSize = 0;
-            this.btnCrearInstagram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.btnCrearInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearInstagram.Font = new System.Drawing.Font("Impact", 11F);
-            this.btnCrearInstagram.ForeColor = System.Drawing.Color.White;
-            this.btnCrearInstagram.Location = new System.Drawing.Point(122, 68);
-            this.btnCrearInstagram.Name = "btnCrearInstagram";
-            this.btnCrearInstagram.Size = new System.Drawing.Size(67, 26);
-            this.btnCrearInstagram.TabIndex = 6;
-            this.btnCrearInstagram.Text = "Guardar";
-            this.btnCrearInstagram.UseVisualStyleBackColor = false;
-            this.btnCrearInstagram.Click += new System.EventHandler(this.btnCrearInstagram_Click);
-            // 
-            // btnCrearWhatsapp
-            // 
-            this.btnCrearWhatsapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
-            this.btnCrearWhatsapp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCrearWhatsapp.FlatAppearance.BorderSize = 0;
-            this.btnCrearWhatsapp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.btnCrearWhatsapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearWhatsapp.Font = new System.Drawing.Font("Impact", 11F);
-            this.btnCrearWhatsapp.ForeColor = System.Drawing.Color.White;
-            this.btnCrearWhatsapp.Location = new System.Drawing.Point(122, 146);
-            this.btnCrearWhatsapp.Name = "btnCrearWhatsapp";
-            this.btnCrearWhatsapp.Size = new System.Drawing.Size(67, 27);
-            this.btnCrearWhatsapp.TabIndex = 7;
-            this.btnCrearWhatsapp.Text = "Guardar";
-            this.btnCrearWhatsapp.UseVisualStyleBackColor = false;
-            this.btnCrearWhatsapp.Click += new System.EventHandler(this.btnCrearWhatsapp_Click);
-            // 
-            // btnEditarInstagram
-            // 
-            this.btnEditarInstagram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
-            this.btnEditarInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarInstagram.FlatAppearance.BorderSize = 0;
-            this.btnEditarInstagram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.btnEditarInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarInstagram.Font = new System.Drawing.Font("Impact", 11F);
-            this.btnEditarInstagram.ForeColor = System.Drawing.Color.White;
-            this.btnEditarInstagram.Location = new System.Drawing.Point(219, 68);
-            this.btnEditarInstagram.Name = "btnEditarInstagram";
-            this.btnEditarInstagram.Size = new System.Drawing.Size(67, 26);
-            this.btnEditarInstagram.TabIndex = 9;
-            this.btnEditarInstagram.Text = "Editar";
-            this.btnEditarInstagram.UseVisualStyleBackColor = false;
-            this.btnEditarInstagram.Click += new System.EventHandler(this.btnEditarInstagram_Click);
-            // 
-            // btnEditarWhatsapp
-            // 
-            this.btnEditarWhatsapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
-            this.btnEditarWhatsapp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarWhatsapp.FlatAppearance.BorderSize = 0;
-            this.btnEditarWhatsapp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.btnEditarWhatsapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarWhatsapp.Font = new System.Drawing.Font("Impact", 11F);
-            this.btnEditarWhatsapp.ForeColor = System.Drawing.Color.White;
-            this.btnEditarWhatsapp.Location = new System.Drawing.Point(219, 146);
-            this.btnEditarWhatsapp.Name = "btnEditarWhatsapp";
-            this.btnEditarWhatsapp.Size = new System.Drawing.Size(67, 27);
-            this.btnEditarWhatsapp.TabIndex = 10;
-            this.btnEditarWhatsapp.Text = "Editar";
-            this.btnEditarWhatsapp.UseVisualStyleBackColor = false;
-            this.btnEditarWhatsapp.Click += new System.EventHandler(this.btnEditarWhatsapp_Click);
-            // 
-            // btnBorrarInstagram
-            // 
-            this.btnBorrarInstagram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
-            this.btnBorrarInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBorrarInstagram.FlatAppearance.BorderSize = 0;
-            this.btnBorrarInstagram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.btnBorrarInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrarInstagram.Font = new System.Drawing.Font("Impact", 11F);
-            this.btnBorrarInstagram.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarInstagram.Location = new System.Drawing.Point(316, 68);
-            this.btnBorrarInstagram.Name = "btnBorrarInstagram";
-            this.btnBorrarInstagram.Size = new System.Drawing.Size(67, 26);
-            this.btnBorrarInstagram.TabIndex = 12;
-            this.btnBorrarInstagram.Text = "Borrar";
-            this.btnBorrarInstagram.UseVisualStyleBackColor = false;
-            this.btnBorrarInstagram.Click += new System.EventHandler(this.btnBorrarInstagram_Click);
-            // 
-            // btnBorrarWhatsapp
-            // 
-            this.btnBorrarWhatsapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
-            this.btnBorrarWhatsapp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBorrarWhatsapp.FlatAppearance.BorderSize = 0;
-            this.btnBorrarWhatsapp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.btnBorrarWhatsapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrarWhatsapp.Font = new System.Drawing.Font("Impact", 11F);
-            this.btnBorrarWhatsapp.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarWhatsapp.Location = new System.Drawing.Point(316, 146);
-            this.btnBorrarWhatsapp.Name = "btnBorrarWhatsapp";
-            this.btnBorrarWhatsapp.Size = new System.Drawing.Size(67, 27);
-            this.btnBorrarWhatsapp.TabIndex = 13;
-            this.btnBorrarWhatsapp.Text = "Borrar";
-            this.btnBorrarWhatsapp.UseVisualStyleBackColor = false;
-            this.btnBorrarWhatsapp.Click += new System.EventHandler(this.btnBorrarWhatsapp_Click);
             // 
             // btnVolver
             // 
@@ -188,7 +85,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Impact", 11F);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(299, 196);
+            this.btnVolver.Location = new System.Drawing.Point(299, 160);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 24);
             this.btnVolver.TabIndex = 15;
@@ -196,19 +93,67 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnCrear
+            // 
+            this.btnCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnCrear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCrear.FlatAppearance.BorderSize = 0;
+            this.btnCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrear.Font = new System.Drawing.Font("Impact", 11F);
+            this.btnCrear.ForeColor = System.Drawing.Color.White;
+            this.btnCrear.Location = new System.Drawing.Point(119, 125);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(84, 24);
+            this.btnCrear.TabIndex = 16;
+            this.btnCrear.Text = "Guardar";
+            this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Impact", 11F);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(209, 125);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(84, 24);
+            this.btnEditar.TabIndex = 17;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(62)))), ((int)(((byte)(140)))));
+            this.btnBorrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBorrar.FlatAppearance.BorderSize = 0;
+            this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Font = new System.Drawing.Font("Impact", 11F);
+            this.btnBorrar.ForeColor = System.Drawing.Color.White;
+            this.btnBorrar.Location = new System.Drawing.Point(299, 125);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(84, 24);
+            this.btnBorrar.TabIndex = 18;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
             // FrmContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(411, 236);
+            this.ClientSize = new System.Drawing.Size(406, 196);
+            this.Controls.Add(this.btnBorrar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnBorrarWhatsapp);
-            this.Controls.Add(this.btnBorrarInstagram);
-            this.Controls.Add(this.btnEditarWhatsapp);
-            this.Controls.Add(this.btnEditarInstagram);
-            this.Controls.Add(this.btnCrearWhatsapp);
-            this.Controls.Add(this.btnCrearInstagram);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtWhatsapp);
@@ -228,12 +173,9 @@
         private System.Windows.Forms.TextBox txtWhatsapp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnCrearInstagram;
-        private System.Windows.Forms.Button btnCrearWhatsapp;
-        private System.Windows.Forms.Button btnEditarInstagram;
-        private System.Windows.Forms.Button btnEditarWhatsapp;
-        private System.Windows.Forms.Button btnBorrarInstagram;
-        private System.Windows.Forms.Button btnBorrarWhatsapp;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnBorrar;
     }
 }

@@ -24,6 +24,7 @@ namespace PortafolioDiseñadores
         {
             usuarioId = FrmHome.UsuarioId;
             CargarContacto();
+            ActualizarEstadosBotones();
         }
 
         private void CargarContacto()
@@ -57,75 +58,6 @@ namespace PortafolioDiseñadores
             }
         }
 
-        private void btnCrearInstagram_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtInstagram.Text))
-            {
-                MessageBox.Show("Ingrese su usuario de Instagram.");
-                return;
-            }
-
-            ActualizarCampo("Instagram", txtInstagram.Text.Trim());
-        }
-
-        private void btnEditarInstagram_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtInstagram.Text))
-            {
-                MessageBox.Show("Ingrese el nuevo usuario de Instagram.");
-                return;
-            }
-
-            ActualizarCampo("Instagram", txtInstagram.Text.Trim());
-        }
-
-        private void btnBorrarInstagram_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtInstagram.Text))
-            {
-                MessageBox.Show("No hay usuario de Instagram que borrar.");
-                return;
-            }
-
-            ActualizarCampo("Instagram", null);
-            txtInstagram.Clear();
-        }
-
-        private void btnCrearWhatsapp_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtWhatsapp.Text))
-            {
-                MessageBox.Show("Ingrese el número de WhatsApp.");
-                return;
-            }
-
-            ActualizarCampo("WhatsApp", txtWhatsapp.Text.Trim());
-        }
-
-        private void btnEditarWhatsapp_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtWhatsapp.Text))
-            {
-                MessageBox.Show("Ingrese el nuevo número de WhatsApp.");
-                return;
-            }
-
-            ActualizarCampo("WhatsApp", txtWhatsapp.Text.Trim());
-        }
-
-        private void btnBorrarWhatsapp_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtWhatsapp.Text))
-            {
-                MessageBox.Show("No hay número de WhatsApp que borrar.");
-                return;
-            }
-
-            ActualizarCampo("WhatsApp", null);
-            txtWhatsapp.Clear();
-        }
-
-
 
         private void ActualizarCampo(string campo, string valor)
         {
@@ -145,10 +77,7 @@ namespace PortafolioDiseñadores
                         cmd.Parameters.AddWithValue("@v", valor);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show($"{campo} actualizado correctamente.");
                 }
-
-                CargarContacto();
             }
             catch (Exception ex)
             {
@@ -160,7 +89,141 @@ namespace PortafolioDiseñadores
         {
             this.Close();
         }
-    }
 
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtInstagram.Text) && string.IsNullOrWhiteSpace(txtWhatsapp.Text))
+            {
+                MessageBox.Show("Debes ingresar al menos un dato (Instagram o WhatsApp) para poder guardar.");
+                return;
+            }
+
+            bool guardado = false;
+
+            if (!string.IsNullOrWhiteSpace(txtInstagram.Text))
+            {
+                ActualizarCampo("Instagram", txtInstagram.Text.Trim());
+                guardado = true;
+            }
+
+            if (!string.IsNullOrWhiteSpace(txtWhatsapp.Text))
+            {
+                ActualizarCampo("WhatsApp", txtWhatsapp.Text.Trim());
+                guardado = true;
+            }
+
+            if (guardado)
+            {
+                MessageBox.Show("Datos guardados correctamente.");
+                CargarContacto();
+                ActualizarEstadosBotones();
+            }
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            string instagramActual = txtInstagram.Text.Trim();
+            string whatsappActual = txtWhatsapp.Text.Trim();
+
+            using (SqlConnection con = new Conexion().Abrir())
+            {
+                string sqlCheck = @"SELECT Instagram, WhatsApp FROM Usuarios WHERE Id = @u";
+                SqlCommand cmdCheck = new SqlCommand(sqlCheck, con);
+                cmdCheck.Parameters.AddWithValue("@u", usuarioId);
+                SqlDataReader dr = cmdCheck.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    bool hayInstagramGuardado = !string.IsNullOrEmpty(dr["Instagram"].ToString());
+                    bool hayWhatsappGuardado = !string.IsNullOrEmpty(dr["WhatsApp"].ToString());
+
+                    if (!hayInstagramGuardado && !hayWhatsappGuardado)
+                    {
+                        MessageBox.Show("No hay información guardada para editar. Primero debes crearla.");
+                        return;
+                    }
+
+                    bool editado = false;
+
+                    if (hayInstagramGuardado && !string.IsNullOrWhiteSpace(instagramActual))
+                    {
+                        ActualizarCampo("Instagram", instagramActual);
+                        editado = true;
+                    }
+                    else if (!hayInstagramGuardado && !string.IsNullOrWhiteSpace(instagramActual))
+                    {
+                        MessageBox.Show("No puedes editar Instagram porque aún no tienes uno guardado.");
+                    }
+
+                    if (hayWhatsappGuardado && !string.IsNullOrWhiteSpace(whatsappActual))
+                    {
+                        ActualizarCampo("WhatsApp", whatsappActual);
+                        editado = true;
+                    }
+                    else if (!hayWhatsappGuardado && !string.IsNullOrWhiteSpace(whatsappActual))
+                    {
+                        MessageBox.Show("No puedes editar WhatsApp porque aún no tienes uno guardado.");
+                    }
+
+                    if (editado)
+                    {
+                        MessageBox.Show("Datos editados correctamente.");
+                        CargarContacto();
+                        ActualizarEstadosBotones();
+                    }
+                }
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtInstagram.Text) && string.IsNullOrEmpty(txtWhatsapp.Text))
+            {
+                MessageBox.Show("No hay información para borrar.");
+                return;
+            }
+
+            DialogResult dr = MessageBox.Show("¿Seguro que deseas borrar tu información de contacto?",
+                                              "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.Yes)
+            {
+                if (!string.IsNullOrEmpty(txtInstagram.Text))
+                    ActualizarCampo("Instagram", null);
+
+                if (!string.IsNullOrEmpty(txtWhatsapp.Text))
+                    ActualizarCampo("WhatsApp", null);
+
+                txtInstagram.Clear();
+                txtWhatsapp.Clear();
+
+                MessageBox.Show("Información borrada correctamente.");
+                ActualizarEstadosBotones();
+            }
+
+
+        }
+
+        private void ActualizarEstadosBotones()
+        {
+            // Si ambos campos están vacíos, deshabilitar Editar y Borrar
+            bool hayDatos = !string.IsNullOrWhiteSpace(txtInstagram.Text) || !string.IsNullOrWhiteSpace(txtWhatsapp.Text);
+
+            btnCrear.Enabled = hayDatos; // Crear solo si hay algo para guardar
+            btnEditar.Enabled = hayDatos; // Editar solo si hay algo que modificar
+            btnBorrar.Enabled = hayDatos; // Borrar solo si hay datos visibles
+        }
+
+        private void txtInstagram_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarEstadosBotones();
+        }
+
+        private void txtWhatsapp_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarEstadosBotones();
+        }
+    }
 }
 
