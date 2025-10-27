@@ -39,7 +39,7 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    // 1️⃣ Buscar el Id del diseñador
+                    
                     SqlCommand cmdId = new SqlCommand(@"
                         SELECT d.Id 
                         FROM Diseñadores d
@@ -57,7 +57,7 @@ namespace PortafolioDiseñadores
 
                     DiseñadorIdBuscado = Convert.ToInt32(result);
 
-                    // 2️⃣ Obtener la información del diseñador
+                    
                     SqlCommand cmdPerfil = new SqlCommand(@"
                         SELECT 
                             u.NombreUsuario,
@@ -87,7 +87,7 @@ namespace PortafolioDiseñadores
                         }
                     }
 
-                    // 3️⃣ Mostrar cantidad de ofertas recibidas
+                    
                     SqlCommand cmdOfertas = new SqlCommand(@"
                         SELECT COUNT(*) 
                         FROM OfertasTrabajo 
@@ -97,11 +97,11 @@ namespace PortafolioDiseñadores
                     int totalOfertas = Convert.ToInt32(cmdOfertas.ExecuteScalar());
                     lblOfertasRecibidas.Text = $"Ofertas Recibidas: {totalOfertas}";
 
-                    // 4️⃣ Cargar proyectos del diseñador
+                    
                     CargarProyectosDelDiseñador(con);
                 }
 
-                // 5️⃣ Mostrar el primer proyecto
+                
                 if (proyectos.Rows.Count > 0)
                 {
                     index = 0;
@@ -121,7 +121,7 @@ namespace PortafolioDiseñadores
                 MessageBox.Show("Error al buscar diseñador: " + ex.Message);
             }
 
-            // 6️⃣ Mostrar botón solo a reclutador o admin
+            
             if ((FrmHome.Rol == "reclutador" || FrmHome.Rol == "admin") && DiseñadorIdBuscado > 0)
             {
                 btnNuevaOferta.Visible = true;

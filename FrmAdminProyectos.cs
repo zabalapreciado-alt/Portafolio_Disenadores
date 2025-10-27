@@ -64,17 +64,8 @@ namespace PortafolioDiseñadores
             }
         }
 
-        
-
-        // Copia la imagen a la carpeta Imagenes del proyecto y guarda sólo el nombre
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //if (FrmHome.UsuarioId == 0)
-            //{
-            //    MessageBox.Show("Debes iniciar sesión como diseñador o admin.");
-            //    return;
-            //}
 
             try
             {

@@ -207,12 +207,11 @@ namespace PortafolioDiseñadores
 
         private void ActualizarEstadosBotones()
         {
-            // Si ambos campos están vacíos, deshabilitar Editar y Borrar
             bool hayDatos = !string.IsNullOrWhiteSpace(txtInstagram.Text) || !string.IsNullOrWhiteSpace(txtWhatsapp.Text);
 
-            btnCrear.Enabled = hayDatos; // Crear solo si hay algo para guardar
-            btnEditar.Enabled = hayDatos; // Editar solo si hay algo que modificar
-            btnBorrar.Enabled = hayDatos; // Borrar solo si hay datos visibles
+            btnCrear.Enabled = hayDatos;
+            btnEditar.Enabled = hayDatos;
+            btnBorrar.Enabled = hayDatos;
         }
 
         private void txtInstagram_TextChanged(object sender, EventArgs e)

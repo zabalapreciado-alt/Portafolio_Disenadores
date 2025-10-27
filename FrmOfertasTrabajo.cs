@@ -98,72 +98,7 @@ namespace PortafolioDiseñadores
             }
         }
 
-        //private void CambiarEstadoSeleccion(string nuevoEstado)
-        //{
-        //    if (dgvOfertas.CurrentRow == null)
-        //    {
-        //        MessageBox.Show("Seleccione una oferta.");
-        //        return;
-        //    }
-
-        //    int id = Convert.ToInt32(dgvOfertas.CurrentRow.Cells["Id"].Value);
-
-        //    try
-        //    {
-        //        using (SqlConnection con = new Conexion().Abrir())
-        //        {
-        //            // 🔹 1️⃣ Obtener datos necesarios
-        //            string sqlInfo = @"
-        //        SELECT 
-        //            O.Titulo,
-        //            R.Contacto AS CorreoReclutador,
-        //            R.Empresa,
-        //            D.Nombre AS NombreDiseñador
-        //        FROM OfertasTrabajo O
-        //        INNER JOIN Reclutadores R ON O.ReclutadorId = R.Id
-        //        INNER JOIN Diseñadores D ON O.DiseñadorId = D.Id
-        //        WHERE O.Id = @id";
-
-        //            SqlCommand cmdInfo = new SqlCommand(sqlInfo, con);
-        //            cmdInfo.Parameters.AddWithValue("@id", id);
-
-        //            using (SqlDataReader reader = cmdInfo.ExecuteReader())
-        //            {
-        //                if (!reader.Read())
-        //                {
-        //                    MessageBox.Show("No se encontraron datos para la oferta seleccionada.");
-        //                    return;
-        //                }
-
-        //                string titulo = reader["Titulo"].ToString();
-        //                string correoReclutador = reader["CorreoReclutador"].ToString();
-        //                string empresa = reader["Empresa"].ToString();
-        //                string nombreDiseñador = reader["NombreDiseñador"].ToString();
-
-        //                reader.Close();
-
-        //                // 🔹 2️⃣ Actualizar estado
-        //                string sql = "UPDATE OfertasTrabajo SET Estado=@e WHERE Id=@id";
-        //                using (SqlCommand cmd = new SqlCommand(sql, con))
-        //                {
-        //                    cmd.Parameters.AddWithValue("@e", nuevoEstado);
-        //                    cmd.Parameters.AddWithValue("@id", id);
-        //                    cmd.ExecuteNonQuery();
-        //                }
-
-        //                // 🔹 3️⃣ Enviar correo de notificación al reclutador
-        //                EnviarCorreoReclutador(correoReclutador, nombreDiseñador, titulo, nuevoEstado);
-        //            }
-        //        }
-
-        //        MessageBox.Show("Oferta actualizada y notificación enviada.");
-        //        CargarOfertas();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error cambiando estado: " + ex.Message);
-        //    }
-        //}
+        
         private void CambiarEstadoSeleccion(string nuevoEstado)
         {
             if (dgvOfertas.CurrentRow == null)
@@ -175,14 +110,14 @@ namespace PortafolioDiseñadores
             int id = Convert.ToInt32(dgvOfertas.CurrentRow.Cells["Id"].Value);
             string estadoActual = dgvOfertas.CurrentRow.Cells["Estado"].Value?.ToString();
 
-            // 🔹 1️⃣ Evitar cambiar ofertas que ya no estén pendientes
+            
             if (!estadoActual.Equals("Pendiente", StringComparison.OrdinalIgnoreCase))
             {
                 MessageBox.Show($"No se puede cambiar una oferta que ya está {estadoActual}.", "Acción no permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 🔹 2️⃣ Confirmar acción con el diseñador
+            
             DialogResult confirmacion = MessageBox.Show(
                 $"¿Está seguro que desea marcar esta oferta como '{nuevoEstado}'?",
                 "Confirmar acción",
@@ -200,7 +135,7 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    // 🔹 3️⃣ Obtener datos necesarios para enviar correo
+                    
                     string sqlInfo = @"
                 SELECT 
                     O.Titulo,
@@ -230,7 +165,7 @@ namespace PortafolioDiseñadores
 
                         reader.Close();
 
-                        // 🔹 4️⃣ Actualizar estado en base de datos
+                        
                         string sqlUpdate = "UPDATE OfertasTrabajo SET Estado=@e WHERE Id=@id";
                         using (SqlCommand cmd = new SqlCommand(sqlUpdate, con))
                         {
@@ -239,7 +174,7 @@ namespace PortafolioDiseñadores
                             cmd.ExecuteNonQuery();
                         }
 
-                        // 🔹 5️⃣ Enviar correo al reclutador
+                        
                         EnviarCorreoReclutador(correoReclutador, nombreDiseñador, titulo, nuevoEstado);
                     }
                 }
@@ -261,7 +196,7 @@ namespace PortafolioDiseñadores
                 string remitente = "showart2025@gmail.com";
                 string contraseña = "xiuy mrar lcqq jsiv";
 
-                // 🔹 Obtener el correo del diseñador (desde la tabla Usuarios)
+                
                 string correoDiseñador = "";
                 using (SqlConnection con = new Conexion().Abrir())
                 {
@@ -277,16 +212,16 @@ namespace PortafolioDiseñadores
                         correoDiseñador = res.ToString();
                 }
 
-                // 🔹 Crear mensaje base
+                
                 string cuerpo = $"Hola,\n\nTu oferta de trabajo \"{tituloOferta}\" ha sido {estado.ToUpper()} por el diseñador {nombreDiseñador}.";
 
-                // 🔹 Si fue aceptada, agregar información de contacto
+                
                 if (estado.Equals("Aceptada", StringComparison.OrdinalIgnoreCase) && !string.IsNullOrEmpty(correoDiseñador))
                 {
                     cuerpo += $"\n\nPara más detalles, comuníquese directamente al correo: {correoDiseñador}";
                 }
 
-                // 🔹 Construcción del mensaje
+                
                 MailMessage mensaje = new MailMessage();
                 mensaje.From = new MailAddress(remitente, "Portafolio Diseñadores");
                 mensaje.To.Add(correoDestino);
@@ -294,7 +229,7 @@ namespace PortafolioDiseñadores
                 mensaje.Body = cuerpo;
                 mensaje.IsBodyHtml = false;
 
-                // 🔹 Configuración SMTP
+                
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                 smtp.Credentials = new NetworkCredential(remitente, contraseña);
                 smtp.EnableSsl = true;

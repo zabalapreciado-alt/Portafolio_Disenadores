@@ -13,8 +13,7 @@ namespace PortafolioDiseñadores
 {
     public partial class FrmAcercaDe : Form
     {
-        private int usuarioId = 0; // Usuario logueado
-
+        private int usuarioId = 0; 
         public FrmAcercaDe()
         {
             InitializeComponent();
@@ -23,11 +22,11 @@ namespace PortafolioDiseñadores
 
         private void FrmAcercaDe_Load(object sender, EventArgs e)
         {
-            usuarioId = FrmHome.UsuarioId; // Lo tomamos del usuario que inició sesión
+            usuarioId = FrmHome.UsuarioId; 
             CargarBiografia();
         }
 
-        // 🔹 Cargar la biografía del usuario desde la tabla Usuarios
+        
         private void CargarBiografia()
         {
             try

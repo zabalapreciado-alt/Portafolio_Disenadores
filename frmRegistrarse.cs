@@ -65,7 +65,7 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    // Primero insertamos en la tabla Usuarios
+                    
                     string sqlUsuario = @"INSERT INTO Usuarios 
                                  (NombreUsuario, Contraseña, Rol, Biografia, WhatsApp, Instagram, CorreoContacto)
                                  VALUES (@u, @p, @r, NULL, NULL, NULL, @correo);
@@ -76,7 +76,7 @@ namespace PortafolioDiseñadores
                     cmdUsuario.Parameters.AddWithValue("@p", txtContraseña.Text.Trim());
                     cmdUsuario.Parameters.AddWithValue("@r", rol);
 
-                    // Para los diseñadores se guarda el correo, para los reclutadores queda NULL
+                    
                     if (rol == "diseñador")
                     {
                         if (string.IsNullOrWhiteSpace(txtCorreo.Text))
@@ -93,7 +93,7 @@ namespace PortafolioDiseñadores
 
                     int nuevoUsuarioId = Convert.ToInt32(cmdUsuario.ExecuteScalar());
 
-                    // Segundo: insertamos según el rol
+                    
                     if (rol == "diseñador")
                     {
                         if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
