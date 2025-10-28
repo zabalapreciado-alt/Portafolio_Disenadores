@@ -29,21 +29,12 @@ namespace PortafolioDiseñadores
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
-                    //// Verificamos que haya usuario logueado
-                    //if (FrmHome.UsuarioId == 0)
-                    //{
-                    //    MessageBox.Show("Debes iniciar sesión como diseñador.");
-                    //    return;
-                    //}
+                    
 
                     // Obtenemos el ID del diseñador vinculado al usuario
                     int disenadorId = ObtenerDisenadorId(con, FrmHome.UsuarioId);
 
-                    //if (disenadorId == 0)
-                    //{
-                    //    MessageBox.Show("No se encontró el perfil del diseñador.");
-                    //    return;
-                    //}
+                    
 
                     string sql = @"SELECT p.Id, d.Nombre AS Diseñador, p.Titulo, p.Descripcion, p.Categoria, p.RutaImagen
                            FROM Proyectos p
@@ -107,31 +98,62 @@ namespace PortafolioDiseñadores
 
             int id = Convert.ToInt32(dgvProyectos.CurrentRow.Cells["Id"].Value);
 
+            
+            string tituloOriginal = dgvProyectos.CurrentRow.Cells["Titulo"].Value?.ToString();
+            string descripcionOriginal = dgvProyectos.CurrentRow.Cells["Descripcion"].Value?.ToString();
+            string categoriaOriginal = dgvProyectos.CurrentRow.Cells["Categoria"].Value?.ToString();
+            string rutaImagenOriginal = dgvProyectos.CurrentRow.Cells["RutaImagen"].Value?.ToString();
+
+            
+            string nuevoTitulo = txtTitulo.Text.Trim();
+            string nuevaDescripcion = txtDescripcion.Text.Trim();
+            string nuevaCategoria = txtCategoria.Text.Trim();
+            string nuevaRutaImagen = rutaImagenNombre;
+
+            
+            if (string.IsNullOrEmpty(nuevaRutaImagen))
+            {
+                nuevaRutaImagen = rutaImagenOriginal;
+            }
+
+            // ✅ Verificamos si hay cambios
+            bool huboCambios =
+                nuevoTitulo != tituloOriginal ||
+                nuevaDescripcion != descripcionOriginal ||
+                nuevaCategoria != categoriaOriginal ||
+                nuevaRutaImagen != rutaImagenOriginal;
+
+            if (!huboCambios)
+            {
+                MessageBox.Show("No se detectaron cambios para actualizar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             try
             {
                 using (SqlConnection con = new Conexion().Abrir())
                 {
                     string sql = @"UPDATE Proyectos 
-                                   SET Titulo=@t, Descripcion=@d, Categoria=@c, RutaImagen=@r 
-                                   WHERE Id=@id";
+                           SET Titulo=@t, Descripcion=@d, Categoria=@c, RutaImagen=@r 
+                           WHERE Id=@id";
                     using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
                         cmd.Parameters.AddWithValue("@id", id);
-                        cmd.Parameters.AddWithValue("@t", txtTitulo.Text.Trim());
-                        cmd.Parameters.AddWithValue("@d", txtDescripcion.Text.Trim());
-                        cmd.Parameters.AddWithValue("@c", txtCategoria.Text.Trim());
-                        cmd.Parameters.AddWithValue("@r", rutaImagenNombre);
+                        cmd.Parameters.AddWithValue("@t", nuevoTitulo);
+                        cmd.Parameters.AddWithValue("@d", nuevaDescripcion);
+                        cmd.Parameters.AddWithValue("@c", nuevaCategoria);
+                        cmd.Parameters.AddWithValue("@r", nuevaRutaImagen);
                         cmd.ExecuteNonQuery();
                     }
                 }
 
-                MessageBox.Show("Proyecto actualizado.");
+                MessageBox.Show("Proyecto actualizado correctamente.");
                 CargarProyectos();
                 LimpiarCampos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error al actualizar: " + ex.Message);
             }
         }
 
@@ -203,6 +225,7 @@ namespace PortafolioDiseñadores
             pbImagen.Image = null;
             rutaImagenNombre = "";
         }
+
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
