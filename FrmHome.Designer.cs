@@ -47,12 +47,12 @@
             // 
             this.lblBienvenida.AutoSize = true;
             this.lblBienvenida.BackColor = System.Drawing.Color.Transparent;
-            this.lblBienvenida.Font = new System.Drawing.Font("Impact", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenida.Font = new System.Drawing.Font("Impact", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenida.ForeColor = System.Drawing.Color.Black;
             this.lblBienvenida.Location = new System.Drawing.Point(11, 34);
             this.lblBienvenida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(251, 36);
+            this.lblBienvenida.Size = new System.Drawing.Size(218, 32);
             this.lblBienvenida.TabIndex = 0;
             this.lblBienvenida.Text = "Bienvenido Invitado";
             this.lblBienvenida.Click += new System.EventHandler(this.lblBienvenida_Click);
@@ -213,9 +213,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PortafolioDiseñadores.Properties.Resources.Professional_Wordmark_Logo_for_ShowArt_Portfolio_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(285, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(312, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(247, 142);
+            this.pictureBox1.Size = new System.Drawing.Size(232, 142);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
